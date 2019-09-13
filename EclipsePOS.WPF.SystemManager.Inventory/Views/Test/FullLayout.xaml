@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="EclipsePOS.WPF.SystemManager.Inventory.Views.Test.FullLayout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="AntiqueWhite" >
+    <!--DockPanel LastChildFill="True" VerticalAlignment="Stretch">
+        <TextBlock  DockPanel.Dock="Top" Background="Aqua">1</TextBlock>
+        <TextBlock DockPanel.Dock="Bottom" Background="Blue">2</TextBlock>
+        <TextBlock DockPanel.Dock="Left" Background="Red">3</TextBlock>
+        <TextBlock DockPanel.Dock="Right" Background="Azure">4</TextBlock>
+    </DockPanel-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
+        <TextBlock  Grid.Row="0" Background="Aqua">1</TextBlock>
+        <TextBlock  Grid.Row="1" Background="Blue">2</TextBlock>
+    </Grid>
+</UserControl>

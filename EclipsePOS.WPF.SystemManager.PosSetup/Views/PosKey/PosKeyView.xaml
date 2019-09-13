@@ -1,0 +1,182 @@
+﻿<Window x:Class="EclipsePOS.WPF.SystemManager.PosSetup.Views.PosKey.PosKeyView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="EclipsePOS-SystemManager" Width="Auto" Height="550"  ResizeMode="NoResize"  Opacity="1" Background="{DynamicResource ContentAreaBrush}" WindowStartupLocation="CenterScreen" Style="{DynamicResource WindowDialog}">
+    <Window.Resources>
+        <Storyboard x:Key="OnLoadedTransition">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rootControl" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        
+    </Window.Resources>
+   
+    <DockPanel LastChildFill="True" >
+        <Border DockPanel.Dock="Top" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,10,0,0" Background="{DynamicResource BottomPanelBrush}" Height="Auto" Margin="2,2,2,2">
+            <TextBlock Margin="10,3,3,3" Background="#00FFFFFF" FontSize="12" Foreground="#FFFFFFFF" Text="Manage POS Keys" />
+		</Border>
+        <Border DockPanel.Dock="Bottom" BorderBrush="{DynamicResource BorderBrush}" BorderThickness ="1"  CornerRadius ="0,0,10,0" Margin="0,5,5,2" Background="{DynamicResource BottomPanelBrush}" Height="Auto">
+            <StackPanel>
+                <TextBlock x:Name="txtBlockMessges" Foreground="{DynamicResource HeaderTextBrush}" />
+            </StackPanel>
+        </Border>
+
+        <Border DockPanel.Dock="Bottom" Height="60" Name="border3"   BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" Margin="0,5,5,0" CornerRadius="10,10,10,10">
+            <StackPanel Orientation="Horizontal"  FlowDirection="RightToLeft">
+                <Button Height="27" Name="btnCancel" Width="75" Margin="10,0,10,0" Style="{DynamicResource GlassyButtonStyle}" FontSize="12">Cancel</Button>
+                <Button Height="27" Name="btnOK" Width="75"  Style="{DynamicResource GlassyButtonStyle}" FontSize="12">OK</Button>
+            </StackPanel>
+        </Border>
+        
+            
+        <Border x:Name="ItemsBorder" DockPanel.Dock="Right" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,0,10,0" Margin="5,2,5,2"  Height="Auto">
+            <StackPanel x:Name="ItemsDetailsStackPanel" >
+                <TextBlock Text="Pos Keys" Background="#00FFFFFF" FontSize="18" Foreground="#FFFFFFFF" HorizontalAlignment="Center" Margin="0,0,0,5"></TextBlock>
+
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                   
+                    <TextBlock  Grid.Row="0" Grid.Column="0"  Text="Panel ID" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14"></TextBlock>
+                    <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding Path=panel_id}" FontSize="14" Margin="0,0,15,15" Name="txtBoxPanelID" Background="#FFE2EFC3" IsReadOnly="True" ></TextBox> 
+                   
+                    <TextBlock Text="Key text 1"  Grid.Row="1" Grid.Column="0"  Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14"></TextBlock>
+                    <TextBox   Grid.Row="1" Grid.Column="1" Text="{Binding Path=key_text, UpdateSourceTrigger=Explicit, ValidatesOnDataErrors=True }" Margin="0,0,15,15" FontSize="14" Name="txtBoxKeyText" Background="#FFE2EFC3"></TextBox>
+
+                    <TextBlock  Grid.Row="2" Grid.Column="0" Text="Key text 2" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14"></TextBlock>
+                    <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Path=image, UpdateSourceTrigger=Explicit, ValidatesOnDataErrors=True}" Margin="0,0,15,15" FontSize="14" Name="txtBoxImage" Background="#FFE2EFC3"></TextBox>
+
+                    
+                    <TextBlock  Grid.Row="3" Grid.Column="0" Text="Key parameter value" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14"></TextBlock>
+                    <TextBox  Grid.Row="3" Grid.Column="1" Text="{Binding Path=key_val, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="0,0,15,15" FontSize="14" Name="txtBoxKeyVal" Background="#FFE2EFC3"></TextBox>
+
+                    <TextBlock  Grid.Row="4" Grid.Column="0" Text="Unique key code" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14"></TextBlock>
+                    <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding Path=key_code, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="0,0,15,15" FontSize="14" Name="txtBoxKeyCode" Background="#FFE2EFC3"></TextBox>
+
+                    
+                    <TextBlock  Grid.Row="5" Grid.Column="0" Text="Access key value" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14"></TextBlock>
+                    <ComboBox  Grid.Row="5" Grid.Column="1" SelectedValue="{Binding Path=attr, UpdateSourceTrigger=Explicit, ValidatesOnDataErrors=True}"  SelectedValuePath="Tag" Margin="0,0,15,15" FontSize="14"  Name="cmbBoxAttr"  Background="#FFE2EFC3">
+                        <ComboBoxItem Tag="90">F1</ComboBoxItem>
+                        <ComboBoxItem Tag="91">F2</ComboBoxItem>
+                        <ComboBoxItem Tag="92">F3</ComboBoxItem>
+                        <ComboBoxItem Tag="93">F4</ComboBoxItem>
+                        <ComboBoxItem Tag="94">F5</ComboBoxItem>
+                        <ComboBoxItem Tag="95">F6</ComboBoxItem>
+                        <ComboBoxItem Tag="96">F7</ComboBoxItem>
+                        <ComboBoxItem Tag="97">F8</ComboBoxItem>
+                        <ComboBoxItem Tag="131184">Ctl+F1</ComboBoxItem>
+                        <ComboBoxItem Tag="131185">Ctl+F2</ComboBoxItem>
+                        <ComboBoxItem Tag="131186">Ctl+F3</ComboBoxItem>
+                        <ComboBoxItem Tag="131187">Ctl+F4</ComboBoxItem>
+                        <ComboBoxItem Tag="131188">Ctl+F5</ComboBoxItem>
+                        <ComboBoxItem Tag="131189">Ctl+F6</ComboBoxItem>
+                        <ComboBoxItem Tag="131190">Ctl+F7</ComboBoxItem>
+                        <ComboBoxItem Tag="131191">Ctl+F8</ComboBoxItem>
+                        <ComboBoxItem Tag="131192">Ctl+F9</ComboBoxItem>
+                    </ComboBox>
+                    
+                    <TextBlock  Grid.Row="6" Grid.Column="0" Text="Image file name" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14"></TextBlock>
+                    <TextBox  Grid.Row="6" Grid.Column="1" Text="{Binding Path=flags, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="0,0,15,5" FontSize="14" Name="txtBoxFlags" Background="#FFE2EFC3"></TextBox>
+
+                    <TextBlock  Grid.Row="7" Grid.Column="1" Text="Copy the images to 'Images' folder in PosWorkbench's start in path" Margin="0,0,15,15" Foreground="#FFFFFFFF" FontSize="14" TextWrapping="Wrap"></TextBlock>
+
+                    <TextBlock  Grid.Row="8" Grid.Column="0" Text="Logout disable" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14"></TextBlock>
+                    <ComboBox  Grid.Row="8" Grid.Column="1" SelectedValue="{Binding Path=logout_disable, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"  SelectedValuePath="Tag" Margin="0,0,15,15" FontSize="14"  Name="cmbBoxLogoutDisable"  Background="#FFE2EFC3">
+                        <ComboBoxItem Tag="1">Yes</ComboBoxItem>
+                        <ComboBoxItem Tag="0">No</ComboBoxItem>
+                    </ComboBox>
+
+                    <TextBlock  Grid.Row="9" Grid.Column="0" Text="Function text" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14"></TextBlock>
+                    <TextBox  Grid.Row="9" Grid.Column="1" Text="{Binding Path=param, UpdateSourceTrigger=Explicit, ValidatesOnDataErrors=True}" Margin="0,0,15,15" FontSize="14" Name="txtBoxParam" Background="#FFE2EFC3"></TextBox>
+
+                    
+                    <TextBlock  Grid.Row="10" Grid.Column="0" Text="Key class" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14"></TextBlock>
+                    <ComboBox  Grid.Row="10" Grid.Column="1" SelectedValue="{Binding Path=key_class, UpdateSourceTrigger=Explicit, ValidatesOnDataErrors=True}"  SelectedValuePath="Tag" Margin="0,0,15,15" FontSize="14"  Name="cmbBoxKeyClass"  Background="#FFE2EFC3">
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.AlphaKey">Alpha Key(Key)</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.AltCurrTender">AltCurr Tender</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.CashTender">Cash Tender</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.CheckTender">Check Tender</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.ClearKey">Clear Key</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.Customer">Clear Key</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.CloseCashDrawer">Close Cash Drawer</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.CreditTender">Credit Tender</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.Discount">Discount(Key)</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.DiscountInput">Discount Input</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.DebtTender">Debt Tender</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.DebitCardTender">Debit Card Tender</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.EnterKey">Enter Key</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.Exit">Exit</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.ExecScript">Exec Script(Key)</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.FreeText">FreeText</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.ItemMarkdown">Item Markdown</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.ItemVoid">Item Void</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.LeftMenuNavigator">Left Menu Navigator(Key)</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.Lock">Lock</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.LogOff">Log Off</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.LogOn">Log On</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.LookupItem">Lookup Item</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.MultKey">Mult Key</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.MediaText">Media Text</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.MediaValue">Media Value</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.MergeOrder">Merge Order</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.NumKey">Num Key</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.OpenOrdersList">Open Orders List</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.OpenDrawer">Open Drawer</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.PageDown">Page Down</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.PageUp">Page Up</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.PaidIn">Paid In</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.PaidOut">Paid Out</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.Plu">Plu</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.PriceOverride">Price Override</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.PrintOrderTicket">Order Ticket</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.PrintKitchenTicket">Kitchen Ticket</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.Quantity">Quantity</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.RecallEj">Recall Ej</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.ReturnSale">Return Sale</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.SaveEj">Save Ej</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.Subtotal">Subtotal</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.AddSurcharge">Surcharge</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.TerminalReport">Terminal Report(Key)</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.Total">Total</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.ToggleDineInOut">Toggle Dine in/Carry out</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.TrainingMode">Training Mode</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.UnLock">UnLock</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.PosEvents.VoidSale">Void Sale</ComboBoxItem>
+                    </ComboBox>
+             </Grid>
+            </StackPanel>
+        </Border>
+
+
+
+        </DockPanel>
+   
+</Window>

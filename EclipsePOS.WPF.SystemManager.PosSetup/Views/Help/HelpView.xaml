@@ -1,0 +1,360 @@
+﻿<UserControl x:Class="EclipsePOS.WPF.SystemManager.PosSetup.Views.Help.HelpView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Name="rootControl"  >
+
+    <UserControl.Resources>
+        <Storyboard x:Key="OnLoadedTransition">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rootControl" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <LinearGradientBrush x:Key="OutboxHeaderBrush" EndPoint="0.5,0.173" StartPoint="0.5,0.827">
+            <GradientStop Color="#FF2373BE" Offset="0"/>
+            <GradientStop Color="#FF6496C8" Offset="1"/>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="BottomPanelBrush" EndPoint="0.5,0.119" StartPoint="0.5,1.081">
+            <GradientStop Color="#FF0F152B" Offset="0"/>
+            <GradientStop Color="#FF5A6496" Offset="1"/>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="HeaderTextBrush" Color="#FFDCDCE6"/>
+        <SolidColorBrush x:Key="GridBodyBrush" Color="#7F28C8FF"/>
+
+        <LinearGradientBrush x:Key="GridShadowBrush" EndPoint="0.5,1.057" StartPoint="0.5,-0.057">
+            <GradientStop Color="#33FFFFFF" Offset="0"/>
+            <GradientStop Color="#00000000" Offset="1"/>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="PageBackgroundBrush" EndPoint="0.989,0.068" StartPoint="0.718,0.4">
+            <GradientStop Color="#FF30265A" Offset="0"/>
+            <GradientStop Color="#FF80BEE7" Offset="1"/>
+            <GradientStop Color="#FF332B5F" Offset="0.038"/>
+            <GradientStop Color="#FF7DB8E2" Offset="0.966"/>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="BorderBrush" Color="#FFC1C3DC"/>
+        <!-- XLS Button Style -->
+        <Style x:Key="btnXLS" BasedOn="{x:Null}" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <!-- Image Width="20" Height="20" Source="..\..\Images\xls.png" / -->
+                            <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="GlassyButtonStyle" BasedOn="{x:Null}" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <ControlTemplate.Resources>
+                            <Storyboard x:Key="Timeline1">
+                                <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ButtonBase" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                    <SplineColorKeyFrame KeyTime="00:00:00" Value="#FF008EB5"/>
+                                    <SplineColorKeyFrame KeyTime="00:00:00.1280000" Value="#FF00C8FF"/>
+                                </ColorAnimationUsingKeyFrames>
+                            </Storyboard>
+                            <Storyboard x:Key="Timeline2">
+                                <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="ButtonBase">
+                                    <SplineColorKeyFrame KeyTime="00:00:00" Value="#FF00C8FF"/>
+                                    <SplineColorKeyFrame KeyTime="00:00:00.2520000" Value="#FF008EB5"/>
+                                </ColorAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </ControlTemplate.Resources>
+                        <Grid>
+                            <Rectangle Stroke="{x:Null}" RadiusX="5" RadiusY="5" x:Name="Reflection" Margin="0,0,0,-20.646" VerticalAlignment="Bottom" Height="18">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="0.497,0.515" StartPoint="0.499,-0.119">
+                                        <GradientStop Color="#2DFFFFFF" Offset="0"/>
+                                        <GradientStop Color="#00FFFFFF" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <Rectangle Stroke="{x:Null}" RadiusX="5" RadiusY="5" Margin="0,1,0,-1" x:Name="ButtonBase">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                        <GradientStop Color="#FF00598C" Offset="0"/>
+                                        <GradientStop Color="#FF008EB5" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <Rectangle Stroke="{x:Null}" RadiusX="5" RadiusY="5" Margin="0,0.999,0,-0.999" x:Name="GlassyTop">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="0.496,0.626" StartPoint="0.5,-0.008">
+                                        <GradientStop Color="#4CFFFFFF" Offset="0"/>
+                                        <GradientStop Color="#00FFFFFF" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True" Margin="10,1,10,1" TextElement.Foreground="White" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard Storyboard="{StaticResource Timeline1}"/>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard x:Name="Timeline2_BeginStoryboard" Storyboard="{StaticResource Timeline2}"/>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <!--UserControl.Background>
+        <ImageBrush ImageSource="../../Images/Alert.png" >
+        </ImageBrush >
+    </UserControl.Background -->
+
+    <DockPanel Opacity="0.9">
+        <Border x:Name ="TopPanelBorder"  DockPanel.Dock="Top" BorderBrush="{DynamicResource BorderBrush}"  BorderThickness="1" CornerRadius="0,10,0,0" Margin="0,5,5,0" Background="{DynamicResource BottomPanelBrush}">
+            <DockPanel>
+                <TextBlock Margin="5,2,5,2" Background="#00FFFFFF" FontSize="13" Foreground="#FFFFFFFF" Text="Pos Setup" DockPanel.Dock="Left" VerticalAlignment="Center"></TextBlock>
+            </DockPanel>
+        </Border>
+        
+        <StackPanel  DockPanel.Dock="Bottom"  Margin="0,0,0,0">
+            <Border BorderBrush="{DynamicResource BorderBrush}" BorderThickness ="1"  CornerRadius ="0,0,10,0" Margin="0,5,5,2" Background="{DynamicResource BottomPanelBrush}">
+                <DockPanel Name="dpBottomPanel" FlowDirection="LeftToRight" Height="25">
+                    <Image x:Name="imgSchemaChanged" Source="../../Images/Alert.png" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="15,5,5,5" Height="16" Width="23"  Visibility="Hidden" ></Image>
+                    <TextBlock x:Name="tbSchemaChanged" Text="Schema Changed" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="5" Foreground="{DynamicResource HeaderTextBrush}" Visibility="Hidden" />
+                    <TextBlock x:Name="tbSync" Text="Saved" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,5,15,5" Foreground="{DynamicResource HeaderTextBrush}" Visibility="Hidden" />
+                     <Image x:Name="imgSync" Source="../../Images/sync.png" DockPanel.Dock="Right" VerticalAlignment="Center" Margin="5" Height="16" Width="23" HorizontalAlignment="Right" Visibility="Hidden" >
+                        <Image.LayoutTransform>
+                            <RotateTransform CenterX="0.5" CenterY="0.5" />
+                        </Image.LayoutTransform>
+                    </Image>
+                </DockPanel>
+            </Border>
+            <Border BorderBrush="{DynamicResource BorderBrush}" Name="BottomPanelShadow" CornerRadius ="0,10,0,0" Margin="0,0,5,5" Height="25" Background="{DynamicResource GridShadowBrush}"/>
+        </StackPanel>
+
+        <Border x:Name="ItemsBorder" DockPanel.Dock="Right" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,0,10,0" Margin="5,2,5,2" Background="{DynamicResource ContentAreaBrush}">
+            <StackPanel x:Name="ItemsDetailsStackPanel" >
+                <TextBlock Text="Pos Setup" Background="#00FFFFFF" FontSize="18" Foreground="#FFFFFFFF" HorizontalAlignment="Center" Margin="0,0,0,5"></TextBlock>
+
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Row="0" Grid.Column="0"  BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,0,10,0" Margin="5,2,5,2" Background="{DynamicResource ContentAreaBrush}" >
+                        <StackPanel>
+                            <!-- TextBlock  Text="Default store group" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock -->
+                            <TextBlock  Text="Step 1 - Manage data source" Margin="15,20,0,20" Foreground="#FFFFFFFF" FontSize="16" TextWrapping="Wrap">
+                             </TextBlock>
+                            <DockPanel>
+                                <Button DockPanel.Dock="Right" Style="{DynamicResource btnXLS}" ToolTip="Demo database"  FontSize="14" Name="btnDemoDatabase" HorizontalAlignment="Center" Command="{Binding}"  Margin="10,10,10,10">
+                                    <Image  Source="../../Images/152_4.ico" VerticalAlignment="Center" Height="20" Width="20"  />
+                                </Button>
+                            </DockPanel>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="0"  BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,0,10,0" Margin="5,2,5,2" Background="{DynamicResource ContentAreaBrush}" >
+                        <StackPanel>
+                            <TextBlock  Text="Step 2 - Setup Organization" Margin="15,20,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock>
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    
+                                </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Row="0" Grid.Column="0">
+                                        <Button DockPanel.Dock="Right" Style="{DynamicResource btnXLS}" ToolTip="Demo database"  FontSize="14" HorizontalAlignment="Center" Command="{Binding}"  Margin="10,10,10,10">
+                                            <Image  Source="../../Images/home.png" VerticalAlignment="Center" Height="20" Width="20"  />
+                                        </Button>
+                                        <TextBlock   Text="Organization" TextWrapping="WrapWithOverflow" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14" HorizontalAlignment="Center" />
+                                     </StackPanel>
+                                     <StackPanel Grid.Row="0" Grid.Column="1">
+                                        <Button DockPanel.Dock="Right" Style="{DynamicResource btnXLS}" ToolTip="Demo database"  FontSize="14" HorizontalAlignment="Center" Command="{Binding}"  Margin="10,10,10,10">
+                                            <Image  Source="../../Images/152_4.ico" VerticalAlignment="Center" Height="20" Width="20"  />
+                                        </Button>
+                                        <TextBlock  Text="Employee roles" TextWrapping="WrapWithOverflow" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14" HorizontalAlignment="Center" />
+                                     </StackPanel>
+                                    <StackPanel Grid.Row="0" Grid.Column="2">
+                                        <Button DockPanel.Dock="Right" Style="{DynamicResource btnXLS}" ToolTip="Demo database"  FontSize="14" HorizontalAlignment="Center" Command="{Binding}"  Margin="10,10,10,10">
+                                            <Image  Source="../../Images/152_4.ico" VerticalAlignment="Center" Height="20" Width="20"  />
+                                        </Button>
+                                        <TextBlock  Text="Employees" TextWrapping="WrapWithOverflow" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14" HorizontalAlignment="Center" />
+                                     </StackPanel>
+                                    <StackPanel Grid.Row="0" Grid.Column="3">
+                                        <Button DockPanel.Dock="Right" Style="{DynamicResource btnXLS}" ToolTip="Demo database"  FontSize="14" HorizontalAlignment="Center" Command="{Binding}"  Margin="10,10,10,10">
+                                            <Image  Source="../../Images/152_4.ico" VerticalAlignment="Center" Height="20" Width="20"  />
+                                        </Button>
+                                        <TextBlock  Text="Tax group" TextWrapping="WrapWithOverflow" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14" HorizontalAlignment="Center" />
+                                     </StackPanel>
+                                    <StackPanel Grid.Row="0" Grid.Column="4">
+                                        <Button DockPanel.Dock="Right" Style="{DynamicResource btnXLS}" ToolTip="Demo database"  FontSize="14" HorizontalAlignment="Center" Command="{Binding}"  Margin="10,10,10,10">
+                                            <Image  Source="../../Images/152_4.ico" VerticalAlignment="Center" Height="20" Width="20"  />
+                                        </Button>
+                                        <TextBlock  Text="Tax" TextWrapping="WrapWithOverflow" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14" HorizontalAlignment="Center" />
+                                     </StackPanel>
+                                    <StackPanel Grid.Row="0" Grid.Column="5">
+                                        <Button DockPanel.Dock="Right" Style="{DynamicResource btnXLS}" ToolTip="Demo database"  FontSize="14" HorizontalAlignment="Center" Command="{Binding}"  Margin="10,10,10,10">
+                                            <Image  Source="../../Images/152_4.ico" VerticalAlignment="Center" Height="20" Width="20"  />
+                                        </Button>
+                                         <TextBlock  Text="Currency" Margin="15,0,0,0" TextWrapping="WrapWithOverflow" Foreground="#FFFFFFFF" FontSize="14" HorizontalAlignment="Center" />
+                                     </StackPanel>
+                                <StackPanel Grid.Row="1" Grid.Column="0">
+                                    <Button DockPanel.Dock="Right" Style="{DynamicResource btnXLS}" ToolTip="Demo database"  FontSize="14" HorizontalAlignment="Center" Command="{Binding}"  Margin="10,10,10,10">
+                                        <Image  Source="../../Images/152_4.ico" VerticalAlignment="Center" Height="20" Width="20"  />
+                                    </Button>
+                                    <TextBlock   Text="Currency rate" TextWrapping="WrapWithOverflow" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14" HorizontalAlignment="Center" />
+                                     </StackPanel>
+                                <StackPanel Grid.Row="1" Grid.Column="1">
+                                    <Button DockPanel.Dock="Right" Style="{DynamicResource btnXLS}" ToolTip="Demo database"  FontSize="14" HorizontalAlignment="Center" Command="{Binding}"  Margin="10,10,10,10">
+                                        <Image  Source="../../Images/152_4.ico" VerticalAlignment="Center" Height="20" Width="20"  />
+                                    </Button>
+                                    <TextBlock  Text="Administratos" TextWrapping="WrapWithOverflow" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14" HorizontalAlignment="Center" />
+                                     </StackPanel>
+                                <StackPanel Grid.Row="1" Grid.Column="2">
+                                    <Button DockPanel.Dock="Right" Style="{DynamicResource btnXLS}" ToolTip="Demo database"  FontSize="14" HorizontalAlignment="Center" Command="{Binding}"  Margin="10,10,10,10">
+                                        <Image  Source="../../Images/152_4.ico" VerticalAlignment="Center" Height="20" Width="20"  />
+                                    </Button>
+                                    <TextBlock  Text="Store" TextWrapping="WrapWithOverflow" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14" HorizontalAlignment="Center" />
+                                     </StackPanel>
+                                <StackPanel Grid.Row="1" Grid.Column="3">
+                                    <Button DockPanel.Dock="Right" Style="{DynamicResource btnXLS}" ToolTip="Demo database"  FontSize="14" HorizontalAlignment="Center" Command="{Binding}"  Margin="10,10,10,10">
+                                        <Image  Source="../../Images/152_4.ico" VerticalAlignment="Center" Height="20" Width="20"  />
+                                    </Button>
+                                    <TextBlock  Text="Station" TextWrapping="WrapWithOverflow" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14" HorizontalAlignment="Center" />
+                                     </StackPanel>
+                                <StackPanel Grid.Row="1" Grid.Column="4">
+                                    <Button DockPanel.Dock="Right" Style="{DynamicResource btnXLS}" ToolTip="Demo database"  FontSize="14" HorizontalAlignment="Center" Command="{Binding}" Margin="10,10,10,10">
+                                        <Image  Source="../../Images/152_4.ico" VerticalAlignment="Center" Height="20" Width="20"  />
+                                    </Button>
+                                    <TextBlock  Text="Table group" TextWrapping="WrapWithOverflow" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14" HorizontalAlignment="Center" />
+                                </StackPanel>
+                                <StackPanel Grid.Row="1" Grid.Column="5">
+                                    <Button DockPanel.Dock="Right" Style="{DynamicResource btnXLS}" ToolTip="Demo database"  FontSize="14" HorizontalAlignment="Center" Command="{Binding}"  Margin="10,10,10,10">
+                                        <Image  Source="../../Images/152_4.ico" VerticalAlignment="Center" Height="20" Width="20"  />
+                                    </Button>
+                                    <TextBlock  Text="Table" Margin="15,0,0,0" TextWrapping="WrapWithOverflow" Foreground="#FFFFFFFF" FontSize="14" HorizontalAlignment="Center" />
+                                 </StackPanel>
+                            </Grid>
+
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="0"  BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,0,10,0" Margin="5,2,5,2" Background="{DynamicResource ContentAreaBrush}" >
+                        <StackPanel>
+                            <TextBlock  Text="Step 3 - Configure the POS " Margin="15,20,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock>
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                 </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Row="0" Grid.Column="0">
+                                    <Button DockPanel.Dock="Right" Style="{DynamicResource btnXLS}" ToolTip="Demo database"  FontSize="14" HorizontalAlignment="Center" Command="{Binding}"  Margin="10,10,10,10">
+                                        <Image  Source="../../Images/102_153.ico" VerticalAlignment="Center" Height="20" Width="20"  />
+                                    </Button>
+                                    <TextBlock   Text="Configurations" TextWrapping="WrapWithOverflow" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14" HorizontalAlignment="Center" />
+                                     </StackPanel>
+                                <StackPanel Grid.Row="0" Grid.Column="1">
+                                    <Button DockPanel.Dock="Right" Style="{DynamicResource btnXLS}" ToolTip="Demo database"  FontSize="14" HorizontalAlignment="Center" Command="{Binding}"  Margin="10,10,10,10">
+                                        <Image  Source="../../Images/152_4.ico" VerticalAlignment="Center" Height="20" Width="20"  />
+                                    </Button>
+                                    <TextBlock  Text="Parameters" TextWrapping="WrapWithOverflow" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14" HorizontalAlignment="Center" />
+                                     </StackPanel>
+                                <StackPanel Grid.Row="0" Grid.Column="2">
+                                    <Button DockPanel.Dock="Right" Style="{DynamicResource btnXLS}" ToolTip="Demo database"  FontSize="14" HorizontalAlignment="Center" Command="{Binding}"  Margin="10,10,10,10">
+                                        <Image  Source="../../Images/152_4.ico" VerticalAlignment="Center" Height="20" Width="20"  />
+                                    </Button>
+                                    <TextBlock  Text="Discount and Promotions" TextWrapping="WrapWithOverflow" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14" HorizontalAlignment="Center" />
+                                     </StackPanel>
+                                <StackPanel Grid.Row="0" Grid.Column="3">
+                                    <Button DockPanel.Dock="Right" Style="{DynamicResource btnXLS}" ToolTip="Demo database"  FontSize="14" HorizontalAlignment="Center" Command="{Binding}"  Margin="10,10,10,10">
+                                        <Image  Source="../../Images/152_4.ico" VerticalAlignment="Center" Height="20" Width="20"  />
+                                    </Button>
+                                    <TextBlock  Text="Menus" TextWrapping="WrapWithOverflow" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14" HorizontalAlignment="Center" />
+                                     </StackPanel>
+                             </Grid>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Row="3" Grid.Column="0"  BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,0,10,0" Margin="5,2,5,2" Background="{DynamicResource ContentAreaBrush}" >
+                        <StackPanel>
+                            <TextBlock  Text="Setp 4 - Set POS startup parameters" Margin="15,20,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock>
+                            <StackPanel>
+                                <!-- TextBlock  Text="Default store group" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock -->
+                                <DockPanel>
+                                    <Button DockPanel.Dock="Right" Style="{DynamicResource btnXLS}" ToolTip="Demo database"  FontSize="14"  HorizontalAlignment="Center" Command="{Binding}"  Margin="10,10,10,10">
+                                        <Image  Source="../../Images/152_4.ico" VerticalAlignment="Center" Height="20" Width="20"  />
+                                    </Button>
+                                </DockPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Row="4" Grid.Column="0"  BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,0,10,0" Margin="5,2,5,2" Background="{DynamicResource ContentAreaBrush}" >
+                        <StackPanel>
+                            <TextBlock  Text="Setp 5 - Setup Inventory" Margin="15,20,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock>
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Row="0" Grid.Column="0">
+                                    <Button DockPanel.Dock="Right" Style="{DynamicResource btnXLS}" ToolTip="Demo database"  FontSize="14" HorizontalAlignment="Center" Command="{Binding}"  Margin="10,10,10,10">
+                                        <Image  Source="../../Images/102_153.ico" VerticalAlignment="Center" Height="20" Width="20"  />
+                                    </Button>
+                                    <TextBlock   Text="Item department" TextWrapping="WrapWithOverflow" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14" HorizontalAlignment="Center" />
+                                     </StackPanel>
+                                <StackPanel Grid.Row="0" Grid.Column="1">
+                                    <Button DockPanel.Dock="Right" Style="{DynamicResource btnXLS}" ToolTip="Demo database"  FontSize="14" HorizontalAlignment="Center" Command="{Binding}"  Margin="10,10,10,10">
+                                        <Image  Source="../../Images/152_4.ico" VerticalAlignment="Center" Height="20" Width="20"  />
+                                    </Button>
+                                    <TextBlock  Text="Item group" TextWrapping="WrapWithOverflow" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14" HorizontalAlignment="Center" />
+                                     </StackPanel>
+                                <StackPanel Grid.Row="0" Grid.Column="2">
+                                    <Button DockPanel.Dock="Right" Style="{DynamicResource btnXLS}" ToolTip="Demo database"  FontSize="14" HorizontalAlignment="Center" Command="{Binding}"  Margin="10,10,10,10">
+                                        <Image  Source="../../Images/152_4.ico" VerticalAlignment="Center" Height="20" Width="20"  />
+                                    </Button>
+                                    <TextBlock  Text="Item list" TextWrapping="WrapWithOverflow" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14" HorizontalAlignment="Center" />
+                                     </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+            </StackPanel>
+
+        </Border>
+    </DockPanel>
+
+</UserControl>

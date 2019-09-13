@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="EclipsePOS.WPF.SystemManager.PosSetup.Views.NavigatorWorkbench.WorkbenchNavView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Name="rootControl">
+    <UserControl.Resources>
+        <Storyboard x:Key="OnLoadedTransition">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rootControl" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <!-- UserControl.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource OnLoadedTransition}"/>
+        </EventTrigger>
+    </UserControl.Triggers -->
+    <StackPanel>
+        <Border BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,10,0,0" Background="{DynamicResource HeaderBrush}" >
+            <TextBlock Margin="10,3,3,3" Background="#00FFFFFF"  Foreground="#FFFFFFFF" Text="Select a task:" />
+        </Border>
+
+        <StackPanel Width="Auto" Height="Auto" >
+       
+
+       
+            <TextBlock Margin="10,3,3,3" Background="#00FFFFFF" FontSize="14" Foreground="#FFFFFFFF" Text="POS Workbench Configurations" TextAlignment="Center" />
+
+            <Button Name="btnPosConfig" Command="{Binding}" Style="{DynamicResource ModuleSubTaskNavigorButton}" >
+                Configurations
+            </Button>
+            <Button Name="btnPosParams" Command="{Binding}" Style="{DynamicResource ModuleSubTaskNavigorButton}" >
+                Parameters
+            </Button>
+       
+            <Button Name="btnMenuRoot" Command="{Binding}" Style="{DynamicResource ModuleSubTaskNavigorButton}" >
+                Menus
+            </Button>
+
+            <TextBlock Margin="10,3,3,3" Background="#00FFFFFF" FontSize="14" Foreground="#FFFFFFFF" Text="Start POS" TextAlignment="Center" />
+
+            <Button Name="btnStartPos" Command="{Binding}" Style="{DynamicResource ModuleSubTaskNavigorButton}" >
+                Start pos workbench
+            </Button>
+
+        </StackPanel>
+
+    </StackPanel>
+
+</UserControl>

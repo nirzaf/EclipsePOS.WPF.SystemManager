@@ -1,0 +1,408 @@
+﻿<UserControl x:Class="EclipsePOS.WPF.SystemManager.Inventory.Views.Plu.PluView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:EclipsePOS.WPF.SystemManager.Inventory.Views"
+    Name="rootControl" MaxHeight="710">
+
+    <UserControl.Resources>
+        <Storyboard x:Key="OnLoadedTransition">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rootControl" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Style x:Key="headerStyle1" TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type GridViewColumnHeader}">
+                        <Border  BorderThickness="1,2,0,2" CornerRadius="5,0,0,5" TextBlock.TextAlignment="Center" Width="{TemplateBinding  Width}" BorderBrush="#FF1D0F48" Background="#FFE2EFC3"  >
+                            <ContentPresenter Content="{TemplateBinding Content}" Height="15" ></ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="headerStyle3" TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type GridViewColumnHeader}">
+                        <Border  BorderThickness="0,2,2,2" CornerRadius="0,5,5,0" TextBlock.TextAlignment="Center" Width="{TemplateBinding  Width}" BorderBrush="#FF1D0F48" Background="#FFE2EFC3"  >
+                            <ContentPresenter Content="{TemplateBinding Content}" Height="15" ></ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ListViewItemStyleBase" TargetType="{x:Type ListViewItem}">
+            <Setter Property="BorderThickness" Value="1,1,1,1" />
+            <Setter Property="BorderBrush" Value="#FF1D0F48" />
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                        <Border BorderBrush="{DynamicResource GridBrush}" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5,5,5,5" Margin="0,0,0,0" >
+                            <StackPanel>
+                                <GridViewRowPresenter Columns="{TemplateBinding GridView.ColumnCollection}"/>
+                            </StackPanel>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="Yellow"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="LstVwItmStyle1" TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource ListViewItemStyleBase}">
+            <Setter Property="Background" Value="#FFEBEBEB" />
+        </Style>
+        <Style x:Key="LstVwItmStyle2" TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource ListViewItemStyleBase}">
+            <Setter Property="Background" Value="#FFC9D5E1" />
+        </Style>
+        <local:ListViewItemStyleSelector x:Key="ListViewItemStyleSelector" />
+
+        <Style x:Key="GlassyButtonStyle" BasedOn="{x:Null}" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <ControlTemplate.Resources>
+                            <Storyboard x:Key="Timeline1">
+                                <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ButtonBase" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                    <SplineColorKeyFrame KeyTime="00:00:00" Value="#FF008EB5"/>
+                                    <SplineColorKeyFrame KeyTime="00:00:00.1280000" Value="#FF00C8FF"/>
+                                </ColorAnimationUsingKeyFrames>
+                            </Storyboard>
+                            <Storyboard x:Key="Timeline2">
+                                <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="ButtonBase">
+                                    <SplineColorKeyFrame KeyTime="00:00:00" Value="#FF00C8FF"/>
+                                    <SplineColorKeyFrame KeyTime="00:00:00.2520000" Value="#FF008EB5"/>
+                                </ColorAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </ControlTemplate.Resources>
+                        <Grid>
+                            <Rectangle Stroke="{x:Null}" RadiusX="5" RadiusY="5" x:Name="Reflection" Margin="0,0,0,-20.646" VerticalAlignment="Bottom" Height="18">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="0.497,0.515" StartPoint="0.499,-0.119">
+                                        <GradientStop Color="#2DFFFFFF" Offset="0"/>
+                                        <GradientStop Color="#00FFFFFF" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <Rectangle Stroke="{x:Null}" RadiusX="5" RadiusY="5" Margin="0,1,0,-1" x:Name="ButtonBase">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                        <GradientStop Color="#FF00598C" Offset="0"/>
+                                        <GradientStop Color="#FF008EB5" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <Rectangle Stroke="{x:Null}" RadiusX="5" RadiusY="5" Margin="0,0.999,0,-0.999" x:Name="GlassyTop">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="0.496,0.626" StartPoint="0.5,-0.008">
+                                        <GradientStop Color="#4CFFFFFF" Offset="0"/>
+                                        <GradientStop Color="#00FFFFFF" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True" Margin="10,1,10,1" TextElement.Foreground="White" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard Storyboard="{StaticResource Timeline1}"/>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard x:Name="Timeline2_BeginStoryboard" Storyboard="{StaticResource Timeline2}"/>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource OnLoadedTransition}"/>
+        </EventTrigger>
+    </UserControl.Triggers>
+
+    <DockPanel>
+        <Border x:Name ="TopPanelBorder"  DockPanel.Dock="Top" BorderBrush="{DynamicResource BorderBrush}"  BorderThickness="1" CornerRadius="0,10,0,0" Margin="0,5,5,0" Background="{DynamicResource BottomPanelBrush}">
+            <DockPanel>
+                <TextBlock Margin="5,2,5,2" Background="#00FFFFFF" FontSize="13" Foreground="#FFFFFFFF" Text="Manage PLU" DockPanel.Dock="Left" VerticalAlignment="Center"></TextBlock>
+            </DockPanel>
+        </Border>
+        <Border DockPanel.Dock="Top" BorderBrush="{DynamicResource BorderBrush}"  BorderThickness="1" CornerRadius="0,0,0,0" Margin="0,5,5,0" Background="{DynamicResource BottomPanelBrush}">
+            <ToolBarTray Background="{DynamicResource BottomPanelBrush}" >
+                <ToolBar Margin="0,0,350,0"  >
+                    <Button Style="{DynamicResource GlassyButtonStyle}" ToolTip="First"  FontSize="12" Name="btnMoveFirst"  Command="{Binding}">
+                        <Image  Source="../../Images/First.ico" VerticalAlignment="Center" Height="16" Width="23"  />
+                    </Button>
+                    <Button Style="{DynamicResource GlassyButtonStyle}" ToolTip="Previous" FontSize="12" Name="btnMovePrevious"  Command="{Binding}">
+                        <Image Source="../../Images/Previous.ico" VerticalAlignment="Center" Height="16" Width="23"  />
+                    </Button>
+                    <Button Style="{DynamicResource GlassyButtonStyle}" ToolTip="Next" FontSize="12" Name="btnMoveNext"  Command="{Binding}">
+                        <Image Source="../../Images/Next.ico" VerticalAlignment="Center" Height="16" Width="23"  />
+                    </Button>
+                    <Button Style="{DynamicResource GlassyButtonStyle}" ToolTip="Last" FontSize="12" Name="btnMoveLast"  Command="{Binding}">
+                        <Image Source="../../Images/Last.ico" VerticalAlignment="Center" Height="16" Width="23"  />
+                    </Button>
+                </ToolBar>
+                <ToolBar >
+                    <Button Style="{DynamicResource GlassyButtonStyle}" ToolTip="Delete"  FontSize="12" Name="btnDelete" Command="{Binding}">
+                        <Image Source="../../Images/delete.ico" VerticalAlignment="Center" Height="16" Width="23"  />
+                    </Button>
+                    <Button Style="{DynamicResource GlassyButtonStyle}" ToolTip="Add" FontSize="12" Name="btnAdd" Command="{Binding}">
+                        <Image Source="../../Images/tick.ico" VerticalAlignment="Center" Height="16" Width="23"  />
+                    </Button>
+                    <Button Style="{DynamicResource GlassyButtonStyle}" ToolTip="Revert"  FontSize="12" Name="btnRevert" Command="{Binding}">
+                        <Image Source="../../Images/undo.ico" VerticalAlignment="Center" Height="16" Width="23"  />
+                    </Button>
+                    <Button Style="{DynamicResource GlassyButtonStyle}" ToolTip="Save"  FontSize="12" Name="btnSave" Command="{Binding}">
+                        <Image Source="../../Images/save.ico" VerticalAlignment="Center" Height="16" Width="23"  />
+                    </Button>
+                </ToolBar>
+            </ToolBarTray>
+        </Border>
+        <StackPanel  DockPanel.Dock="Bottom"  Margin="0,0,0,0">
+            <Border BorderBrush="{DynamicResource BorderBrush}" BorderThickness ="1"  CornerRadius ="0,0,10,0" Margin="0,5,5,2" Background="{DynamicResource BottomPanelBrush}">
+                <DockPanel Name="dpBottomPanel" FlowDirection="LeftToRight" Height="25">
+                    <Image x:Name="imgSchemaChanged" Source="../../Images/Alert.png" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="15,5,5,5" Height="16" Width="23"  Visibility="Hidden" ></Image>
+                    <TextBlock x:Name="tbSchemaChanged" Text="Schema Changed" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="5" Foreground="{DynamicResource HeaderTextBrush}" Visibility="Hidden" />
+                    <TextBlock x:Name="tbSync" Text="Saved" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,5,15,5" Foreground="{DynamicResource HeaderTextBrush}" Visibility="Hidden" />
+                     <Image x:Name="imgSync" Source="../../Images/sync.png" DockPanel.Dock="Right" VerticalAlignment="Center" Margin="5" Height="16" Width="23" HorizontalAlignment="Right" Visibility="Hidden" >
+                        <Image.LayoutTransform>
+                            <RotateTransform CenterX="0.5" CenterY="0.5" />
+                        </Image.LayoutTransform>
+                    </Image>
+                </DockPanel>
+            </Border>
+            <Border BorderBrush="{DynamicResource BorderBrush}" Name="BottomPanelShadow" CornerRadius ="0,10,0,0" Margin="0,0,5,5" Height="25" Background="{DynamicResource GridShadowBrush}"/>
+        </StackPanel>
+
+        <ListView Background ="{DynamicResource GridBrush}" ItemsSource ="{Binding}"  DockPanel.Dock="Left" x:Name="itemsListView"  SelectionChanged="OnItemListView_SelectionChanged" MaxWidth="312" ItemContainerStyleSelector="{StaticResource ListViewItemStyleSelector}" >
+            <!-- ListView Background ="{DynamicResource GridBrush}" ItemsSource ="{Binding}"  DockPanel.Dock="Left" x:Name="organizationListView"  SelectionChanged="OnOrgView_SelectionChanged" MaxWidth="312" -->
+            <ListView.View>
+                <GridView AllowsColumnReorder="False" ColumnHeaderToolTip="Items">
+
+                    <GridViewColumn Header="SKU" Width="102"  HeaderContainerStyle="{StaticResource headerStyle1}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="{DynamicResource GridBrush}" BorderThickness="0,0,2,0" Margin="0,0,0,0">
+                                    <TextBlock Margin="1,0,0,0" Text="{Binding Path=sku, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True }" />
+                                        </Border>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Description" Width="200"  HeaderContainerStyle="{StaticResource headerStyle1}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="{DynamicResource GridBrush}" BorderThickness="0,0,2,0" Margin="0,0,0,0">
+                                    <TextBlock Margin="1,0,0,0" Text="{Binding Path=short_desc}" />
+                                        </Border>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Unit price"  Width="155"  HeaderContainerStyle="{StaticResource headerStyle1}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="{DynamicResource GridBrush}" BorderThickness="0,0,2,0" Margin="0,0,0,0">
+                                    <TextBlock Margin="1,0,0,0" Text="{Binding Path=amount, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                                </Border>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Department"  Width="100" HeaderContainerStyle="{StaticResource headerStyle1}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="{DynamicResource GridBrush}" BorderThickness="0,0,2,0" Margin="0,0,0,0">
+                                    <TextBlock Margin="1,0,0,0" Text="{Binding Path=dept, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                                </Border>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Item group" Width="155" HeaderContainerStyle="{StaticResource headerStyle1}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="{DynamicResource GridBrush}" BorderThickness="0,0,2,0" Margin="0,0,0,0">
+                                    <TextBlock Margin="1,0,0,0" Text="{Binding Path=item_group, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                                        </Border>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Tax group"  Width="155" HeaderContainerStyle="{StaticResource headerStyle1}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="{DynamicResource GridBrush}" BorderThickness="0,0,2,0" Margin="0,0,0,0">
+                                    <TextBlock Margin="1,0,0,0" Text="{Binding Path=tax_group, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                                        </Border>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Pricing option"  Width="155" HeaderContainerStyle="{StaticResource headerStyle1}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="{DynamicResource GridBrush}" BorderThickness="0,0,2,0" Margin="0,0,0,0">
+                                    <TextBlock Margin="1,0,0,0" Text="{Binding Path=pricing_opt, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                                        </Border>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Active date"  Width="155" HeaderContainerStyle="{StaticResource headerStyle1}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="{DynamicResource GridBrush}" BorderThickness="0,0,2,0" Margin="0,0,0,0">
+                                    <TextBlock Margin="1,0,0,0" Text="{Binding Path=active_date, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                                        </Border>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Deactive date"  Width="155" HeaderContainerStyle="{StaticResource headerStyle1}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="{DynamicResource GridBrush}" BorderThickness="0,0,2,0" Margin="0,0,0,0">
+                                    <TextBlock Margin="1,0,0,0" Text="{Binding Path=deactive_date, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                                        </Border>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Tax excempt"  Width="155" HeaderContainerStyle="{StaticResource headerStyle1}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="{DynamicResource GridBrush}" BorderThickness="0,0,2,0" Margin="0,0,0,0">
+                                    <TextBlock Margin="1,0,0,0" Text="{Binding Path=tax_exempt, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                                        </Border>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Border x:Name="ItemsBorder" DockPanel.Dock="Right" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,0,10,0" Margin="5,2,5,2" Background="{DynamicResource ContentAreaBrush}">
+            <StackPanel x:Name="ItemsDetailsStackPanel" >
+                <TextBlock Text="Items" Background="#00FFFFFF" FontSize="18" Foreground="#FFFFFFFF" HorizontalAlignment="Center" Margin="0,0,0,5"></TextBlock>
+
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock  Grid.Row="0" Grid.Column="0"  Text="Store group" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock>
+                    <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding Path=retail_store_group_no, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True }" FontSize="16" Margin="0,0,15,15" Name="txtBoxStoreGroup" Background="#FFE2EFC3" ></TextBox>
+
+                    <TextBlock Text="Sku"  Grid.Row="1" Grid.Column="0"  Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock>
+                    <TextBox   Grid.Row="1" Grid.Column="1" Text="{Binding Path=sku}" Margin="0,0,15,15" FontSize="16" Name="txtBoxSku" Background="#FFE2EFC3"></TextBox>
+
+                    <TextBlock  Grid.Row="2" Grid.Column="0" Text="Description" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock>
+                    <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Path=short_desc}" Margin="0,0,15,15" FontSize="16" Name="txtBoxShortDesc" Background="#FFE2EFC3"></TextBox>
+
+                    <TextBlock  Grid.Row="3" Grid.Column="0" Text="Unit price" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock>
+                    <TextBox   Grid.Row="3" Grid.Column="1" TextAlignment="Right" Text="{Binding Path=amount}"  Margin="0,0,15,15" FontSize="16" Name="txtBoxUnitPrice" Background="#FFE2EFC3"></TextBox>
+
+                    <TextBlock   Grid.Row="4" Grid.Column="0" Text="Department" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock>
+                    <ComboBox  Grid.Row="4" Grid.Column="1"  SelectedValuePath="department_id" SelectedValue="{Binding Path=dept}"  Margin="0,0,15,15" Background="#FFE2EFC3" FontSize="16" Name="cmbBoxDepartment" >
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" >
+                                    <TextBlock Name="txtBlockDepartmentId" Text="{Binding Path=department_id}" />
+                                     <TextBlock Margin="10,0,0,0">-</TextBlock>
+                                     <TextBlock Name="txtBlockDepartmentName" Margin="10,0,0,0" Text="{Binding Path=department_name}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ComboBox>
+
+                    <TextBlock  Grid.Row="5" Grid.Column="0"  Text="Item group" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock>
+                    <ComboBox  Grid.Row="5" Grid.Column="1"  SelectedValuePath="group_id" SelectedValue="{Binding Path=item_group}"   Margin="0,0,15,15" FontSize="16" Name="cmbBoxItemGroup" Background="#FFE2EFC3">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" >
+                                    <TextBlock Name="txtBlockItemGroup" Text="{Binding Path=group_id}" />
+                                    <TextBlock Margin="10,0,0,0">-</TextBlock>
+                                    <TextBlock Name="txtBlockGroupName" Margin="10,0,0,0" Text="{Binding Path=group_name}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ComboBox>
+
+                    <TextBlock  Grid.Row="6" Grid.Column="0"  Text="Tax group" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock>
+                    <ComboBox  Grid.Row="6" Grid.Column="1" SelectedValuePath="tax_group_id" SelectedValue="{Binding Path=tax_group}"    Margin="0,0,15,15" FontSize="16" Name="cmbBoxTaxId" Background="#FFE2EFC3">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" >
+                                    <TextBlock Name="tax_group_id" Text="{Binding Path=tax_group_id}" />
+                                    <TextBlock Margin="10,0,0,0">-</TextBlock>
+                                    <TextBlock Name="txtBlockGroupName" Margin="10,0,0,0" Text="{Binding Path=tax_group_name}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ComboBox>
+
+                    <TextBlock  Grid.Row="7" Grid.Column="0"  Text="Pricing option" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock>
+                    <ComboBox  Grid.Row="7" Grid.Column="1" SelectedValue="{Binding Path=pricing_opt}"  SelectedValuePath="Tag" Margin="0,0,15,15" FontSize="16" Name="cmbBoxPricingOpt" Background="#FFE2EFC3">
+                        <ComboBoxItem Tag="0">Counter pricing</ComboBoxItem>
+                        <ComboBoxItem Tag="1">Price override allowed</ComboBoxItem>
+                        <ComboBoxItem Tag="2">Price override not allowed</ComboBoxItem>
+                    </ComboBox>
+
+                    <TextBlock  Grid.Row="8" Grid.Column="0"  Text="Active date" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock>
+                    <TextBox  Grid.Row="8" Grid.Column="1"  Text="{Binding Path=active_date}"  Margin="0,0,15,15" FontSize="16" Name="txtBoxActiveDate" Background="#FFE2EFC3"></TextBox>
+
+                    <TextBlock  Grid.Row="9" Grid.Column="0"  Text="Deactive date" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock>
+                    <TextBox  Grid.Row="9" Grid.Column="1"  Text="{Binding Path=deactive_date}"  Margin="0,0,15,15" FontSize="16" Name="txtBoxDeactive_date" Background="#FFE2EFC3"></TextBox>
+
+                    <TextBlock  Grid.Row="10" Grid.Column="0"  Text="Tax inclusive" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock>
+
+                    <ComboBox  Grid.Row="10" Grid.Column="1"  SelectedValue="{Binding Path=tax_inclusive}"  SelectedValuePath="Tag"   Margin="0,0,15,15" FontSize="16" Name="txtTaxInclusive" Background="#FFE2EFC3">
+                        <ComboBoxItem Tag="1">Inclusive</ComboBoxItem>
+                        <ComboBoxItem Tag="0">Exclusive</ComboBoxItem>
+                    </ComboBox>
+
+                    <TextBlock  Grid.Row="11" Grid.Column="0"  Text="Tax exempt" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock>
+                    <ComboBox  Grid.Row="11" Grid.Column="1" SelectedValue="{Binding Path=tax_exempt}"  SelectedValuePath="Tag" Margin="0,0,15,15" FontSize="16" Name="cmbBoxTaxExempt" Background="#FFE2EFC3">
+                        <ComboBoxItem Tag="1">Yes</ComboBoxItem>
+                        <ComboBoxItem Tag="0">No</ComboBoxItem>
+                    </ComboBox>
+
+
+                </Grid>
+
+            </StackPanel>
+
+        </Border>
+    </DockPanel>
+
+</UserControl>

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="possite" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ECLIPSE-NPC\SQLEXPRESS;Initial Catalog=possite;Integrated Security=True" SettingsObjectName="EclipsePOS.WPF.SystemManager.Data.Properties.Settings" SettingsPropertyName="possiteConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.sub" Member="subs">
+    <Type Name="sub">
+      <Column Name="subscriber_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="subscriber_name" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="subscriber_pass" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.help" Member="helps">
+    <Type Name="help">
+      <Column Name="help_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="display_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="display_text" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.trans" Member="trans">
+    <Type Name="tran">
+      <Column Name="trans_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="trans_no" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="site_no" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pos_no" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="drawer_no" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="config_no" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="trans_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="state" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="reason_code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="customer_no" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="start_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="complete_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="emp_no" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="carry_out" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="training_mode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="locale_language" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="locale_country" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="locale_variant" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="archive_date" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="upload_date" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="replication_date" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.trans_item" Member="trans_items">
+    <Type Name="trans_item">
+      <Column Name="trans_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="seq_no" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sku" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="sku_link" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="quantity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ext_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="item_desc" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="state" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="reason_code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tax_exempt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tax_incl" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="var_amount" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.pos_key" Member="pos_keys">
+    <Type Name="pos_key">
+      <Column Name="key_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="config_no" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="panel_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="key_text" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="key_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="key_val" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="key_code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="device_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="x_loc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="y_loc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="key_height" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="key_width" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fg_color" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bg_color" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="attr" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="flags" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="logout_disable" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="key_class" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="param" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="image" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.organization" Member="organizations">
+    <Type Name="organization">
+      <Column Name="organization_no" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="organization_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="federal_tax_id" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="legal_status_code" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="state_tax_id" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="tax_id" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.pos_param" Member="pos_params">
+    <Type Name="pos_param">
+      <Column Name="config_no" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="param_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="param_catogory" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="help_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="param_name" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="param_value" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

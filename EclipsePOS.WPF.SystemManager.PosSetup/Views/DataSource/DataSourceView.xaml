@@ -1,0 +1,175 @@
+﻿<UserControl x:Class="EclipsePOS.WPF.SystemManager.PosSetup.Views.DataSource.DataSourceView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+     xmlns:local="clr-namespace:EclipsePOS.WPF.SystemManager.PosSetup.Views"
+    Name="rootControl"  Style="{DynamicResource RightPanelUserControl}">
+
+    <UserControl.Resources>
+        <Storyboard x:Key="OnLoadedTransition">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rootControl" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        
+       
+    </UserControl.Resources>
+    
+    
+
+    <DockPanel>
+        <Border x:Name ="TopPanelBorder"  DockPanel.Dock="Top" BorderBrush="{DynamicResource BorderBrush}"  BorderThickness="1" CornerRadius="0,10,0,0" Margin="0,5,5,0" Background="{DynamicResource BottomPanelBrush}">
+            <DockPanel>
+                <TextBlock Margin="5,2,5,2" Background="#00FFFFFF" FontSize="13" Foreground="#FFFFFFFF" Text="Manage Store Data Source" DockPanel.Dock="Left" VerticalAlignment="Center"></TextBlock>
+            </DockPanel>
+        </Border>
+        
+        <Border DockPanel.Dock="Top" BorderBrush="{DynamicResource BorderBrush}"  BorderThickness="1" CornerRadius="0,0,0,0" Margin="0,5,5,0" Background="{DynamicResource BottomPanelBrush}">
+            <ToolBarTray Background="{DynamicResource BottomPanelBrush}" >
+            </ToolBarTray>
+        </Border>
+        <StackPanel  DockPanel.Dock="Bottom"  Margin="0,0,0,0">
+            <Border BorderBrush="{DynamicResource BorderBrush}" BorderThickness ="1"  CornerRadius ="0,0,10,0" Margin="0,5,5,2" Background="{DynamicResource BottomPanelBrush}">
+                <DockPanel Name="dpBottomPanel" FlowDirection="LeftToRight" Height="25">
+                 </DockPanel>
+            </Border>
+            <Border BorderBrush="{DynamicResource BorderBrush}" Name="BottomPanelShadow" CornerRadius ="0,10,0,0" Margin="0,0,5,5" Height="25" Background="{DynamicResource GridShadowBrush}"/>
+        </StackPanel>
+
+        <Border x:Name="ItemsBorder" DockPanel.Dock="Right" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,0,10,0" Margin="5,2,5,2" Background="{DynamicResource ContentAreaBrush}">
+            <StackPanel x:Name="ItemsDetailsStackPanel" >
+                <TextBlock Text="Store Database" Background="#00FFFFFF" FontSize="18" Foreground="#FFFFFFFF" HorizontalAlignment="Center" Margin="0,0,0,5"></TextBlock>
+
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <!-- Border Grid.Row="0" Grid.Column="0"  BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,0,10,0" Margin="5,2,5,2" Background="{DynamicResource ContentAreaBrush}"  -->
+                        <StackPanel>
+                            <!-- TextBlock  Text="Default store group" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock -->
+                            <TextBlock  Name="txtBlockWarMessage"  Margin="15,10,10,20" Foreground="#FFFFFFFF" FontSize="14" TextWrapping="Wrap">
+                             </TextBlock>
+                            <TextBlock  Name="txtBlockCurrDBPath" Margin="15,10,10,10" Foreground="#FFFFFFFF" FontSize="14" TextWrapping="Wrap"></TextBlock>
+                        </StackPanel>
+                     <!-- /Border -->
+                 
+                    
+                    <!--Border Grid.Row="1" Grid.Column="0"  BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,0,10,0" Margin="5,2,5,2" Background="{DynamicResource ContentAreaBrush}" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Grid.Row="0"  Name="txtBlockDemoDBHeader" Margin="15,10,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock>
+                            <TextBlock Grid.Column="0" Grid.Row="1" DockPanel.Dock="Right" Name="txtBlockDemoDBDetail" Margin="15,10,0,10" Foreground="#FFFFFFFF" FontSize="14" TextWrapping="Wrap"></TextBlock>
+                            <Button  Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Style="{DynamicResource GlassyButtonStyle}" ToolTip="Demo database"  FontSize="14" Name="btnDemoDatabase" HorizontalAlignment="Center" Command="{Binding}" Height="40" Width="100" Margin="10,10,10,10">
+                                Demo
+                            </Button>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="0"  BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,0,10,0" Margin="5,2,5,2" Background="{DynamicResource ContentAreaBrush}" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock   Grid.Column="0" Grid.Row="0" Name="txtBlockNewDBHeader" Margin="15,10,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock>
+                            <TextBlock Grid.Column="0" Grid.Row="1" Name="txtBlockNewDBDetail" Margin="15,10,0,10" Foreground="#FFFFFFFF" FontSize="14" TextWrapping="Wrap"></TextBlock>
+                            <Button Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"  Style="{DynamicResource GlassyButtonStyle}" ToolTip="New database"  FontSize="14" Name="btnNewDatabase" HorizontalAlignment="Center" Command="{Binding}" Height="40" Width="100" Margin="10,10,10,10">
+                                New
+                            </Button>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Row="3" Grid.Column="0"  BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,0,10,0" Margin="5,2,5,2" Background="{DynamicResource ContentAreaBrush}" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock  Grid.Column="0" Grid.Row="0" Name="txtBlockExistingDBHeader" Margin="15,10,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock>
+                            <TextBlock Grid.Column="0" Grid.Row="1" Name="txtBlockExistingDBDetail" Margin="15,10,0,10" Foreground="#FFFFFFFF" FontSize="14" TextWrapping="Wrap"></TextBlock>
+                            <Button Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"  Style="{DynamicResource GlassyButtonStyle}" ToolTip="Existing database"  FontSize="14" Name="btnExistingDatabase" HorizontalAlignment="Center" Command="{Binding}" Height="40" Width="100" Margin="10,10,10,10">
+                                Attach
+                            </Button>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Row="4" Grid.Column="0"  BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,0,10,0" Margin="5,2,5,2" Background="{DynamicResource ContentAreaBrush}" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock  Grid.Column="0" Grid.Row="0" Name="txtBlockBackupDBHeader" Margin="15,10,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock>
+                            <TextBlock Grid.Column="0" Grid.Row="1" Name="txtBlockBackupDBDetail" Margin="15,10,0,10" Foreground="#FFFFFFFF" FontSize="14" TextWrapping="Wrap"></TextBlock>
+                            <Button  Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"  Style="{DynamicResource GlassyButtonStyle}" ToolTip="Backup database"  FontSize="14" Name="btnBackupDatabase" HorizontalAlignment="Center" Command="{Binding}" Height="40" Width="100" Margin="10,10,10,10" >
+                                Backup
+                            </Button>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Row="5" Grid.Column="0"  BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,0,10,0" Margin="5,2,5,2" Background="{DynamicResource ContentAreaBrush}" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock  Grid.Column="0" Grid.Row="0" Name="txtBlockExportDataHeader" Margin="15,10,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock>
+                            <TextBlock Grid.Column="0" Grid.Row="1" Name="txtBlockExportDataDetail" Margin="15,10,0,10" Foreground="#FFFFFFFF" FontSize="14" TextWrapping="Wrap"></TextBlock>
+                            <Button  Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"  Style="{DynamicResource GlassyButtonStyle}" ToolTip="Export data"  FontSize="14" Name="btnExportData" HorizontalAlignment="Center" Command="{Binding}" Height="40" Width="100" Margin="10,10,10,10">
+                                Export
+                            </Button>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Row="6" Grid.Column="0"  BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,0,10,0" Margin="5,2,5,2" Background="{DynamicResource ContentAreaBrush}" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock  Grid.Column="0" Grid.Row="0" Name="txtBlockImportDataHeader" Margin="15,10,0,0" Foreground="#FFFFFFFF" FontSize="16"></TextBlock>
+                            <TextBlock Grid.Column="0" Grid.Row="1" Name="txtBlockImportDataDetail" Margin="15,10,0,10" Foreground="#FFFFFFFF" FontSize="14" TextWrapping="Wrap"></TextBlock>
+                            <Button  Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"  Style="{DynamicResource GlassyButtonStyle}" ToolTip="Import data"  FontSize="14" Name="btnImportData" HorizontalAlignment="Center" Command="{Binding}" Height="40" Width="100" Margin="10,10,10,10">
+                                Import
+                            </Button >
+                        </Grid>
+                    </Border -->
+                </Grid>
+
+            </StackPanel>
+
+        </Border>
+    </DockPanel>
+
+</UserControl>

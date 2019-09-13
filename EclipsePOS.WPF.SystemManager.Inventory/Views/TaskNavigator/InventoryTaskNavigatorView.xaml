@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="EclipsePOS.WPF.SystemManager.Inventory.Views.TaskNavigator.InventoryTaskNavigatorView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+    <StackPanel>
+        <TextBlock>
+            Select a task
+        </TextBlock>
+        <Button Command="{Binding ShowItemDepartmentCommand }">
+            Item Department
+        </Button>
+        <Button>
+            Item group
+        </Button>
+        <Button>
+            Items
+        </Button>
+        <Button>
+            Item List
+        </Button>
+        <Button>
+            Link Item 
+        </Button>
+    </StackPanel>
+</UserControl>

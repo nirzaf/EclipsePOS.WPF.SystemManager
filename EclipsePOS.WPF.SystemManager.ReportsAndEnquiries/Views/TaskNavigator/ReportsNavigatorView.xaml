@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="EclipsePOS.WPF.SystemManager.ReportsAndEnquiries.Views.TaskNavigator.ReportsNavigatorView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:EclipsePOS.WPF.SystemManager.ReportsAndEnquiries.Views.TaskNavigator"
+    Background ="{DynamicResource ContentAreaBrush}"
+    Name="rootControl" >
+
+    <UserControl.Resources>
+        <Storyboard x:Key="OnLoadedTransition">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rootControl" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <!-- UserControl.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource OnLoadedTransition}"/>
+        </EventTrigger>
+    </UserControl.Triggers -->
+
+    <StackPanel>
+        <Border BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,10,0,0" Background="{DynamicResource HeaderBrush}" >
+            <TextBlock Margin="10,3,3,3" Background="#00FFFFFF" FontSize="13" Foreground="#FFFFFFFF" Text="Select a task:" />
+		</Border>
+        
+        <TextBlock Margin="10,3,3,3" Background="#00FFFFFF" FontSize="14" Foreground="#FFFFFFFF" Text="Sales" TextAlignment="Center" />
+
+        <Button Name="btnSalesSummay" Command="{Binding}" Style="{DynamicResource OrangeButton}">
+            Sales summary 
+        </Button>
+        
+        <Button Name="btnSalesDetail" Command="{Binding}" Style="{DynamicResource OrangeButton}">
+            Sales detail 
+        </Button>
+        
+        <Button Name="btnSalesBySalesPerson" Command="{Binding}" Style="{DynamicResource OrangeButton}">
+           Sales by Sales Person
+        </Button >
+        
+        <!-- Button  Name="btnSalesByItemDepartment" Command="{Binding}"  Style="{DynamicResource OrangeButton}" >
+            Sales by item department
+        </Button -->
+        <TextBlock Margin="10,3,3,3" Background="#00FFFFFF" FontSize="14" Foreground="#FFFFFFFF" Text="Collection" TextAlignment="Center" />
+
+
+        <Button Name="btnCollectionSummary" Command="{Binding}"  Style="{DynamicResource OrangeButton}" >
+            Collection summary
+        </Button>
+
+        <Button Name="btnCollectionDetail" Command="{Binding}"  Style="{DynamicResource OrangeButton}" >
+            Collection details by store
+        </Button>
+
+        <!--Button Name="btnTaxSummary" Command="{Binding}"  Style="{DynamicResource OrangeButton}" >
+            Tax summary 
+        </Button -->
+
+        <TextBlock Margin="10,3,3,3" Background="#00FFFFFF" FontSize="14" Foreground="#FFFFFFFF" Text="Tax" TextAlignment="Center" />
+
+        <Button Name="btnTaxDetail" Command="{Binding}"  Style="{DynamicResource OrangeButton}" >
+            Tax detail
+        </Button>
+
+        <TextBlock Margin="10,3,3,3" Background="#00FFFFFF" FontSize="14" Foreground="#FFFFFFFF" Text="Inventory" TextAlignment="Center" />
+
+        
+        <Button Name="btnCurrentInventory" Command="{Binding}"  Style="{DynamicResource OrangeButton}" >
+            Current inventory
+        </Button>
+        <Button Name="btnCurrentInventoryDetails" Command="{Binding}"  Style="{DynamicResource OrangeButton}" >
+            Current inventory details
+        </Button>
+        <Button Name="btnStockDiary" Command="{Binding}"  Style="{DynamicResource OrangeButton}" >
+            Stock diary
+        </Button>
+        <Button Name="btnStockDiaryDetails" Command="{Binding}"  Style="{DynamicResource OrangeButton}" >
+            Stock diary details
+        </Button>
+
+
+        <TextBlock Margin="10,3,3,3" Background="#00FFFFFF" FontSize="14" Foreground="#FFFFFFFF" Text="Item Tags" TextAlignment="Center" />
+
+        <Button Name="btnItemLabels" Command="{Binding}"  Style="{DynamicResource OrangeButton}" >
+            Item labels
+        </Button>
+
+
+    </StackPanel>
+
+</UserControl>

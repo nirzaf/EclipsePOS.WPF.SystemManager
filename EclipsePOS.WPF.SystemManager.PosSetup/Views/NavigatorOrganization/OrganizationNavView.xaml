@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="EclipsePOS.WPF.SystemManager.PosSetup.Views.NavigatorOrganization.OrganizationNavView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Name="rootControl">
+    <UserControl.Resources>
+        <Storyboard x:Key="OnLoadedTransition">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rootControl" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <!-- UserControl.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource OnLoadedTransition}"/>
+        </EventTrigger>
+    </UserControl.Triggers -->
+    <StackPanel>
+        <Border BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,10,0,0" Background="{DynamicResource HeaderBrush}" >
+            <TextBlock Margin="10,3,3,3" Background="#00FFFFFF"  Foreground="#FFFFFFFF" Text="Select a task:" />
+        </Border>
+
+        <StackPanel Width="Auto" Height="Auto" >
+            <TextBlock Margin="10,3,3,3" Background="#00FFFFFF" FontSize="14" Foreground="#FFFFFFFF" Text="Store organization" TextAlignment="Center" />
+            <Button Name="btnOrganization" Command="{Binding}" Style="{DynamicResource ModuleSubTaskNavigorButton}" FontSize="12" >
+                Organization
+            </Button>
+
+            <Button Name="btnStore" Command="{Binding}" Style="{DynamicResource ModuleSubTaskNavigorButton}" FontSize="12" >
+                Store Locations
+            </Button>
+
+            <Button Name="btnStation" Command="{Binding}" Style="{DynamicResource ModuleSubTaskNavigorButton}" FontSize="12">
+                Station
+            </Button>
+            
+            <TextBlock Margin="10,3,3,3" Background="#00FFFFFF" FontSize="14" Foreground="#FFFFFFFF" Text="Workbench Startup Settings and System Defaults" TextAlignment="Center" TextWrapping="Wrap" />
+
+            <Button Name="btnPosStartupSettings" Command="{Binding}" Style="{DynamicResource ModuleSubTaskNavigorButton}" >
+                Startup Settings
+            </Button>
+
+            
+        </StackPanel>
+        
+    </StackPanel>
+
+</UserControl>

@@ -1,0 +1,311 @@
+﻿<UserControl x:Class="EclipsePOS.WPF.SystemManager.PosSetup.Views.Surcharge.SerchargeView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+     xmlns:local="clr-namespace:EclipsePOS.WPF.SystemManager.PosSetup.Views"
+    Name="rootControl" Style="{DynamicResource RightPanelUserControl}" >
+
+
+    <UserControl.Resources>
+        <Storyboard x:Key="OnLoadedTransition">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rootControl" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Style x:Key="ListViewItemStyleBase" TargetType="{x:Type ListViewItem}">
+            <Setter Property="BorderThickness" Value="1,1,1,1" />
+            <Setter Property="BorderBrush" Value="#FF1D0F48" />
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                        <Border BorderBrush="{DynamicResource GridBrush}" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5,5,5,5" Margin="0,0,0,0"  >
+                            <StackPanel>
+                                <GridViewRowPresenter Height="15"  />
+                            </StackPanel>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="Yellow"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="LstVwItmStyle1" TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource ListViewItemStyleBase}">
+            <Setter Property="Background" Value="#FFEBEBEB" />
+        </Style>
+
+        <Style x:Key="LstVwItmStyle2" TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource ListViewItemStyleBase}">
+            <Setter Property="Background" Value="#FFC9D5E1" />
+        </Style>
+
+        <local:ListViewItemStyleSelector x:Key="ListViewItemStyleSelector" />
+
+
+    </UserControl.Resources>
+
+
+    <!-- UserControl.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource OnLoadedTransition}"/>
+        </EventTrigger>
+    </UserControl.Triggers -->
+
+    <DockPanel>
+        <Border x:Name ="TopPanelBorder"  DockPanel.Dock="Top" BorderBrush="{DynamicResource BorderBrush}"  BorderThickness="1" CornerRadius="0,10,0,0" Margin="0,5,5,0" Background="{DynamicResource BottomPanelBrush}">
+            <DockPanel>
+                <TextBlock Margin="5,2,5,2" Background="#00FFFFFF" FontSize="13" Foreground="#FFFFFFFF" Text="Manage Surcharges" DockPanel.Dock="Left" VerticalAlignment="Center"></TextBlock>
+            </DockPanel>
+        </Border>
+        <Border DockPanel.Dock="Top" BorderBrush="{DynamicResource BorderBrush}"  BorderThickness="1" CornerRadius="0,0,0,0" Margin="0,5,5,0" Background="{DynamicResource BottomPanelBrush}" Height="50">
+            <StackPanel Orientation="Horizontal" Background="{DynamicResource BottomPanelBrush}" >
+                <Button Style="{DynamicResource GlassyButtonStyle}" ToolTip="First"  FontSize="12" Name="btnMoveFirst"  Command="{Binding}" Margin="10,10,0,10" Content="|&lt;" />
+                <Button Style="{DynamicResource GlassyButtonStyle}" ToolTip="Previous" FontSize="12" Name="btnMovePrevious"  Command="{Binding}" Margin="10,10,0,10" Content="&lt;"/>
+                <Button Style="{DynamicResource GlassyButtonStyle}" ToolTip="Next" FontSize="12" Name="btnMoveNext"  Command="{Binding}" Margin="10,10,0,10" Content="&gt;"/>
+                <Button Style="{DynamicResource GlassyButtonStyle}" ToolTip="Last" FontSize="12" Name="btnMoveLast"  Command="{Binding}" Margin="10,10,0,10" Content="&gt;|"/>
+                <TextBlock Text="Organization" VerticalAlignment="Center"  Margin="10,10,5,10" Foreground="#FFFFFFFF" FontSize="12"></TextBlock>
+                <!-- ComboBox    SelectedValuePath="config_no" SelectedValue="{Binding Path=config_no}"  Margin="10,10,10,10" Background="#FFE2EFC3" FontSize="16" Height="23" Width="125"  Name="cmbBoxConfigNo" -->
+                <ComboBox  Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"  SelectedValuePath="organization_no" Margin="10,5,0,5" Background="#FFE2EFC3" FontSize="12" Name="cmbBoxOrganizationID" Width="150" >
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock Name="txtBlockOrganizationID" Text="{Binding Path=organization_no}" />
+                                <TextBlock Margin="10,0,0,0">-</TextBlock>
+                                <TextBlock Name="txtBlockOrganizationName" Margin="10,0,0,0" Text="{Binding Path=organization_name}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ComboBox>
+
+                <Button Style="{DynamicResource GlassyButtonStyle}" ToolTip="Delete"  FontSize="12" Name="btnDelete" Command="{Binding}" Margin="10,10,0,10" Content="Delete"/>
+                <Button Style="{DynamicResource GlassyButtonStyle}" ToolTip="Add" FontSize="12" Name="btnAdd" Command="{Binding}" Margin="10,10,5,10" Content="Add"/>
+                <Button Style="{DynamicResource GlassyButtonStyle}" ToolTip="Revert changes"  FontSize="12" Name="btnRevert" Command="{Binding}" Margin="10,10,0,10" Content="Revert"/>
+                <Button Style="{DynamicResource GlassyButtonStyle}" ToolTip="Save changes"  FontSize="12" Name="btnSave" Command="{Binding}" Margin="10,10,0,10" Content="Save" />
+            </StackPanel>
+        </Border>
+
+        <StackPanel  DockPanel.Dock="Bottom"  Margin="0,0,0,0">
+            <Border BorderBrush="{DynamicResource BorderBrush}" BorderThickness ="1"  CornerRadius ="0,0,10,0" Margin="0,5,5,2" Background="{DynamicResource BottomPanelBrush}">
+                <DockPanel Name="dpBottomPanel" FlowDirection="LeftToRight" Height="25">
+                </DockPanel>
+            </Border>
+        </StackPanel>
+
+        <ListView Background ="{DynamicResource GridBrush}" ItemsSource ="{Binding}"  DockPanel.Dock="Left" x:Name="surchargeListView"   MaxWidth="312" ItemContainerStyleSelector="{StaticResource ListViewItemStyleSelector}" IsSynchronizedWithCurrentItem="True" >
+            <ListView.View>
+                <GridView AllowsColumnReorder="False" >
+
+                   
+                    <GridViewColumn Header="Surcharge code"   HeaderContainerStyle="{DynamicResource headerStyle1}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="{DynamicResource GridBrush}" BorderThickness="0,0,2,0" Margin="0,0,0,0">
+                                    <TextBlock Margin="1,0,0,0" Text="{Binding Path=surcharge_code, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True }" MinWidth="100" />
+                                </Border>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                   
+
+                    <GridViewColumn Header="Description"   HeaderContainerStyle="{DynamicResource headerStyle1}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="{DynamicResource GridBrush}" BorderThickness="0,0,2,0" Margin="0,0,0,0">
+                                    <TextBlock Margin="1,0,0,0" Name ="txtBoxDescription" Text="{Binding Path=surcharge_desc, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True }" MinWidth="100" />
+                                </Border>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                   
+                    <GridViewColumn Header="Amount"   HeaderContainerStyle="{DynamicResource headerStyle1}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="{DynamicResource GridBrush}" BorderThickness="0,0,2,0" Margin="0,0,0,0">
+                                    <TextBlock Margin="1,0,0,0"  Text="{Binding Path=amount, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True }" MinWidth="100"/>
+                                </Border>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                 
+                    <GridViewColumn Header="Method"   HeaderContainerStyle="{DynamicResource headerStyle1}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="{DynamicResource GridBrush}" BorderThickness="0,0,2,0" Margin="0,0,0,0">
+                                    <TextBlock Margin="1,0,0,0"  Text="{Binding Path=method, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True }" MinWidth="100"/>
+                                </Border>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Tax group"   HeaderContainerStyle="{DynamicResource headerStyle1}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="{DynamicResource GridBrush}" BorderThickness="0,0,2,0" Margin="0,0,0,0">
+                                    <TextBlock Margin="1,0,0,0" Text="{Binding Path=tax_group_id, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True }" MinWidth="100" />
+                                </Border>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    
+
+                    <GridViewColumn Header="Tax inclusive"   HeaderContainerStyle="{DynamicResource headerStyle1}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="{DynamicResource GridBrush}" BorderThickness="0,0,2,0" Margin="0,0,0,0">
+                                    <TextBlock Margin="1,0,0,0" Text="{Binding Path=tax_inclusive, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True }" MinWidth="100"/>
+                                </Border>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Tax exempt"   HeaderContainerStyle="{DynamicResource headerStyle1}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="{DynamicResource GridBrush}" BorderThickness="0,0,2,0" Margin="0,0,0,0">
+                                    <TextBlock Margin="1,0,0,0" Text="{Binding Path=tax_exempt, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True }" MinWidth="100"/>
+                                </Border>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Surcharge key id"   HeaderContainerStyle="{DynamicResource headerStyle1}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="{DynamicResource GridBrush}" BorderThickness="0,0,2,0" Margin="0,0,0,0">
+                                    <TextBlock Margin="1,0,0,0" Text="{Binding Path=surcharge_key_id, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True }" MinWidth="100"/>
+                                </Border>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    
+                    <GridViewColumn Header="Organization"   HeaderContainerStyle="{DynamicResource headerStyle1}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="{DynamicResource GridBrush}" BorderThickness="0,0,2,0" Margin="0,0,0,0">
+                                    <TextBlock Margin="1,0,0,0" Text="{Binding Path=organization_no, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True }" MinWidth="100"/>
+                                </Border>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Border x:Name="ItemsBorder" DockPanel.Dock="Right" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,0,10,0" Margin="5,2,5,2" Background="{DynamicResource ContentAreaBrush}">
+            <StackPanel x:Name="ItemsDetailsStackPanel" >
+                <TextBlock Text="Surcharges" Background="#00FFFFFF" FontSize="18" Foreground="#FFFFFFFF" HorizontalAlignment="Center" Margin="0,0,0,5"></TextBlock>
+
+                <Grid x:Name="dataGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    
+                    <TextBlock Text="Surcharge code"  Grid.Row="0" Grid.Column="0"  Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14"></TextBlock>
+                    <TextBox   Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"  Text="{Binding Path=surcharge_code, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True }" Margin="0,0,15,15" FontSize="14" Background="#FFE2EFC3" CharacterCasing="Upper" Name="txtBoxSurchargeCode"></TextBox>
+
+                    
+                    <TextBlock  Grid.Row="1" Grid.Column="0" Text="Description" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14"></TextBlock>
+                    <TextBox  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"  Text="{Binding Path=surcharge_desc, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="0,0,15,15" FontSize="14"  Background="#FFE2EFC3"></TextBox>
+
+                    
+                    <TextBlock  Grid.Row="2" Grid.Column="0" Text="Amount" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14"></TextBlock>
+                    <TextBox  Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=amount, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="0,0,15,15" FontSize="14" Background="#FFE2EFC3"></TextBox>
+
+                    
+                    <TextBlock  Grid.Row="3" Grid.Column="0" Text="Method" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14"></TextBlock>
+                    <!-- TextBox  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Path=method, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="0,0,15,15" FontSize="14"  Background="#FFE2EFC3"></TextBox -->
+                    <ComboBox  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"  SelectedValue="{Binding Path=method, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"  SelectedValuePath="Tag" Margin="0,0,15,15" FontSize="14"    Background="#FFE2EFC3">
+                        <ComboBoxItem Tag="0">Percent</ComboBoxItem>
+                        <ComboBoxItem Tag="1">Amount</ComboBoxItem>
+                    </ComboBox>
+                        
+                        
+                    <TextBlock  Grid.Row="4" Grid.Column="0" Text="Tax group" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14"></TextBlock>
+                    <!-- TextBox  Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"  Text="{Binding Path=tax_group_id, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="0,0,15,15" FontSize="14"  Background="#FFE2EFC3"></TextBox -->
+                    <ComboBox  Grid.Row="4" Grid.Column="1"  SelectedValuePath="tax_group_id" Grid.ColumnSpan="3"  SelectedValue="{Binding Path=tax_group_id, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"    Margin="0,0,15,10" FontSize="14" Name="cmbBoxTaxId" Background="#FFE2EFC3" >
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" >
+                                    <TextBlock Name="tax_group_id" Text="{Binding Path=tax_group_id}" />
+                                    <TextBlock Margin="10,0,0,0">-</TextBlock>
+                                    <TextBlock Name="txtBlockGroupName" Margin="10,0,0,0" Text="{Binding Path=tax_group_name}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ComboBox>
+
+
+                    <TextBlock  Grid.Row="5" Grid.Column="0" Text="Tax inclusive" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14"></TextBlock>
+                    <!-- TextBox  Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2"  Text="{Binding Path=tax_inclusive, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="0,0,15,15" FontSize="14" Background="#FFE2EFC3"></TextBox -->
+                    <ComboBox  Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" SelectedValue="{Binding Path=tax_inclusive, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"  SelectedValuePath="Tag"   Margin="0,0,15,10" FontSize="14" Name="cmbBoxTaxInclusive" Background="#FFE2EFC3">
+                        <ComboBoxItem Tag="1">Inclusive</ComboBoxItem>
+                        <ComboBoxItem Tag="0">Exclusive</ComboBoxItem>
+                    </ComboBox>
+                    
+                    
+                    <TextBlock  Grid.Row="6" Grid.Column="0" Text="Tax exempt" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14"></TextBlock>
+                    <!-- TextBox  Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"  Text="{Binding Path=tax_exempt, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="0,0,15,15" FontSize="14"  Background="#FFE2EFC3"></TextBox -->
+                    <ComboBox  Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" SelectedValue="{Binding Path=tax_exempt, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"  SelectedValuePath="Tag" Margin="0,0,15,10" FontSize="14" Name="cmbBoxTaxExempt" Background="#FFE2EFC3">
+                        <ComboBoxItem Tag="1">Yes</ComboBoxItem>
+                        <ComboBoxItem Tag="0">No</ComboBoxItem>
+                    </ComboBox>
+                    
+                    
+
+                    <TextBlock  Grid.Row="7" Grid.Column="0" Text="Key id" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14"></TextBlock>
+                    <TextBox  Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"  Text="{Binding Path=surcharge_key_id, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="0,0,15,15" FontSize="14"  Background="#FFE2EFC3"></TextBox>
+
+                    <!-- TextBlock  Grid.Row="18" Grid.Column="0" Text="Operator class" Margin="15,0,0,0" Foreground="#FFFFFFFF" FontSize="14"></TextBlock>
+                    <ComboBox  Grid.Row="18" Grid.Column="1" Grid.ColumnSpan="3"  SelectedValue="{Binding Path=promotion_class, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"  SelectedValuePath="Tag" Margin="0,0,15,15" FontSize="14"  Name="cmbBoxPromotionClass"  Background="#FFE2EFC3">
+                        <ComboBoxItem Tag="EclipsePos.Apps.Operators.NForX">NForX</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.Operators.GroupDiscount">GroupDiscount</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.Operators.ItemDiscount">ItemDiscount</ComboBoxItem>
+                        <ComboBoxItem Tag="EclipsePos.Apps.Operators.FixedAmountDiscount">FixedAmountDiscount</ComboBoxItem>
+                    </ComboBox -->
+
+
+
+                </Grid>
+            </StackPanel>
+        </Border>
+    </DockPanel>
+
+
+</UserControl>

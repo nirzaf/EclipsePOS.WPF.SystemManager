@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="menuPanelsLookupDataSet" targetNamespace="http://tempuri.org/menuPanelsLookupDataSet.xsd" xmlns:mstns="http://tempuri.org/menuPanelsLookupDataSet.xsd" xmlns="http://tempuri.org/menuPanelsLookupDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="possiteConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="possiteConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.EclipsePOS.WPF.SystemManager.Data.Properties.Settings.GlobalReference.Default.possiteConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="menu_panelsTableAdapter" GeneratorDataComponentClassName="menu_panelsTableAdapter" Name="menu_panels" UserDataComponentName="menu_panelsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="possiteConnectionString (Settings)" DbObjectName="possite.dbo.menu_panels" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT panel_id, panel_name FROM dbo.menu_panels order by panel_id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="panel_id" DataSetColumn="panel_id" />
+              <Mapping SourceColumn="panel_name" DataSetColumn="panel_name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="menuPanelsLookupDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="menuPanelsLookupDataSet" msprop:Generator_DataSetName="menuPanelsLookupDataSet" msprop:EnableTableAdapterManager="True">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="menu_panels" msprop:Generator_UserTableName="menu_panels" msprop:Generator_RowDeletedName="menu_panelsRowDeleted" msprop:Generator_RowChangedName="menu_panelsRowChanged" msprop:Generator_RowClassName="menu_panelsRow" msprop:Generator_RowChangingName="menu_panelsRowChanging" msprop:Generator_RowEvArgName="menu_panelsRowChangeEvent" msprop:Generator_RowEvHandlerName="menu_panelsRowChangeEventHandler" msprop:Generator_TableClassName="menu_panelsDataTable" msprop:Generator_TableVarName="tablemenu_panels" msprop:Generator_RowDeletingName="menu_panelsRowDeleting" msprop:Generator_TablePropName="menu_panels">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="panel_id" msprop:Generator_UserColumnName="panel_id" msprop:Generator_ColumnVarNameInTable="columnpanel_id" msprop:Generator_ColumnPropNameInRow="panel_id" msprop:Generator_ColumnPropNameInTable="panel_idColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="panel_name" msprop:Generator_UserColumnName="panel_name" msprop:Generator_ColumnVarNameInTable="columnpanel_name" msprop:Generator_ColumnPropNameInRow="panel_name" msprop:Generator_ColumnPropNameInTable="panel_nameColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:menu_panels" />
+      <xs:field xpath="mstns:panel_id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

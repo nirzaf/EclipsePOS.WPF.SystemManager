@@ -1,0 +1,1060 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="shipmentDetailsDataSet" targetNamespace="http://tempuri.org/shipmentDetailsDataSet.xsd" xmlns:mstns="http://tempuri.org/shipmentDetailsDataSet.xsd" xmlns="http://tempuri.org/shipmentDetailsDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="possiteConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="possiteConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.EclipsePOS.WPF.SystemManager.Data.Properties.Settings.GlobalReference.Default.possiteConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Shipment_DetailsTableAdapter" GeneratorDataComponentClassName="Shipment_DetailsTableAdapter" Name="Shipment_Details" UserDataComponentName="Shipment_DetailsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="possiteConnectionString (Settings)" DbObjectName="possite.dbo.Shipment_Details" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Shipment_Details] ([SHIUNIQ], [LINENUM], [LINETYPE], [ITEM], [MISCCHARGE], [DESC], [ACCTSET], [USERCOSTMD], [PRICELIST], [CATEGORY], [LOCATION], [PICKSEQ], [EXPDATE], [STOCKITEM], [ORDQTYORD], [ORDQTYBKOR], [ORDQTYCOMM], [ORDQTYTCOM], [ORDQTYSTD], [ORDUNIT], [ORDUNITCON], [QTYORDERED], [QTYSHIPPED], [QTYBACKORD], [QTYCOMMIT], [QTYTRUECOM], [SHIUNIT], [UNITCONV], [UNITPRICE], [PRICEOVER], [UNITCOST], [MOSTREC], [STDCOST], [COST1], [COST2], [AVGCOST], [LASTCOST], [UNITPRCDEC], [PRICEUNIT], [PRIUNTPRC], [PRIUNTCONV], [PRIPERCENT], [PRIAMOUNT], [BASEUNIT], [PRIBASPRC], [PRIBASCONV], [COSTUNIT], [COSUNTCST], [COSUNTCONV], [EXTSHIMISC], [SHIDISC], [EXTSCOST], [EXTOVER], [UNITWEIGHT], [EXTWEIGHT], [COMPLETE], [FINISHORD], [ADDTOILOC], [SALESLOST], [TAUTH1], [TAUTH2], [TAUTH3], [TAUTH4], [TAUTH5], [TCLASS1], [TCLASS2], [TCLASS3], [TCLASS4], [TCLASS5], [TINCLUDED1], [TINCLUDED2], [TINCLUDED3], [TINCLUDED4], [TINCLUDED5], [TBASE1], [TBASE2], [TBASE3], [TBASE4], [TBASE5], [TAMOUNT1], [TAMOUNT2], [TAMOUNT3], [TAMOUNT4], [TAMOUNT5], [TRATE1], [TRATE2], [TRATE3], [TRATE4], [TRATE5], [DETAILNUM], [COMMINST], [GLNONSTKCR], [ORDNUMBER], [ORDDTLNUM], [INDBTABLE], [REFRESH], [SHIPTRACK], [SHIPVIA], [VIADESC], [DISCPER], [MANITEMNO], [CUSTITEMNO], [VALUES], [DDTLTYPE], [DDTLNO], [BUILDQTY], [BUILDUNIT], [BLDUNTCONV], [NEXTCMPNUM], [EPOSPROMID], [BASEWUNIT], [WEIGHTUNIT], [WEIGHTCONV], [PRWGHTUNIT], [PRWGHTCONV], [PRIBASWCNV], [DEFUWEIGHT], [DEFEXTWGHT], [PRPRICEBY], [CAPPROVEBY], [HDRDISC], [STRAMOUNT1], [STRAMOUNT2], [STRAMOUNT3], [STRAMOUNT4], [STRAMOUNT5], [PSPRINTED], [COG], [JOBRELATED], [CONTRACT], [PROJECT], [CCATEGORY], [COSTCLASS], [PROJSTYLE], [PROJTYPE], [REVREC], [BILLTYPE], [REVBILL], [COGSWIP], [RTGAMOUNT], [RTGPERCENT], [RTGDAYS], [RTGAMTOVR], [RTGTXBASE1], [RTGTXBASE2], [RTGTXBASE3], [RTGTXBASE4], [RTGTXBASE5], [RTGTXAMT1], [RTGTXAMT2], [RTGTXAMT3], [RTGTXAMT4], [RTGTXAMT5], [PMTRANSNBR], [PRICEOPT], [ARITEMNO], [ARUNIT], [PAYMNTDIST], [SERIALQTY], [LOTQTY], [SLITEM], [COMPANYID], [OPPOID], [EXTSMOSTRE], [EXTSSTDCOS], [EXTSCOST1], [EXTSCOST2], [EXTSAVGCST], [EXTSLSTCST], [PCODDESC], [CATGDESC], [LOCDESC], [TAUTH1DESC], [TAUTH2DESC], [TAUTH3DESC], [TAUTH4DESC], [TAUTH5DESC], [TCLAS1DESC], [TCLAS2DESC], [TCLAS3DESC], [TCLAS4DESC], [TCLAS5DESC], [GLNONSTKCD], [EDCSHIMISC], [ACTION], [IPCID], [FPOPSNQO], [FPOPSNQS], [POPUPSN], [CLOSESN], [LTSETID], [FPOPLTQO], [FPOPLTQS], [POPUPLT], [CLOSELT], [ORDUNIQ], [SERIALITEM], [UNFMTITEM], [ORDLINENUM], [PROCESSCMD], [WUOMDESC], [EXTNETPRI], [DISSHIMISC], [TAXTOTAL], [STRTOTAL], [LVL1NAME], [LVL2NAME], [LVL3NAME], [UFMTCONTNO], [NETPRIWTX], [SHIDUE], [XGENALCQTY], [XLOTMAKQTY], [XPERLOTQTY], [SALLOCFROM], [LALLOCFROM], [METERHWND]) VALUES (@SHIUNIQ, @LINENUM, @LINETYPE, @ITEM, @MISCCHARGE, @DESC, @ACCTSET, @USERCOSTMD, @PRICELIST, @CATEGORY, @LOCATION, @PICKSEQ, @EXPDATE, @STOCKITEM, @ORDQTYORD, @ORDQTYBKOR, @ORDQTYCOMM, @ORDQTYTCOM, @ORDQTYSTD, @ORDUNIT, @ORDUNITCON, @QTYORDERED, @QTYSHIPPED, @QTYBACKORD, @QTYCOMMIT, @QTYTRUECOM, @SHIUNIT, @UNITCONV, @UNITPRICE, @PRICEOVER, @UNITCOST, @MOSTREC, @STDCOST, @COST1, @COST2, @AVGCOST, @LASTCOST, @UNITPRCDEC, @PRICEUNIT, @PRIUNTPRC, @PRIUNTCONV, @PRIPERCENT, @PRIAMOUNT, @BASEUNIT, @PRIBASPRC, @PRIBASCONV, @COSTUNIT, @COSUNTCST, @COSUNTCONV, @EXTSHIMISC, @SHIDISC, @EXTSCOST, @EXTOVER, @UNITWEIGHT, @EXTWEIGHT, @COMPLETE, @FINISHORD, @ADDTOILOC, @SALESLOST, @TAUTH1, @TAUTH2, @TAUTH3, @TAUTH4, @TAUTH5, @TCLASS1, @TCLASS2, @TCLASS3, @TCLASS4, @TCLASS5, @TINCLUDED1, @TINCLUDED2, @TINCLUDED3, @TINCLUDED4, @TINCLUDED5, @TBASE1, @TBASE2, @TBASE3, @TBASE4, @TBASE5, @TAMOUNT1, @TAMOUNT2, @TAMOUNT3, @TAMOUNT4, @TAMOUNT5, @TRATE1, @TRATE2, @TRATE3, @TRATE4, @TRATE5, @DETAILNUM, @COMMINST, @GLNONSTKCR, @ORDNUMBER, @ORDDTLNUM, @INDBTABLE, @REFRESH, @SHIPTRACK, @SHIPVIA, @VIADESC, @DISCPER, @MANITEMNO, @CUSTITEMNO, @VALUES, @DDTLTYPE, @DDTLNO, @BUILDQTY, @BUILDUNIT, @BLDUNTCONV, @NEXTCMPNUM, @EPOSPROMID, @BASEWUNIT, @WEIGHTUNIT, @WEIGHTCONV, @PRWGHTUNIT, @PRWGHTCONV, @PRIBASWCNV, @DEFUWEIGHT, @DEFEXTWGHT, @PRPRICEBY, @CAPPROVEBY, @HDRDISC, @STRAMOUNT1, @STRAMOUNT2, @STRAMOUNT3, @STRAMOUNT4, @STRAMOUNT5, @PSPRINTED, @COG, @JOBRELATED, @CONTRACT, @PROJECT, @CCATEGORY, @COSTCLASS, @PROJSTYLE, @PROJTYPE, @REVREC, @BILLTYPE, @REVBILL, @COGSWIP, @RTGAMOUNT, @RTGPERCENT, @RTGDAYS, @RTGAMTOVR, @RTGTXBASE1, @RTGTXBASE2, @RTGTXBASE3, @RTGTXBASE4, @RTGTXBASE5, @RTGTXAMT1, @RTGTXAMT2, @RTGTXAMT3, @RTGTXAMT4, @RTGTXAMT5, @PMTRANSNBR, @PRICEOPT, @ARITEMNO, @ARUNIT, @PAYMNTDIST, @SERIALQTY, @LOTQTY, @SLITEM, @COMPANYID, @OPPOID, @EXTSMOSTRE, @EXTSSTDCOS, @EXTSCOST1, @EXTSCOST2, @EXTSAVGCST, @EXTSLSTCST, @PCODDESC, @CATGDESC, @LOCDESC, @TAUTH1DESC, @TAUTH2DESC, @TAUTH3DESC, @TAUTH4DESC, @TAUTH5DESC, @TCLAS1DESC, @TCLAS2DESC, @TCLAS3DESC, @TCLAS4DESC, @TCLAS5DESC, @GLNONSTKCD, @EDCSHIMISC, @ACTION, @IPCID, @FPOPSNQO, @FPOPSNQS, @POPUPSN, @CLOSESN, @LTSETID, @FPOPLTQO, @FPOPLTQS, @POPUPLT, @CLOSELT, @ORDUNIQ, @SERIALITEM, @UNFMTITEM, @ORDLINENUM, @PROCESSCMD, @WUOMDESC, @EXTNETPRI, @DISSHIMISC, @TAXTOTAL, @STRTOTAL, @LVL1NAME, @LVL2NAME, @LVL3NAME, @UFMTCONTNO, @NETPRIWTX, @SHIDUE, @XGENALCQTY, @XLOTMAKQTY, @XPERLOTQTY, @SALLOCFROM, @LALLOCFROM, @METERHWND)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@SHIUNIQ" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="SHIUNIQ" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@LINENUM" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LINENUM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@LINETYPE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LINETYPE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ITEM" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ITEM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@MISCCHARGE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MISCCHARGE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DESC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ACCTSET" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ACCTSET" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@USERCOSTMD" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="USERCOSTMD" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PRICELIST" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PRICELIST" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CATEGORY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CATEGORY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@LOCATION" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LOCATION" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PICKSEQ" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PICKSEQ" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@EXPDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EXPDATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@STOCKITEM" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="STOCKITEM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@ORDQTYORD" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="ORDQTYORD" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@ORDQTYBKOR" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="ORDQTYBKOR" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@ORDQTYCOMM" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="ORDQTYCOMM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@ORDQTYTCOM" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="ORDQTYTCOM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@ORDQTYSTD" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="ORDQTYSTD" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORDUNIT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORDUNIT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@ORDUNITCON" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="ORDUNITCON" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@QTYORDERED" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="QTYORDERED" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@QTYSHIPPED" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="QTYSHIPPED" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@QTYBACKORD" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="QTYBACKORD" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@QTYCOMMIT" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="QTYCOMMIT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@QTYTRUECOM" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="QTYTRUECOM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SHIUNIT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIUNIT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@UNITCONV" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="UNITCONV" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@UNITPRICE" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="UNITPRICE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@PRICEOVER" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="PRICEOVER" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@UNITCOST" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="UNITCOST" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@MOSTREC" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="MOSTREC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@STDCOST" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="STDCOST" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@COST1" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="COST1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@COST2" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="COST2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@AVGCOST" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="AVGCOST" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@LASTCOST" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="LASTCOST" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@UNITPRCDEC" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="UNITPRCDEC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PRICEUNIT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PRICEUNIT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@PRIUNTPRC" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="PRIUNTPRC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@PRIUNTCONV" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="PRIUNTCONV" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@PRIPERCENT" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="PRIPERCENT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@PRIAMOUNT" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="PRIAMOUNT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BASEUNIT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BASEUNIT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@PRIBASPRC" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="PRIBASPRC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@PRIBASCONV" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="PRIBASCONV" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@COSTUNIT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="COSTUNIT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@COSUNTCST" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="COSUNTCST" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@COSUNTCONV" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="COSUNTCONV" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@EXTSHIMISC" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="EXTSHIMISC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@SHIDISC" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="SHIDISC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@EXTSCOST" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="EXTSCOST" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@EXTOVER" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="EXTOVER" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@UNITWEIGHT" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="UNITWEIGHT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@EXTWEIGHT" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="EXTWEIGHT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@COMPLETE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="COMPLETE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@FINISHORD" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="FINISHORD" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@ADDTOILOC" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="ADDTOILOC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@SALESLOST" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="SALESLOST" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TAUTH1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TAUTH1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TAUTH2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TAUTH2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TAUTH3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TAUTH3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TAUTH4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TAUTH4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TAUTH5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TAUTH5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@TCLASS1" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TCLASS1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@TCLASS2" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TCLASS2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@TCLASS3" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TCLASS3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@TCLASS4" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TCLASS4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@TCLASS5" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TCLASS5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@TINCLUDED1" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="TINCLUDED1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@TINCLUDED2" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="TINCLUDED2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@TINCLUDED3" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="TINCLUDED3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@TINCLUDED4" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="TINCLUDED4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@TINCLUDED5" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="TINCLUDED5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@TBASE1" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="TBASE1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@TBASE2" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="TBASE2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@TBASE3" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="TBASE3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@TBASE4" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="TBASE4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@TBASE5" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="TBASE5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@TAMOUNT1" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="TAMOUNT1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@TAMOUNT2" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="TAMOUNT2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@TAMOUNT3" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="TAMOUNT3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@TAMOUNT4" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="TAMOUNT4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@TAMOUNT5" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="TAMOUNT5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@TRATE1" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="TRATE1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@TRATE2" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="TRATE2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@TRATE3" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="TRATE3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@TRATE4" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="TRATE4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@TRATE5" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="TRATE5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@DETAILNUM" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DETAILNUM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@COMMINST" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="COMMINST" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@GLNONSTKCR" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="GLNONSTKCR" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORDNUMBER" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORDNUMBER" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ORDDTLNUM" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ORDDTLNUM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@INDBTABLE" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="INDBTABLE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@REFRESH" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="REFRESH" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SHIPTRACK" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPTRACK" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SHIPVIA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPVIA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@VIADESC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="VIADESC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@DISCPER" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="DISCPER" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@MANITEMNO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MANITEMNO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CUSTITEMNO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CUSTITEMNO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@VALUES" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VALUES" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@DDTLTYPE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DDTLTYPE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DDTLNO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DDTLNO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@BUILDQTY" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="BUILDQTY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BUILDUNIT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BUILDUNIT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@BLDUNTCONV" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="BLDUNTCONV" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@NEXTCMPNUM" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NEXTCMPNUM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@EPOSPROMID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPOSPROMID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BASEWUNIT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BASEWUNIT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@WEIGHTUNIT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="WEIGHTUNIT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@WEIGHTCONV" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="WEIGHTCONV" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PRWGHTUNIT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PRWGHTUNIT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@PRWGHTCONV" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="PRWGHTCONV" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@PRIBASWCNV" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="PRIBASWCNV" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@DEFUWEIGHT" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="DEFUWEIGHT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@DEFEXTWGHT" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="DEFEXTWGHT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@PRPRICEBY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PRPRICEBY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CAPPROVEBY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CAPPROVEBY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@HDRDISC" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="HDRDISC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@STRAMOUNT1" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="STRAMOUNT1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@STRAMOUNT2" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="STRAMOUNT2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@STRAMOUNT3" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="STRAMOUNT3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@STRAMOUNT4" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="STRAMOUNT4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@STRAMOUNT5" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="STRAMOUNT5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@PSPRINTED" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="PSPRINTED" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@COG" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="COG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@JOBRELATED" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="JOBRELATED" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CONTRACT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CONTRACT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PROJECT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PROJECT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CCATEGORY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CCATEGORY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@COSTCLASS" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="COSTCLASS" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@PROJSTYLE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PROJSTYLE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@PROJTYPE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PROJTYPE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@REVREC" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="REVREC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@BILLTYPE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BILLTYPE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@REVBILL" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="REVBILL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@COGSWIP" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="COGSWIP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@RTGAMOUNT" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="RTGAMOUNT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@RTGPERCENT" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="RTGPERCENT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@RTGDAYS" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RTGDAYS" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@RTGAMTOVR" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="RTGAMTOVR" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@RTGTXBASE1" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="RTGTXBASE1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@RTGTXBASE2" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="RTGTXBASE2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@RTGTXBASE3" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="RTGTXBASE3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@RTGTXBASE4" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="RTGTXBASE4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@RTGTXBASE5" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="RTGTXBASE5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@RTGTXAMT1" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="RTGTXAMT1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@RTGTXAMT2" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="RTGTXAMT2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@RTGTXAMT3" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="RTGTXAMT3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@RTGTXAMT4" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="RTGTXAMT4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@RTGTXAMT5" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="RTGTXAMT5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@PMTRANSNBR" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PMTRANSNBR" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@PRICEOPT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PRICEOPT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ARITEMNO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ARITEMNO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ARUNIT" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ARUNIT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@PAYMNTDIST" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="PAYMNTDIST" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SERIALQTY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SERIALQTY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@LOTQTY" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="LOTQTY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SLITEM" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SLITEM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@COMPANYID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="COMPANYID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@OPPOID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OPPOID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@EXTSMOSTRE" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="EXTSMOSTRE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@EXTSSTDCOS" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="EXTSSTDCOS" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@EXTSCOST1" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="EXTSCOST1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@EXTSCOST2" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="EXTSCOST2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@EXTSAVGCST" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="EXTSAVGCST" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@EXTSLSTCST" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="EXTSLSTCST" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PCODDESC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PCODDESC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CATGDESC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CATGDESC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@LOCDESC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LOCDESC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TAUTH1DESC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TAUTH1DESC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TAUTH2DESC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TAUTH2DESC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TAUTH3DESC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TAUTH3DESC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TAUTH4DESC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TAUTH4DESC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TAUTH5DESC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TAUTH5DESC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TCLAS1DESC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TCLAS1DESC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TCLAS2DESC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TCLAS2DESC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TCLAS3DESC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TCLAS3DESC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TCLAS4DESC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TCLAS4DESC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TCLAS5DESC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TCLAS5DESC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@GLNONSTKCD" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="GLNONSTKCD" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@EDCSHIMISC" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="EDCSHIMISC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ACTION" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ACTION" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IPCID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IPCID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@FPOPSNQO" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="FPOPSNQO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@FPOPSNQS" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="FPOPSNQS" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@POPUPSN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="POPUPSN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@CLOSESN" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="CLOSESN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@LTSETID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="LTSETID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@FPOPLTQO" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="FPOPLTQO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@FPOPLTQS" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="FPOPLTQS" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@POPUPLT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="POPUPLT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@CLOSELT" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="CLOSELT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@ORDUNIQ" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="ORDUNIQ" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@SERIALITEM" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="SERIALITEM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@UNFMTITEM" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="UNFMTITEM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ORDLINENUM" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ORDLINENUM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@PROCESSCMD" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PROCESSCMD" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@WUOMDESC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="WUOMDESC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@EXTNETPRI" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="EXTNETPRI" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@DISSHIMISC" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="DISSHIMISC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@TAXTOTAL" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="TAXTOTAL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@STRTOTAL" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="STRTOTAL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@LVL1NAME" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LVL1NAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@LVL2NAME" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LVL2NAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@LVL3NAME" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LVL3NAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@UFMTCONTNO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="UFMTCONTNO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@NETPRIWTX" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="NETPRIWTX" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@SHIDUE" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="SHIDUE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@XGENALCQTY" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="XGENALCQTY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@XLOTMAKQTY" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="XLOTMAKQTY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@XPERLOTQTY" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="XPERLOTQTY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SALLOCFROM" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SALLOCFROM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@LALLOCFROM" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LALLOCFROM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@METERHWND" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="METERHWND" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT SHIUNIQ, LINENUM, LINETYPE, ITEM, MISCCHARGE, [DESC], ACCTSET, USERCOSTMD, PRICELIST, CATEGORY, LOCATION, PICKSEQ, EXPDATE, STOCKITEM, ORDQTYORD, ORDQTYBKOR, ORDQTYCOMM, ORDQTYTCOM, ORDQTYSTD, ORDUNIT, ORDUNITCON, QTYORDERED, QTYSHIPPED, QTYBACKORD, QTYCOMMIT, QTYTRUECOM, SHIUNIT, UNITCONV, UNITPRICE, PRICEOVER, UNITCOST, MOSTREC, STDCOST, COST1, COST2, AVGCOST, LASTCOST, UNITPRCDEC, PRICEUNIT, PRIUNTPRC, PRIUNTCONV, PRIPERCENT, PRIAMOUNT, BASEUNIT, PRIBASPRC, PRIBASCONV, COSTUNIT, COSUNTCST, COSUNTCONV, EXTSHIMISC, SHIDISC, EXTSCOST, EXTOVER, UNITWEIGHT, EXTWEIGHT, COMPLETE, FINISHORD, ADDTOILOC, SALESLOST, TAUTH1, TAUTH2, TAUTH3, TAUTH4, TAUTH5, TCLASS1, TCLASS2, TCLASS3, TCLASS4, TCLASS5, TINCLUDED1, TINCLUDED2, TINCLUDED3, TINCLUDED4, TINCLUDED5, TBASE1, TBASE2, TBASE3, TBASE4, TBASE5, TAMOUNT1, TAMOUNT2, TAMOUNT3, TAMOUNT4, TAMOUNT5, TRATE1, TRATE2, TRATE3, TRATE4, TRATE5, DETAILNUM, COMMINST, GLNONSTKCR, ORDNUMBER, ORDDTLNUM, INDBTABLE, REFRESH, SHIPTRACK, SHIPVIA, VIADESC, DISCPER, MANITEMNO, CUSTITEMNO, [VALUES], DDTLTYPE, DDTLNO, BUILDQTY, BUILDUNIT, BLDUNTCONV, NEXTCMPNUM, EPOSPROMID, BASEWUNIT, WEIGHTUNIT, WEIGHTCONV, PRWGHTUNIT, PRWGHTCONV, PRIBASWCNV, DEFUWEIGHT, DEFEXTWGHT, PRPRICEBY, CAPPROVEBY, HDRDISC, STRAMOUNT1, STRAMOUNT2, STRAMOUNT3, STRAMOUNT4, STRAMOUNT5, PSPRINTED, COG, JOBRELATED, CONTRACT, PROJECT, CCATEGORY, COSTCLASS, PROJSTYLE, PROJTYPE, REVREC, BILLTYPE, REVBILL, COGSWIP, RTGAMOUNT, RTGPERCENT, RTGDAYS, RTGAMTOVR, RTGTXBASE1, RTGTXBASE2, RTGTXBASE3, RTGTXBASE4, RTGTXBASE5, RTGTXAMT1, RTGTXAMT2, RTGTXAMT3, RTGTXAMT4, RTGTXAMT5, PMTRANSNBR, PRICEOPT, ARITEMNO, ARUNIT, PAYMNTDIST, SERIALQTY, LOTQTY, SLITEM, COMPANYID, OPPOID, EXTSMOSTRE, EXTSSTDCOS, EXTSCOST1, EXTSCOST2, EXTSAVGCST, EXTSLSTCST, PCODDESC, CATGDESC, LOCDESC, TAUTH1DESC, TAUTH2DESC, TAUTH3DESC, TAUTH4DESC, TAUTH5DESC, TCLAS1DESC, TCLAS2DESC, TCLAS3DESC, TCLAS4DESC, TCLAS5DESC, GLNONSTKCD, EDCSHIMISC, ACTION, IPCID, FPOPSNQO, FPOPSNQS, POPUPSN, CLOSESN, LTSETID, FPOPLTQO, FPOPLTQS, POPUPLT, CLOSELT, ORDUNIQ, SERIALITEM, UNFMTITEM, ORDLINENUM, PROCESSCMD, WUOMDESC, EXTNETPRI, DISSHIMISC, TAXTOTAL, STRTOTAL, LVL1NAME, LVL2NAME, LVL3NAME, UFMTCONTNO, NETPRIWTX, SHIDUE, XGENALCQTY, XLOTMAKQTY, XPERLOTQTY, SALLOCFROM, LALLOCFROM, METERHWND FROM dbo.Shipment_Details</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SHIUNIQ" DataSetColumn="SHIUNIQ" />
+              <Mapping SourceColumn="LINENUM" DataSetColumn="LINENUM" />
+              <Mapping SourceColumn="LINETYPE" DataSetColumn="LINETYPE" />
+              <Mapping SourceColumn="ITEM" DataSetColumn="ITEM" />
+              <Mapping SourceColumn="MISCCHARGE" DataSetColumn="MISCCHARGE" />
+              <Mapping SourceColumn="DESC" DataSetColumn="DESC" />
+              <Mapping SourceColumn="ACCTSET" DataSetColumn="ACCTSET" />
+              <Mapping SourceColumn="USERCOSTMD" DataSetColumn="USERCOSTMD" />
+              <Mapping SourceColumn="PRICELIST" DataSetColumn="PRICELIST" />
+              <Mapping SourceColumn="CATEGORY" DataSetColumn="CATEGORY" />
+              <Mapping SourceColumn="LOCATION" DataSetColumn="LOCATION" />
+              <Mapping SourceColumn="PICKSEQ" DataSetColumn="PICKSEQ" />
+              <Mapping SourceColumn="EXPDATE" DataSetColumn="EXPDATE" />
+              <Mapping SourceColumn="STOCKITEM" DataSetColumn="STOCKITEM" />
+              <Mapping SourceColumn="ORDQTYORD" DataSetColumn="ORDQTYORD" />
+              <Mapping SourceColumn="ORDQTYBKOR" DataSetColumn="ORDQTYBKOR" />
+              <Mapping SourceColumn="ORDQTYCOMM" DataSetColumn="ORDQTYCOMM" />
+              <Mapping SourceColumn="ORDQTYTCOM" DataSetColumn="ORDQTYTCOM" />
+              <Mapping SourceColumn="ORDQTYSTD" DataSetColumn="ORDQTYSTD" />
+              <Mapping SourceColumn="ORDUNIT" DataSetColumn="ORDUNIT" />
+              <Mapping SourceColumn="ORDUNITCON" DataSetColumn="ORDUNITCON" />
+              <Mapping SourceColumn="QTYORDERED" DataSetColumn="QTYORDERED" />
+              <Mapping SourceColumn="QTYSHIPPED" DataSetColumn="QTYSHIPPED" />
+              <Mapping SourceColumn="QTYBACKORD" DataSetColumn="QTYBACKORD" />
+              <Mapping SourceColumn="QTYCOMMIT" DataSetColumn="QTYCOMMIT" />
+              <Mapping SourceColumn="QTYTRUECOM" DataSetColumn="QTYTRUECOM" />
+              <Mapping SourceColumn="SHIUNIT" DataSetColumn="SHIUNIT" />
+              <Mapping SourceColumn="UNITCONV" DataSetColumn="UNITCONV" />
+              <Mapping SourceColumn="UNITPRICE" DataSetColumn="UNITPRICE" />
+              <Mapping SourceColumn="PRICEOVER" DataSetColumn="PRICEOVER" />
+              <Mapping SourceColumn="UNITCOST" DataSetColumn="UNITCOST" />
+              <Mapping SourceColumn="MOSTREC" DataSetColumn="MOSTREC" />
+              <Mapping SourceColumn="STDCOST" DataSetColumn="STDCOST" />
+              <Mapping SourceColumn="COST1" DataSetColumn="COST1" />
+              <Mapping SourceColumn="COST2" DataSetColumn="COST2" />
+              <Mapping SourceColumn="AVGCOST" DataSetColumn="AVGCOST" />
+              <Mapping SourceColumn="LASTCOST" DataSetColumn="LASTCOST" />
+              <Mapping SourceColumn="UNITPRCDEC" DataSetColumn="UNITPRCDEC" />
+              <Mapping SourceColumn="PRICEUNIT" DataSetColumn="PRICEUNIT" />
+              <Mapping SourceColumn="PRIUNTPRC" DataSetColumn="PRIUNTPRC" />
+              <Mapping SourceColumn="PRIUNTCONV" DataSetColumn="PRIUNTCONV" />
+              <Mapping SourceColumn="PRIPERCENT" DataSetColumn="PRIPERCENT" />
+              <Mapping SourceColumn="PRIAMOUNT" DataSetColumn="PRIAMOUNT" />
+              <Mapping SourceColumn="BASEUNIT" DataSetColumn="BASEUNIT" />
+              <Mapping SourceColumn="PRIBASPRC" DataSetColumn="PRIBASPRC" />
+              <Mapping SourceColumn="PRIBASCONV" DataSetColumn="PRIBASCONV" />
+              <Mapping SourceColumn="COSTUNIT" DataSetColumn="COSTUNIT" />
+              <Mapping SourceColumn="COSUNTCST" DataSetColumn="COSUNTCST" />
+              <Mapping SourceColumn="COSUNTCONV" DataSetColumn="COSUNTCONV" />
+              <Mapping SourceColumn="EXTSHIMISC" DataSetColumn="EXTSHIMISC" />
+              <Mapping SourceColumn="SHIDISC" DataSetColumn="SHIDISC" />
+              <Mapping SourceColumn="EXTSCOST" DataSetColumn="EXTSCOST" />
+              <Mapping SourceColumn="EXTOVER" DataSetColumn="EXTOVER" />
+              <Mapping SourceColumn="UNITWEIGHT" DataSetColumn="UNITWEIGHT" />
+              <Mapping SourceColumn="EXTWEIGHT" DataSetColumn="EXTWEIGHT" />
+              <Mapping SourceColumn="COMPLETE" DataSetColumn="COMPLETE" />
+              <Mapping SourceColumn="FINISHORD" DataSetColumn="FINISHORD" />
+              <Mapping SourceColumn="ADDTOILOC" DataSetColumn="ADDTOILOC" />
+              <Mapping SourceColumn="SALESLOST" DataSetColumn="SALESLOST" />
+              <Mapping SourceColumn="TAUTH1" DataSetColumn="TAUTH1" />
+              <Mapping SourceColumn="TAUTH2" DataSetColumn="TAUTH2" />
+              <Mapping SourceColumn="TAUTH3" DataSetColumn="TAUTH3" />
+              <Mapping SourceColumn="TAUTH4" DataSetColumn="TAUTH4" />
+              <Mapping SourceColumn="TAUTH5" DataSetColumn="TAUTH5" />
+              <Mapping SourceColumn="TCLASS1" DataSetColumn="TCLASS1" />
+              <Mapping SourceColumn="TCLASS2" DataSetColumn="TCLASS2" />
+              <Mapping SourceColumn="TCLASS3" DataSetColumn="TCLASS3" />
+              <Mapping SourceColumn="TCLASS4" DataSetColumn="TCLASS4" />
+              <Mapping SourceColumn="TCLASS5" DataSetColumn="TCLASS5" />
+              <Mapping SourceColumn="TINCLUDED1" DataSetColumn="TINCLUDED1" />
+              <Mapping SourceColumn="TINCLUDED2" DataSetColumn="TINCLUDED2" />
+              <Mapping SourceColumn="TINCLUDED3" DataSetColumn="TINCLUDED3" />
+              <Mapping SourceColumn="TINCLUDED4" DataSetColumn="TINCLUDED4" />
+              <Mapping SourceColumn="TINCLUDED5" DataSetColumn="TINCLUDED5" />
+              <Mapping SourceColumn="TBASE1" DataSetColumn="TBASE1" />
+              <Mapping SourceColumn="TBASE2" DataSetColumn="TBASE2" />
+              <Mapping SourceColumn="TBASE3" DataSetColumn="TBASE3" />
+              <Mapping SourceColumn="TBASE4" DataSetColumn="TBASE4" />
+              <Mapping SourceColumn="TBASE5" DataSetColumn="TBASE5" />
+              <Mapping SourceColumn="TAMOUNT1" DataSetColumn="TAMOUNT1" />
+              <Mapping SourceColumn="TAMOUNT2" DataSetColumn="TAMOUNT2" />
+              <Mapping SourceColumn="TAMOUNT3" DataSetColumn="TAMOUNT3" />
+              <Mapping SourceColumn="TAMOUNT4" DataSetColumn="TAMOUNT4" />
+              <Mapping SourceColumn="TAMOUNT5" DataSetColumn="TAMOUNT5" />
+              <Mapping SourceColumn="TRATE1" DataSetColumn="TRATE1" />
+              <Mapping SourceColumn="TRATE2" DataSetColumn="TRATE2" />
+              <Mapping SourceColumn="TRATE3" DataSetColumn="TRATE3" />
+              <Mapping SourceColumn="TRATE4" DataSetColumn="TRATE4" />
+              <Mapping SourceColumn="TRATE5" DataSetColumn="TRATE5" />
+              <Mapping SourceColumn="DETAILNUM" DataSetColumn="DETAILNUM" />
+              <Mapping SourceColumn="COMMINST" DataSetColumn="COMMINST" />
+              <Mapping SourceColumn="GLNONSTKCR" DataSetColumn="GLNONSTKCR" />
+              <Mapping SourceColumn="ORDNUMBER" DataSetColumn="ORDNUMBER" />
+              <Mapping SourceColumn="ORDDTLNUM" DataSetColumn="ORDDTLNUM" />
+              <Mapping SourceColumn="INDBTABLE" DataSetColumn="INDBTABLE" />
+              <Mapping SourceColumn="REFRESH" DataSetColumn="REFRESH" />
+              <Mapping SourceColumn="SHIPTRACK" DataSetColumn="SHIPTRACK" />
+              <Mapping SourceColumn="SHIPVIA" DataSetColumn="SHIPVIA" />
+              <Mapping SourceColumn="VIADESC" DataSetColumn="VIADESC" />
+              <Mapping SourceColumn="DISCPER" DataSetColumn="DISCPER" />
+              <Mapping SourceColumn="MANITEMNO" DataSetColumn="MANITEMNO" />
+              <Mapping SourceColumn="CUSTITEMNO" DataSetColumn="CUSTITEMNO" />
+              <Mapping SourceColumn="VALUES" DataSetColumn="VALUES" />
+              <Mapping SourceColumn="DDTLTYPE" DataSetColumn="DDTLTYPE" />
+              <Mapping SourceColumn="DDTLNO" DataSetColumn="DDTLNO" />
+              <Mapping SourceColumn="BUILDQTY" DataSetColumn="BUILDQTY" />
+              <Mapping SourceColumn="BUILDUNIT" DataSetColumn="BUILDUNIT" />
+              <Mapping SourceColumn="BLDUNTCONV" DataSetColumn="BLDUNTCONV" />
+              <Mapping SourceColumn="NEXTCMPNUM" DataSetColumn="NEXTCMPNUM" />
+              <Mapping SourceColumn="EPOSPROMID" DataSetColumn="EPOSPROMID" />
+              <Mapping SourceColumn="BASEWUNIT" DataSetColumn="BASEWUNIT" />
+              <Mapping SourceColumn="WEIGHTUNIT" DataSetColumn="WEIGHTUNIT" />
+              <Mapping SourceColumn="WEIGHTCONV" DataSetColumn="WEIGHTCONV" />
+              <Mapping SourceColumn="PRWGHTUNIT" DataSetColumn="PRWGHTUNIT" />
+              <Mapping SourceColumn="PRWGHTCONV" DataSetColumn="PRWGHTCONV" />
+              <Mapping SourceColumn="PRIBASWCNV" DataSetColumn="PRIBASWCNV" />
+              <Mapping SourceColumn="DEFUWEIGHT" DataSetColumn="DEFUWEIGHT" />
+              <Mapping SourceColumn="DEFEXTWGHT" DataSetColumn="DEFEXTWGHT" />
+              <Mapping SourceColumn="PRPRICEBY" DataSetColumn="PRPRICEBY" />
+              <Mapping SourceColumn="CAPPROVEBY" DataSetColumn="CAPPROVEBY" />
+              <Mapping SourceColumn="HDRDISC" DataSetColumn="HDRDISC" />
+              <Mapping SourceColumn="STRAMOUNT1" DataSetColumn="STRAMOUNT1" />
+              <Mapping SourceColumn="STRAMOUNT2" DataSetColumn="STRAMOUNT2" />
+              <Mapping SourceColumn="STRAMOUNT3" DataSetColumn="STRAMOUNT3" />
+              <Mapping SourceColumn="STRAMOUNT4" DataSetColumn="STRAMOUNT4" />
+              <Mapping SourceColumn="STRAMOUNT5" DataSetColumn="STRAMOUNT5" />
+              <Mapping SourceColumn="PSPRINTED" DataSetColumn="PSPRINTED" />
+              <Mapping SourceColumn="COG" DataSetColumn="COG" />
+              <Mapping SourceColumn="JOBRELATED" DataSetColumn="JOBRELATED" />
+              <Mapping SourceColumn="CONTRACT" DataSetColumn="CONTRACT" />
+              <Mapping SourceColumn="PROJECT" DataSetColumn="PROJECT" />
+              <Mapping SourceColumn="CCATEGORY" DataSetColumn="CCATEGORY" />
+              <Mapping SourceColumn="COSTCLASS" DataSetColumn="COSTCLASS" />
+              <Mapping SourceColumn="PROJSTYLE" DataSetColumn="PROJSTYLE" />
+              <Mapping SourceColumn="PROJTYPE" DataSetColumn="PROJTYPE" />
+              <Mapping SourceColumn="REVREC" DataSetColumn="REVREC" />
+              <Mapping SourceColumn="BILLTYPE" DataSetColumn="BILLTYPE" />
+              <Mapping SourceColumn="REVBILL" DataSetColumn="REVBILL" />
+              <Mapping SourceColumn="COGSWIP" DataSetColumn="COGSWIP" />
+              <Mapping SourceColumn="RTGAMOUNT" DataSetColumn="RTGAMOUNT" />
+              <Mapping SourceColumn="RTGPERCENT" DataSetColumn="RTGPERCENT" />
+              <Mapping SourceColumn="RTGDAYS" DataSetColumn="RTGDAYS" />
+              <Mapping SourceColumn="RTGAMTOVR" DataSetColumn="RTGAMTOVR" />
+              <Mapping SourceColumn="RTGTXBASE1" DataSetColumn="RTGTXBASE1" />
+              <Mapping SourceColumn="RTGTXBASE2" DataSetColumn="RTGTXBASE2" />
+              <Mapping SourceColumn="RTGTXBASE3" DataSetColumn="RTGTXBASE3" />
+              <Mapping SourceColumn="RTGTXBASE4" DataSetColumn="RTGTXBASE4" />
+              <Mapping SourceColumn="RTGTXBASE5" DataSetColumn="RTGTXBASE5" />
+              <Mapping SourceColumn="RTGTXAMT1" DataSetColumn="RTGTXAMT1" />
+              <Mapping SourceColumn="RTGTXAMT2" DataSetColumn="RTGTXAMT2" />
+              <Mapping SourceColumn="RTGTXAMT3" DataSetColumn="RTGTXAMT3" />
+              <Mapping SourceColumn="RTGTXAMT4" DataSetColumn="RTGTXAMT4" />
+              <Mapping SourceColumn="RTGTXAMT5" DataSetColumn="RTGTXAMT5" />
+              <Mapping SourceColumn="PMTRANSNBR" DataSetColumn="PMTRANSNBR" />
+              <Mapping SourceColumn="PRICEOPT" DataSetColumn="PRICEOPT" />
+              <Mapping SourceColumn="ARITEMNO" DataSetColumn="ARITEMNO" />
+              <Mapping SourceColumn="ARUNIT" DataSetColumn="ARUNIT" />
+              <Mapping SourceColumn="PAYMNTDIST" DataSetColumn="PAYMNTDIST" />
+              <Mapping SourceColumn="SERIALQTY" DataSetColumn="SERIALQTY" />
+              <Mapping SourceColumn="LOTQTY" DataSetColumn="LOTQTY" />
+              <Mapping SourceColumn="SLITEM" DataSetColumn="SLITEM" />
+              <Mapping SourceColumn="COMPANYID" DataSetColumn="COMPANYID" />
+              <Mapping SourceColumn="OPPOID" DataSetColumn="OPPOID" />
+              <Mapping SourceColumn="EXTSMOSTRE" DataSetColumn="EXTSMOSTRE" />
+              <Mapping SourceColumn="EXTSSTDCOS" DataSetColumn="EXTSSTDCOS" />
+              <Mapping SourceColumn="EXTSCOST1" DataSetColumn="EXTSCOST1" />
+              <Mapping SourceColumn="EXTSCOST2" DataSetColumn="EXTSCOST2" />
+              <Mapping SourceColumn="EXTSAVGCST" DataSetColumn="EXTSAVGCST" />
+              <Mapping SourceColumn="EXTSLSTCST" DataSetColumn="EXTSLSTCST" />
+              <Mapping SourceColumn="PCODDESC" DataSetColumn="PCODDESC" />
+              <Mapping SourceColumn="CATGDESC" DataSetColumn="CATGDESC" />
+              <Mapping SourceColumn="LOCDESC" DataSetColumn="LOCDESC" />
+              <Mapping SourceColumn="TAUTH1DESC" DataSetColumn="TAUTH1DESC" />
+              <Mapping SourceColumn="TAUTH2DESC" DataSetColumn="TAUTH2DESC" />
+              <Mapping SourceColumn="TAUTH3DESC" DataSetColumn="TAUTH3DESC" />
+              <Mapping SourceColumn="TAUTH4DESC" DataSetColumn="TAUTH4DESC" />
+              <Mapping SourceColumn="TAUTH5DESC" DataSetColumn="TAUTH5DESC" />
+              <Mapping SourceColumn="TCLAS1DESC" DataSetColumn="TCLAS1DESC" />
+              <Mapping SourceColumn="TCLAS2DESC" DataSetColumn="TCLAS2DESC" />
+              <Mapping SourceColumn="TCLAS3DESC" DataSetColumn="TCLAS3DESC" />
+              <Mapping SourceColumn="TCLAS4DESC" DataSetColumn="TCLAS4DESC" />
+              <Mapping SourceColumn="TCLAS5DESC" DataSetColumn="TCLAS5DESC" />
+              <Mapping SourceColumn="GLNONSTKCD" DataSetColumn="GLNONSTKCD" />
+              <Mapping SourceColumn="EDCSHIMISC" DataSetColumn="EDCSHIMISC" />
+              <Mapping SourceColumn="ACTION" DataSetColumn="ACTION" />
+              <Mapping SourceColumn="IPCID" DataSetColumn="IPCID" />
+              <Mapping SourceColumn="FPOPSNQO" DataSetColumn="FPOPSNQO" />
+              <Mapping SourceColumn="FPOPSNQS" DataSetColumn="FPOPSNQS" />
+              <Mapping SourceColumn="POPUPSN" DataSetColumn="POPUPSN" />
+              <Mapping SourceColumn="CLOSESN" DataSetColumn="CLOSESN" />
+              <Mapping SourceColumn="LTSETID" DataSetColumn="LTSETID" />
+              <Mapping SourceColumn="FPOPLTQO" DataSetColumn="FPOPLTQO" />
+              <Mapping SourceColumn="FPOPLTQS" DataSetColumn="FPOPLTQS" />
+              <Mapping SourceColumn="POPUPLT" DataSetColumn="POPUPLT" />
+              <Mapping SourceColumn="CLOSELT" DataSetColumn="CLOSELT" />
+              <Mapping SourceColumn="ORDUNIQ" DataSetColumn="ORDUNIQ" />
+              <Mapping SourceColumn="SERIALITEM" DataSetColumn="SERIALITEM" />
+              <Mapping SourceColumn="UNFMTITEM" DataSetColumn="UNFMTITEM" />
+              <Mapping SourceColumn="ORDLINENUM" DataSetColumn="ORDLINENUM" />
+              <Mapping SourceColumn="PROCESSCMD" DataSetColumn="PROCESSCMD" />
+              <Mapping SourceColumn="WUOMDESC" DataSetColumn="WUOMDESC" />
+              <Mapping SourceColumn="EXTNETPRI" DataSetColumn="EXTNETPRI" />
+              <Mapping SourceColumn="DISSHIMISC" DataSetColumn="DISSHIMISC" />
+              <Mapping SourceColumn="TAXTOTAL" DataSetColumn="TAXTOTAL" />
+              <Mapping SourceColumn="STRTOTAL" DataSetColumn="STRTOTAL" />
+              <Mapping SourceColumn="LVL1NAME" DataSetColumn="LVL1NAME" />
+              <Mapping SourceColumn="LVL2NAME" DataSetColumn="LVL2NAME" />
+              <Mapping SourceColumn="LVL3NAME" DataSetColumn="LVL3NAME" />
+              <Mapping SourceColumn="UFMTCONTNO" DataSetColumn="UFMTCONTNO" />
+              <Mapping SourceColumn="NETPRIWTX" DataSetColumn="NETPRIWTX" />
+              <Mapping SourceColumn="SHIDUE" DataSetColumn="SHIDUE" />
+              <Mapping SourceColumn="XGENALCQTY" DataSetColumn="XGENALCQTY" />
+              <Mapping SourceColumn="XLOTMAKQTY" DataSetColumn="XLOTMAKQTY" />
+              <Mapping SourceColumn="XPERLOTQTY" DataSetColumn="XPERLOTQTY" />
+              <Mapping SourceColumn="SALLOCFROM" DataSetColumn="SALLOCFROM" />
+              <Mapping SourceColumn="LALLOCFROM" DataSetColumn="LALLOCFROM" />
+              <Mapping SourceColumn="METERHWND" DataSetColumn="METERHWND" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="shipmentDetailsDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="shipmentDetailsDataSet" msprop:Generator_UserDSName="shipmentDetailsDataSet" msprop:EnableTableAdapterManager="True">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Shipment_Details" msprop:Generator_UserTableName="Shipment_Details" msprop:Generator_RowDeletedName="Shipment_DetailsRowDeleted" msprop:Generator_TableClassName="Shipment_DetailsDataTable" msprop:Generator_RowChangedName="Shipment_DetailsRowChanged" msprop:Generator_RowClassName="Shipment_DetailsRow" msprop:Generator_RowChangingName="Shipment_DetailsRowChanging" msprop:Generator_RowEvArgName="Shipment_DetailsRowChangeEvent" msprop:Generator_RowEvHandlerName="Shipment_DetailsRowChangeEventHandler" msprop:Generator_TablePropName="Shipment_Details" msprop:Generator_TableVarName="tableShipment_Details" msprop:Generator_RowDeletingName="Shipment_DetailsRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SHIUNIQ" msprop:Generator_UserColumnName="SHIUNIQ" msprop:Generator_ColumnPropNameInRow="SHIUNIQ" msprop:Generator_ColumnVarNameInTable="columnSHIUNIQ" msprop:Generator_ColumnPropNameInTable="SHIUNIQColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="LINENUM" msprop:Generator_UserColumnName="LINENUM" msprop:Generator_ColumnPropNameInRow="LINENUM" msprop:Generator_ColumnVarNameInTable="columnLINENUM" msprop:Generator_ColumnPropNameInTable="LINENUMColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="LINETYPE" msprop:Generator_UserColumnName="LINETYPE" msprop:Generator_ColumnPropNameInRow="LINETYPE" msprop:Generator_ColumnVarNameInTable="columnLINETYPE" msprop:Generator_ColumnPropNameInTable="LINETYPEColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ITEM" msprop:Generator_UserColumnName="ITEM" msprop:Generator_ColumnPropNameInRow="ITEM" msprop:Generator_ColumnVarNameInTable="columnITEM" msprop:Generator_ColumnPropNameInTable="ITEMColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MISCCHARGE" msprop:Generator_UserColumnName="MISCCHARGE" msprop:Generator_ColumnPropNameInRow="MISCCHARGE" msprop:Generator_ColumnVarNameInTable="columnMISCCHARGE" msprop:Generator_ColumnPropNameInTable="MISCCHARGEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESC" msprop:Generator_UserColumnName="DESC" msprop:Generator_ColumnPropNameInRow="DESC" msprop:Generator_ColumnVarNameInTable="columnDESC" msprop:Generator_ColumnPropNameInTable="DESCColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ACCTSET" msprop:Generator_UserColumnName="ACCTSET" msprop:Generator_ColumnPropNameInRow="ACCTSET" msprop:Generator_ColumnVarNameInTable="columnACCTSET" msprop:Generator_ColumnPropNameInTable="ACCTSETColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="USERCOSTMD" msprop:Generator_UserColumnName="USERCOSTMD" msprop:Generator_ColumnPropNameInRow="USERCOSTMD" msprop:Generator_ColumnVarNameInTable="columnUSERCOSTMD" msprop:Generator_ColumnPropNameInTable="USERCOSTMDColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="PRICELIST" msprop:Generator_UserColumnName="PRICELIST" msprop:Generator_ColumnPropNameInRow="PRICELIST" msprop:Generator_ColumnVarNameInTable="columnPRICELIST" msprop:Generator_ColumnPropNameInTable="PRICELISTColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CATEGORY" msprop:Generator_UserColumnName="CATEGORY" msprop:Generator_ColumnPropNameInRow="CATEGORY" msprop:Generator_ColumnVarNameInTable="columnCATEGORY" msprop:Generator_ColumnPropNameInTable="CATEGORYColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOCATION" msprop:Generator_UserColumnName="LOCATION" msprop:Generator_ColumnPropNameInRow="LOCATION" msprop:Generator_ColumnVarNameInTable="columnLOCATION" msprop:Generator_ColumnPropNameInTable="LOCATIONColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PICKSEQ" msprop:Generator_UserColumnName="PICKSEQ" msprop:Generator_ColumnPropNameInRow="PICKSEQ" msprop:Generator_ColumnVarNameInTable="columnPICKSEQ" msprop:Generator_ColumnPropNameInTable="PICKSEQColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EXPDATE" msprop:Generator_UserColumnName="EXPDATE" msprop:Generator_ColumnPropNameInRow="EXPDATE" msprop:Generator_ColumnVarNameInTable="columnEXPDATE" msprop:Generator_ColumnPropNameInTable="EXPDATEColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="STOCKITEM" msprop:Generator_UserColumnName="STOCKITEM" msprop:Generator_ColumnPropNameInRow="STOCKITEM" msprop:Generator_ColumnVarNameInTable="columnSTOCKITEM" msprop:Generator_ColumnPropNameInTable="STOCKITEMColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ORDQTYORD" msprop:Generator_UserColumnName="ORDQTYORD" msprop:Generator_ColumnPropNameInRow="ORDQTYORD" msprop:Generator_ColumnVarNameInTable="columnORDQTYORD" msprop:Generator_ColumnPropNameInTable="ORDQTYORDColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="ORDQTYBKOR" msprop:Generator_UserColumnName="ORDQTYBKOR" msprop:Generator_ColumnPropNameInRow="ORDQTYBKOR" msprop:Generator_ColumnVarNameInTable="columnORDQTYBKOR" msprop:Generator_ColumnPropNameInTable="ORDQTYBKORColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="ORDQTYCOMM" msprop:Generator_UserColumnName="ORDQTYCOMM" msprop:Generator_ColumnPropNameInRow="ORDQTYCOMM" msprop:Generator_ColumnVarNameInTable="columnORDQTYCOMM" msprop:Generator_ColumnPropNameInTable="ORDQTYCOMMColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="ORDQTYTCOM" msprop:Generator_UserColumnName="ORDQTYTCOM" msprop:Generator_ColumnPropNameInRow="ORDQTYTCOM" msprop:Generator_ColumnVarNameInTable="columnORDQTYTCOM" msprop:Generator_ColumnPropNameInTable="ORDQTYTCOMColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="ORDQTYSTD" msprop:Generator_UserColumnName="ORDQTYSTD" msprop:Generator_ColumnPropNameInRow="ORDQTYSTD" msprop:Generator_ColumnVarNameInTable="columnORDQTYSTD" msprop:Generator_ColumnPropNameInTable="ORDQTYSTDColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="ORDUNIT" msprop:Generator_UserColumnName="ORDUNIT" msprop:Generator_ColumnPropNameInRow="ORDUNIT" msprop:Generator_ColumnVarNameInTable="columnORDUNIT" msprop:Generator_ColumnPropNameInTable="ORDUNITColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORDUNITCON" msprop:Generator_UserColumnName="ORDUNITCON" msprop:Generator_ColumnPropNameInRow="ORDUNITCON" msprop:Generator_ColumnVarNameInTable="columnORDUNITCON" msprop:Generator_ColumnPropNameInTable="ORDUNITCONColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="QTYORDERED" msprop:Generator_UserColumnName="QTYORDERED" msprop:Generator_ColumnPropNameInRow="QTYORDERED" msprop:Generator_ColumnVarNameInTable="columnQTYORDERED" msprop:Generator_ColumnPropNameInTable="QTYORDEREDColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="QTYSHIPPED" msprop:Generator_UserColumnName="QTYSHIPPED" msprop:Generator_ColumnPropNameInRow="QTYSHIPPED" msprop:Generator_ColumnVarNameInTable="columnQTYSHIPPED" msprop:Generator_ColumnPropNameInTable="QTYSHIPPEDColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="QTYBACKORD" msprop:Generator_UserColumnName="QTYBACKORD" msprop:Generator_ColumnPropNameInRow="QTYBACKORD" msprop:Generator_ColumnVarNameInTable="columnQTYBACKORD" msprop:Generator_ColumnPropNameInTable="QTYBACKORDColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="QTYCOMMIT" msprop:Generator_UserColumnName="QTYCOMMIT" msprop:Generator_ColumnPropNameInRow="QTYCOMMIT" msprop:Generator_ColumnVarNameInTable="columnQTYCOMMIT" msprop:Generator_ColumnPropNameInTable="QTYCOMMITColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="QTYTRUECOM" msprop:Generator_UserColumnName="QTYTRUECOM" msprop:Generator_ColumnPropNameInRow="QTYTRUECOM" msprop:Generator_ColumnVarNameInTable="columnQTYTRUECOM" msprop:Generator_ColumnPropNameInTable="QTYTRUECOMColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="SHIUNIT" msprop:Generator_UserColumnName="SHIUNIT" msprop:Generator_ColumnPropNameInRow="SHIUNIT" msprop:Generator_ColumnVarNameInTable="columnSHIUNIT" msprop:Generator_ColumnPropNameInTable="SHIUNITColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UNITCONV" msprop:Generator_UserColumnName="UNITCONV" msprop:Generator_ColumnPropNameInRow="UNITCONV" msprop:Generator_ColumnVarNameInTable="columnUNITCONV" msprop:Generator_ColumnPropNameInTable="UNITCONVColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="UNITPRICE" msprop:Generator_UserColumnName="UNITPRICE" msprop:Generator_ColumnPropNameInRow="UNITPRICE" msprop:Generator_ColumnVarNameInTable="columnUNITPRICE" msprop:Generator_ColumnPropNameInTable="UNITPRICEColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="PRICEOVER" msprop:Generator_UserColumnName="PRICEOVER" msprop:Generator_ColumnPropNameInRow="PRICEOVER" msprop:Generator_ColumnVarNameInTable="columnPRICEOVER" msprop:Generator_ColumnPropNameInTable="PRICEOVERColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="UNITCOST" msprop:Generator_UserColumnName="UNITCOST" msprop:Generator_ColumnPropNameInRow="UNITCOST" msprop:Generator_ColumnVarNameInTable="columnUNITCOST" msprop:Generator_ColumnPropNameInTable="UNITCOSTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="MOSTREC" msprop:Generator_UserColumnName="MOSTREC" msprop:Generator_ColumnPropNameInRow="MOSTREC" msprop:Generator_ColumnVarNameInTable="columnMOSTREC" msprop:Generator_ColumnPropNameInTable="MOSTRECColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="STDCOST" msprop:Generator_UserColumnName="STDCOST" msprop:Generator_ColumnPropNameInRow="STDCOST" msprop:Generator_ColumnVarNameInTable="columnSTDCOST" msprop:Generator_ColumnPropNameInTable="STDCOSTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="COST1" msprop:Generator_UserColumnName="COST1" msprop:Generator_ColumnPropNameInRow="COST1" msprop:Generator_ColumnVarNameInTable="columnCOST1" msprop:Generator_ColumnPropNameInTable="COST1Column" type="xs:double" minOccurs="0" />
+              <xs:element name="COST2" msprop:Generator_UserColumnName="COST2" msprop:Generator_ColumnPropNameInRow="COST2" msprop:Generator_ColumnVarNameInTable="columnCOST2" msprop:Generator_ColumnPropNameInTable="COST2Column" type="xs:double" minOccurs="0" />
+              <xs:element name="AVGCOST" msprop:Generator_UserColumnName="AVGCOST" msprop:Generator_ColumnPropNameInRow="AVGCOST" msprop:Generator_ColumnVarNameInTable="columnAVGCOST" msprop:Generator_ColumnPropNameInTable="AVGCOSTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="LASTCOST" msprop:Generator_UserColumnName="LASTCOST" msprop:Generator_ColumnPropNameInRow="LASTCOST" msprop:Generator_ColumnVarNameInTable="columnLASTCOST" msprop:Generator_ColumnPropNameInTable="LASTCOSTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="UNITPRCDEC" msprop:Generator_UserColumnName="UNITPRCDEC" msprop:Generator_ColumnPropNameInRow="UNITPRCDEC" msprop:Generator_ColumnVarNameInTable="columnUNITPRCDEC" msprop:Generator_ColumnPropNameInTable="UNITPRCDECColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="PRICEUNIT" msprop:Generator_UserColumnName="PRICEUNIT" msprop:Generator_ColumnPropNameInRow="PRICEUNIT" msprop:Generator_ColumnVarNameInTable="columnPRICEUNIT" msprop:Generator_ColumnPropNameInTable="PRICEUNITColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PRIUNTPRC" msprop:Generator_UserColumnName="PRIUNTPRC" msprop:Generator_ColumnPropNameInRow="PRIUNTPRC" msprop:Generator_ColumnVarNameInTable="columnPRIUNTPRC" msprop:Generator_ColumnPropNameInTable="PRIUNTPRCColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="PRIUNTCONV" msprop:Generator_UserColumnName="PRIUNTCONV" msprop:Generator_ColumnPropNameInRow="PRIUNTCONV" msprop:Generator_ColumnVarNameInTable="columnPRIUNTCONV" msprop:Generator_ColumnPropNameInTable="PRIUNTCONVColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="PRIPERCENT" msprop:Generator_UserColumnName="PRIPERCENT" msprop:Generator_ColumnPropNameInRow="PRIPERCENT" msprop:Generator_ColumnVarNameInTable="columnPRIPERCENT" msprop:Generator_ColumnPropNameInTable="PRIPERCENTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="PRIAMOUNT" msprop:Generator_UserColumnName="PRIAMOUNT" msprop:Generator_ColumnPropNameInRow="PRIAMOUNT" msprop:Generator_ColumnVarNameInTable="columnPRIAMOUNT" msprop:Generator_ColumnPropNameInTable="PRIAMOUNTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="BASEUNIT" msprop:Generator_UserColumnName="BASEUNIT" msprop:Generator_ColumnPropNameInRow="BASEUNIT" msprop:Generator_ColumnVarNameInTable="columnBASEUNIT" msprop:Generator_ColumnPropNameInTable="BASEUNITColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PRIBASPRC" msprop:Generator_UserColumnName="PRIBASPRC" msprop:Generator_ColumnPropNameInRow="PRIBASPRC" msprop:Generator_ColumnVarNameInTable="columnPRIBASPRC" msprop:Generator_ColumnPropNameInTable="PRIBASPRCColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="PRIBASCONV" msprop:Generator_UserColumnName="PRIBASCONV" msprop:Generator_ColumnPropNameInRow="PRIBASCONV" msprop:Generator_ColumnVarNameInTable="columnPRIBASCONV" msprop:Generator_ColumnPropNameInTable="PRIBASCONVColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="COSTUNIT" msprop:Generator_UserColumnName="COSTUNIT" msprop:Generator_ColumnPropNameInRow="COSTUNIT" msprop:Generator_ColumnVarNameInTable="columnCOSTUNIT" msprop:Generator_ColumnPropNameInTable="COSTUNITColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COSUNTCST" msprop:Generator_UserColumnName="COSUNTCST" msprop:Generator_ColumnPropNameInRow="COSUNTCST" msprop:Generator_ColumnVarNameInTable="columnCOSUNTCST" msprop:Generator_ColumnPropNameInTable="COSUNTCSTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="COSUNTCONV" msprop:Generator_UserColumnName="COSUNTCONV" msprop:Generator_ColumnPropNameInRow="COSUNTCONV" msprop:Generator_ColumnVarNameInTable="columnCOSUNTCONV" msprop:Generator_ColumnPropNameInTable="COSUNTCONVColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="EXTSHIMISC" msprop:Generator_UserColumnName="EXTSHIMISC" msprop:Generator_ColumnPropNameInRow="EXTSHIMISC" msprop:Generator_ColumnVarNameInTable="columnEXTSHIMISC" msprop:Generator_ColumnPropNameInTable="EXTSHIMISCColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="SHIDISC" msprop:Generator_UserColumnName="SHIDISC" msprop:Generator_ColumnPropNameInRow="SHIDISC" msprop:Generator_ColumnVarNameInTable="columnSHIDISC" msprop:Generator_ColumnPropNameInTable="SHIDISCColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="EXTSCOST" msprop:Generator_UserColumnName="EXTSCOST" msprop:Generator_ColumnPropNameInRow="EXTSCOST" msprop:Generator_ColumnVarNameInTable="columnEXTSCOST" msprop:Generator_ColumnPropNameInTable="EXTSCOSTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="EXTOVER" msprop:Generator_UserColumnName="EXTOVER" msprop:Generator_ColumnPropNameInRow="EXTOVER" msprop:Generator_ColumnVarNameInTable="columnEXTOVER" msprop:Generator_ColumnPropNameInTable="EXTOVERColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="UNITWEIGHT" msprop:Generator_UserColumnName="UNITWEIGHT" msprop:Generator_ColumnPropNameInRow="UNITWEIGHT" msprop:Generator_ColumnVarNameInTable="columnUNITWEIGHT" msprop:Generator_ColumnPropNameInTable="UNITWEIGHTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="EXTWEIGHT" msprop:Generator_UserColumnName="EXTWEIGHT" msprop:Generator_ColumnPropNameInRow="EXTWEIGHT" msprop:Generator_ColumnVarNameInTable="columnEXTWEIGHT" msprop:Generator_ColumnPropNameInTable="EXTWEIGHTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="COMPLETE" msprop:Generator_UserColumnName="COMPLETE" msprop:Generator_ColumnPropNameInRow="COMPLETE" msprop:Generator_ColumnVarNameInTable="columnCOMPLETE" msprop:Generator_ColumnPropNameInTable="COMPLETEColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="FINISHORD" msprop:Generator_UserColumnName="FINISHORD" msprop:Generator_ColumnPropNameInRow="FINISHORD" msprop:Generator_ColumnVarNameInTable="columnFINISHORD" msprop:Generator_ColumnPropNameInTable="FINISHORDColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ADDTOILOC" msprop:Generator_UserColumnName="ADDTOILOC" msprop:Generator_ColumnPropNameInRow="ADDTOILOC" msprop:Generator_ColumnVarNameInTable="columnADDTOILOC" msprop:Generator_ColumnPropNameInTable="ADDTOILOCColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="SALESLOST" msprop:Generator_UserColumnName="SALESLOST" msprop:Generator_ColumnPropNameInRow="SALESLOST" msprop:Generator_ColumnVarNameInTable="columnSALESLOST" msprop:Generator_ColumnPropNameInTable="SALESLOSTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="TAUTH1" msprop:Generator_UserColumnName="TAUTH1" msprop:Generator_ColumnPropNameInRow="TAUTH1" msprop:Generator_ColumnVarNameInTable="columnTAUTH1" msprop:Generator_ColumnPropNameInTable="TAUTH1Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TAUTH2" msprop:Generator_UserColumnName="TAUTH2" msprop:Generator_ColumnPropNameInRow="TAUTH2" msprop:Generator_ColumnVarNameInTable="columnTAUTH2" msprop:Generator_ColumnPropNameInTable="TAUTH2Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TAUTH3" msprop:Generator_UserColumnName="TAUTH3" msprop:Generator_ColumnPropNameInRow="TAUTH3" msprop:Generator_ColumnVarNameInTable="columnTAUTH3" msprop:Generator_ColumnPropNameInTable="TAUTH3Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TAUTH4" msprop:Generator_UserColumnName="TAUTH4" msprop:Generator_ColumnPropNameInRow="TAUTH4" msprop:Generator_ColumnVarNameInTable="columnTAUTH4" msprop:Generator_ColumnPropNameInTable="TAUTH4Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TAUTH5" msprop:Generator_UserColumnName="TAUTH5" msprop:Generator_ColumnPropNameInRow="TAUTH5" msprop:Generator_ColumnVarNameInTable="columnTAUTH5" msprop:Generator_ColumnPropNameInTable="TAUTH5Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TCLASS1" msprop:Generator_UserColumnName="TCLASS1" msprop:Generator_ColumnPropNameInRow="TCLASS1" msprop:Generator_ColumnVarNameInTable="columnTCLASS1" msprop:Generator_ColumnPropNameInTable="TCLASS1Column" type="xs:int" minOccurs="0" />
+              <xs:element name="TCLASS2" msprop:Generator_UserColumnName="TCLASS2" msprop:Generator_ColumnPropNameInRow="TCLASS2" msprop:Generator_ColumnVarNameInTable="columnTCLASS2" msprop:Generator_ColumnPropNameInTable="TCLASS2Column" type="xs:int" minOccurs="0" />
+              <xs:element name="TCLASS3" msprop:Generator_UserColumnName="TCLASS3" msprop:Generator_ColumnPropNameInRow="TCLASS3" msprop:Generator_ColumnVarNameInTable="columnTCLASS3" msprop:Generator_ColumnPropNameInTable="TCLASS3Column" type="xs:int" minOccurs="0" />
+              <xs:element name="TCLASS4" msprop:Generator_UserColumnName="TCLASS4" msprop:Generator_ColumnPropNameInRow="TCLASS4" msprop:Generator_ColumnVarNameInTable="columnTCLASS4" msprop:Generator_ColumnPropNameInTable="TCLASS4Column" type="xs:int" minOccurs="0" />
+              <xs:element name="TCLASS5" msprop:Generator_UserColumnName="TCLASS5" msprop:Generator_ColumnPropNameInRow="TCLASS5" msprop:Generator_ColumnVarNameInTable="columnTCLASS5" msprop:Generator_ColumnPropNameInTable="TCLASS5Column" type="xs:int" minOccurs="0" />
+              <xs:element name="TINCLUDED1" msprop:Generator_UserColumnName="TINCLUDED1" msprop:Generator_ColumnPropNameInRow="TINCLUDED1" msprop:Generator_ColumnVarNameInTable="columnTINCLUDED1" msprop:Generator_ColumnPropNameInTable="TINCLUDED1Column" type="xs:boolean" minOccurs="0" />
+              <xs:element name="TINCLUDED2" msprop:Generator_UserColumnName="TINCLUDED2" msprop:Generator_ColumnPropNameInRow="TINCLUDED2" msprop:Generator_ColumnVarNameInTable="columnTINCLUDED2" msprop:Generator_ColumnPropNameInTable="TINCLUDED2Column" type="xs:boolean" minOccurs="0" />
+              <xs:element name="TINCLUDED3" msprop:Generator_UserColumnName="TINCLUDED3" msprop:Generator_ColumnPropNameInRow="TINCLUDED3" msprop:Generator_ColumnVarNameInTable="columnTINCLUDED3" msprop:Generator_ColumnPropNameInTable="TINCLUDED3Column" type="xs:boolean" minOccurs="0" />
+              <xs:element name="TINCLUDED4" msprop:Generator_UserColumnName="TINCLUDED4" msprop:Generator_ColumnPropNameInRow="TINCLUDED4" msprop:Generator_ColumnVarNameInTable="columnTINCLUDED4" msprop:Generator_ColumnPropNameInTable="TINCLUDED4Column" type="xs:boolean" minOccurs="0" />
+              <xs:element name="TINCLUDED5" msprop:Generator_UserColumnName="TINCLUDED5" msprop:Generator_ColumnPropNameInRow="TINCLUDED5" msprop:Generator_ColumnVarNameInTable="columnTINCLUDED5" msprop:Generator_ColumnPropNameInTable="TINCLUDED5Column" type="xs:boolean" minOccurs="0" />
+              <xs:element name="TBASE1" msprop:Generator_UserColumnName="TBASE1" msprop:Generator_ColumnPropNameInRow="TBASE1" msprop:Generator_ColumnVarNameInTable="columnTBASE1" msprop:Generator_ColumnPropNameInTable="TBASE1Column" type="xs:double" minOccurs="0" />
+              <xs:element name="TBASE2" msprop:Generator_UserColumnName="TBASE2" msprop:Generator_ColumnPropNameInRow="TBASE2" msprop:Generator_ColumnVarNameInTable="columnTBASE2" msprop:Generator_ColumnPropNameInTable="TBASE2Column" type="xs:double" minOccurs="0" />
+              <xs:element name="TBASE3" msprop:Generator_UserColumnName="TBASE3" msprop:Generator_ColumnPropNameInRow="TBASE3" msprop:Generator_ColumnVarNameInTable="columnTBASE3" msprop:Generator_ColumnPropNameInTable="TBASE3Column" type="xs:double" minOccurs="0" />
+              <xs:element name="TBASE4" msprop:Generator_UserColumnName="TBASE4" msprop:Generator_ColumnPropNameInRow="TBASE4" msprop:Generator_ColumnVarNameInTable="columnTBASE4" msprop:Generator_ColumnPropNameInTable="TBASE4Column" type="xs:double" minOccurs="0" />
+              <xs:element name="TBASE5" msprop:Generator_UserColumnName="TBASE5" msprop:Generator_ColumnPropNameInRow="TBASE5" msprop:Generator_ColumnVarNameInTable="columnTBASE5" msprop:Generator_ColumnPropNameInTable="TBASE5Column" type="xs:double" minOccurs="0" />
+              <xs:element name="TAMOUNT1" msprop:Generator_UserColumnName="TAMOUNT1" msprop:Generator_ColumnPropNameInRow="TAMOUNT1" msprop:Generator_ColumnVarNameInTable="columnTAMOUNT1" msprop:Generator_ColumnPropNameInTable="TAMOUNT1Column" type="xs:double" minOccurs="0" />
+              <xs:element name="TAMOUNT2" msprop:Generator_UserColumnName="TAMOUNT2" msprop:Generator_ColumnPropNameInRow="TAMOUNT2" msprop:Generator_ColumnVarNameInTable="columnTAMOUNT2" msprop:Generator_ColumnPropNameInTable="TAMOUNT2Column" type="xs:double" minOccurs="0" />
+              <xs:element name="TAMOUNT3" msprop:Generator_UserColumnName="TAMOUNT3" msprop:Generator_ColumnPropNameInRow="TAMOUNT3" msprop:Generator_ColumnVarNameInTable="columnTAMOUNT3" msprop:Generator_ColumnPropNameInTable="TAMOUNT3Column" type="xs:double" minOccurs="0" />
+              <xs:element name="TAMOUNT4" msprop:Generator_UserColumnName="TAMOUNT4" msprop:Generator_ColumnPropNameInRow="TAMOUNT4" msprop:Generator_ColumnVarNameInTable="columnTAMOUNT4" msprop:Generator_ColumnPropNameInTable="TAMOUNT4Column" type="xs:double" minOccurs="0" />
+              <xs:element name="TAMOUNT5" msprop:Generator_UserColumnName="TAMOUNT5" msprop:Generator_ColumnPropNameInRow="TAMOUNT5" msprop:Generator_ColumnVarNameInTable="columnTAMOUNT5" msprop:Generator_ColumnPropNameInTable="TAMOUNT5Column" type="xs:double" minOccurs="0" />
+              <xs:element name="TRATE1" msprop:Generator_UserColumnName="TRATE1" msprop:Generator_ColumnPropNameInRow="TRATE1" msprop:Generator_ColumnVarNameInTable="columnTRATE1" msprop:Generator_ColumnPropNameInTable="TRATE1Column" type="xs:double" minOccurs="0" />
+              <xs:element name="TRATE2" msprop:Generator_UserColumnName="TRATE2" msprop:Generator_ColumnPropNameInRow="TRATE2" msprop:Generator_ColumnVarNameInTable="columnTRATE2" msprop:Generator_ColumnPropNameInTable="TRATE2Column" type="xs:double" minOccurs="0" />
+              <xs:element name="TRATE3" msprop:Generator_UserColumnName="TRATE3" msprop:Generator_ColumnPropNameInRow="TRATE3" msprop:Generator_ColumnVarNameInTable="columnTRATE3" msprop:Generator_ColumnPropNameInTable="TRATE3Column" type="xs:double" minOccurs="0" />
+              <xs:element name="TRATE4" msprop:Generator_UserColumnName="TRATE4" msprop:Generator_ColumnPropNameInRow="TRATE4" msprop:Generator_ColumnVarNameInTable="columnTRATE4" msprop:Generator_ColumnPropNameInTable="TRATE4Column" type="xs:double" minOccurs="0" />
+              <xs:element name="TRATE5" msprop:Generator_UserColumnName="TRATE5" msprop:Generator_ColumnPropNameInRow="TRATE5" msprop:Generator_ColumnVarNameInTable="columnTRATE5" msprop:Generator_ColumnPropNameInTable="TRATE5Column" type="xs:double" minOccurs="0" />
+              <xs:element name="DETAILNUM" msprop:Generator_UserColumnName="DETAILNUM" msprop:Generator_ColumnPropNameInRow="DETAILNUM" msprop:Generator_ColumnVarNameInTable="columnDETAILNUM" msprop:Generator_ColumnPropNameInTable="DETAILNUMColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="COMMINST" msprop:Generator_UserColumnName="COMMINST" msprop:Generator_ColumnPropNameInRow="COMMINST" msprop:Generator_ColumnVarNameInTable="columnCOMMINST" msprop:Generator_ColumnPropNameInTable="COMMINSTColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="GLNONSTKCR" msprop:Generator_UserColumnName="GLNONSTKCR" msprop:Generator_ColumnPropNameInRow="GLNONSTKCR" msprop:Generator_ColumnVarNameInTable="columnGLNONSTKCR" msprop:Generator_ColumnPropNameInTable="GLNONSTKCRColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORDNUMBER" msprop:Generator_UserColumnName="ORDNUMBER" msprop:Generator_ColumnPropNameInRow="ORDNUMBER" msprop:Generator_ColumnVarNameInTable="columnORDNUMBER" msprop:Generator_ColumnPropNameInTable="ORDNUMBERColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="22" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORDDTLNUM" msprop:Generator_UserColumnName="ORDDTLNUM" msprop:Generator_ColumnPropNameInRow="ORDDTLNUM" msprop:Generator_ColumnVarNameInTable="columnORDDTLNUM" msprop:Generator_ColumnPropNameInTable="ORDDTLNUMColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="INDBTABLE" msprop:Generator_UserColumnName="INDBTABLE" msprop:Generator_ColumnPropNameInRow="INDBTABLE" msprop:Generator_ColumnVarNameInTable="columnINDBTABLE" msprop:Generator_ColumnPropNameInTable="INDBTABLEColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="REFRESH" msprop:Generator_UserColumnName="REFRESH" msprop:Generator_ColumnPropNameInRow="REFRESH" msprop:Generator_ColumnVarNameInTable="columnREFRESH" msprop:Generator_ColumnPropNameInTable="REFRESHColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="SHIPTRACK" msprop:Generator_UserColumnName="SHIPTRACK" msprop:Generator_ColumnPropNameInRow="SHIPTRACK" msprop:Generator_ColumnVarNameInTable="columnSHIPTRACK" msprop:Generator_ColumnPropNameInTable="SHIPTRACKColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="36" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SHIPVIA" msprop:Generator_UserColumnName="SHIPVIA" msprop:Generator_ColumnPropNameInRow="SHIPVIA" msprop:Generator_ColumnVarNameInTable="columnSHIPVIA" msprop:Generator_ColumnPropNameInTable="SHIPVIAColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VIADESC" msprop:Generator_UserColumnName="VIADESC" msprop:Generator_ColumnPropNameInRow="VIADESC" msprop:Generator_ColumnVarNameInTable="columnVIADESC" msprop:Generator_ColumnPropNameInTable="VIADESCColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DISCPER" msprop:Generator_UserColumnName="DISCPER" msprop:Generator_ColumnPropNameInRow="DISCPER" msprop:Generator_ColumnVarNameInTable="columnDISCPER" msprop:Generator_ColumnPropNameInTable="DISCPERColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="MANITEMNO" msprop:Generator_UserColumnName="MANITEMNO" msprop:Generator_ColumnPropNameInRow="MANITEMNO" msprop:Generator_ColumnVarNameInTable="columnMANITEMNO" msprop:Generator_ColumnPropNameInTable="MANITEMNOColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CUSTITEMNO" msprop:Generator_UserColumnName="CUSTITEMNO" msprop:Generator_ColumnPropNameInRow="CUSTITEMNO" msprop:Generator_ColumnVarNameInTable="columnCUSTITEMNO" msprop:Generator_ColumnPropNameInTable="CUSTITEMNOColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VALUES" msprop:Generator_UserColumnName="VALUES" msprop:Generator_ColumnPropNameInRow="VALUES" msprop:Generator_ColumnVarNameInTable="columnVALUES" msprop:Generator_ColumnPropNameInTable="VALUESColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="DDTLTYPE" msprop:Generator_UserColumnName="DDTLTYPE" msprop:Generator_ColumnPropNameInRow="DDTLTYPE" msprop:Generator_ColumnVarNameInTable="columnDDTLTYPE" msprop:Generator_ColumnPropNameInTable="DDTLTYPEColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="DDTLNO" msprop:Generator_UserColumnName="DDTLNO" msprop:Generator_ColumnPropNameInRow="DDTLNO" msprop:Generator_ColumnVarNameInTable="columnDDTLNO" msprop:Generator_ColumnPropNameInTable="DDTLNOColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BUILDQTY" msprop:Generator_UserColumnName="BUILDQTY" msprop:Generator_ColumnPropNameInRow="BUILDQTY" msprop:Generator_ColumnVarNameInTable="columnBUILDQTY" msprop:Generator_ColumnPropNameInTable="BUILDQTYColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="BUILDUNIT" msprop:Generator_UserColumnName="BUILDUNIT" msprop:Generator_ColumnPropNameInRow="BUILDUNIT" msprop:Generator_ColumnVarNameInTable="columnBUILDUNIT" msprop:Generator_ColumnPropNameInTable="BUILDUNITColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BLDUNTCONV" msprop:Generator_UserColumnName="BLDUNTCONV" msprop:Generator_ColumnPropNameInRow="BLDUNTCONV" msprop:Generator_ColumnVarNameInTable="columnBLDUNTCONV" msprop:Generator_ColumnPropNameInTable="BLDUNTCONVColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="NEXTCMPNUM" msprop:Generator_UserColumnName="NEXTCMPNUM" msprop:Generator_ColumnPropNameInRow="NEXTCMPNUM" msprop:Generator_ColumnVarNameInTable="columnNEXTCMPNUM" msprop:Generator_ColumnPropNameInTable="NEXTCMPNUMColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="EPOSPROMID" msprop:Generator_UserColumnName="EPOSPROMID" msprop:Generator_ColumnPropNameInRow="EPOSPROMID" msprop:Generator_ColumnVarNameInTable="columnEPOSPROMID" msprop:Generator_ColumnPropNameInTable="EPOSPROMIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="BASEWUNIT" msprop:Generator_UserColumnName="BASEWUNIT" msprop:Generator_ColumnPropNameInRow="BASEWUNIT" msprop:Generator_ColumnVarNameInTable="columnBASEWUNIT" msprop:Generator_ColumnPropNameInTable="BASEWUNITColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WEIGHTUNIT" msprop:Generator_UserColumnName="WEIGHTUNIT" msprop:Generator_ColumnPropNameInRow="WEIGHTUNIT" msprop:Generator_ColumnVarNameInTable="columnWEIGHTUNIT" msprop:Generator_ColumnPropNameInTable="WEIGHTUNITColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WEIGHTCONV" msprop:Generator_UserColumnName="WEIGHTCONV" msprop:Generator_ColumnPropNameInRow="WEIGHTCONV" msprop:Generator_ColumnVarNameInTable="columnWEIGHTCONV" msprop:Generator_ColumnPropNameInTable="WEIGHTCONVColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="PRWGHTUNIT" msprop:Generator_UserColumnName="PRWGHTUNIT" msprop:Generator_ColumnPropNameInRow="PRWGHTUNIT" msprop:Generator_ColumnVarNameInTable="columnPRWGHTUNIT" msprop:Generator_ColumnPropNameInTable="PRWGHTUNITColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PRWGHTCONV" msprop:Generator_UserColumnName="PRWGHTCONV" msprop:Generator_ColumnPropNameInRow="PRWGHTCONV" msprop:Generator_ColumnVarNameInTable="columnPRWGHTCONV" msprop:Generator_ColumnPropNameInTable="PRWGHTCONVColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="PRIBASWCNV" msprop:Generator_UserColumnName="PRIBASWCNV" msprop:Generator_ColumnPropNameInRow="PRIBASWCNV" msprop:Generator_ColumnVarNameInTable="columnPRIBASWCNV" msprop:Generator_ColumnPropNameInTable="PRIBASWCNVColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="DEFUWEIGHT" msprop:Generator_UserColumnName="DEFUWEIGHT" msprop:Generator_ColumnPropNameInRow="DEFUWEIGHT" msprop:Generator_ColumnVarNameInTable="columnDEFUWEIGHT" msprop:Generator_ColumnPropNameInTable="DEFUWEIGHTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="DEFEXTWGHT" msprop:Generator_UserColumnName="DEFEXTWGHT" msprop:Generator_ColumnPropNameInRow="DEFEXTWGHT" msprop:Generator_ColumnVarNameInTable="columnDEFEXTWGHT" msprop:Generator_ColumnPropNameInTable="DEFEXTWGHTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="PRPRICEBY" msprop:Generator_UserColumnName="PRPRICEBY" msprop:Generator_ColumnPropNameInRow="PRPRICEBY" msprop:Generator_ColumnVarNameInTable="columnPRPRICEBY" msprop:Generator_ColumnPropNameInTable="PRPRICEBYColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="CAPPROVEBY" msprop:Generator_UserColumnName="CAPPROVEBY" msprop:Generator_ColumnPropNameInRow="CAPPROVEBY" msprop:Generator_ColumnVarNameInTable="columnCAPPROVEBY" msprop:Generator_ColumnPropNameInTable="CAPPROVEBYColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HDRDISC" msprop:Generator_UserColumnName="HDRDISC" msprop:Generator_ColumnPropNameInRow="HDRDISC" msprop:Generator_ColumnVarNameInTable="columnHDRDISC" msprop:Generator_ColumnPropNameInTable="HDRDISCColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="STRAMOUNT1" msprop:Generator_UserColumnName="STRAMOUNT1" msprop:Generator_ColumnPropNameInRow="STRAMOUNT1" msprop:Generator_ColumnVarNameInTable="columnSTRAMOUNT1" msprop:Generator_ColumnPropNameInTable="STRAMOUNT1Column" type="xs:double" minOccurs="0" />
+              <xs:element name="STRAMOUNT2" msprop:Generator_UserColumnName="STRAMOUNT2" msprop:Generator_ColumnPropNameInRow="STRAMOUNT2" msprop:Generator_ColumnVarNameInTable="columnSTRAMOUNT2" msprop:Generator_ColumnPropNameInTable="STRAMOUNT2Column" type="xs:double" minOccurs="0" />
+              <xs:element name="STRAMOUNT3" msprop:Generator_UserColumnName="STRAMOUNT3" msprop:Generator_ColumnPropNameInRow="STRAMOUNT3" msprop:Generator_ColumnVarNameInTable="columnSTRAMOUNT3" msprop:Generator_ColumnPropNameInTable="STRAMOUNT3Column" type="xs:double" minOccurs="0" />
+              <xs:element name="STRAMOUNT4" msprop:Generator_UserColumnName="STRAMOUNT4" msprop:Generator_ColumnPropNameInRow="STRAMOUNT4" msprop:Generator_ColumnVarNameInTable="columnSTRAMOUNT4" msprop:Generator_ColumnPropNameInTable="STRAMOUNT4Column" type="xs:double" minOccurs="0" />
+              <xs:element name="STRAMOUNT5" msprop:Generator_UserColumnName="STRAMOUNT5" msprop:Generator_ColumnPropNameInRow="STRAMOUNT5" msprop:Generator_ColumnVarNameInTable="columnSTRAMOUNT5" msprop:Generator_ColumnPropNameInTable="STRAMOUNT5Column" type="xs:double" minOccurs="0" />
+              <xs:element name="PSPRINTED" msprop:Generator_UserColumnName="PSPRINTED" msprop:Generator_ColumnPropNameInRow="PSPRINTED" msprop:Generator_ColumnVarNameInTable="columnPSPRINTED" msprop:Generator_ColumnPropNameInTable="PSPRINTEDColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="COG" msprop:Generator_UserColumnName="COG" msprop:Generator_ColumnPropNameInRow="COG" msprop:Generator_ColumnVarNameInTable="columnCOG" msprop:Generator_ColumnPropNameInTable="COGColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="JOBRELATED" msprop:Generator_UserColumnName="JOBRELATED" msprop:Generator_ColumnPropNameInRow="JOBRELATED" msprop:Generator_ColumnVarNameInTable="columnJOBRELATED" msprop:Generator_ColumnPropNameInTable="JOBRELATEDColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="CONTRACT" msprop:Generator_UserColumnName="CONTRACT" msprop:Generator_ColumnPropNameInRow="CONTRACT" msprop:Generator_ColumnVarNameInTable="columnCONTRACT" msprop:Generator_ColumnPropNameInTable="CONTRACTColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PROJECT" msprop:Generator_UserColumnName="PROJECT" msprop:Generator_ColumnPropNameInRow="PROJECT" msprop:Generator_ColumnVarNameInTable="columnPROJECT" msprop:Generator_ColumnPropNameInTable="PROJECTColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CCATEGORY" msprop:Generator_UserColumnName="CCATEGORY" msprop:Generator_ColumnPropNameInRow="CCATEGORY" msprop:Generator_ColumnVarNameInTable="columnCCATEGORY" msprop:Generator_ColumnPropNameInTable="CCATEGORYColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COSTCLASS" msprop:Generator_UserColumnName="COSTCLASS" msprop:Generator_ColumnPropNameInRow="COSTCLASS" msprop:Generator_ColumnVarNameInTable="columnCOSTCLASS" msprop:Generator_ColumnPropNameInTable="COSTCLASSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="PROJSTYLE" msprop:Generator_UserColumnName="PROJSTYLE" msprop:Generator_ColumnPropNameInRow="PROJSTYLE" msprop:Generator_ColumnVarNameInTable="columnPROJSTYLE" msprop:Generator_ColumnPropNameInTable="PROJSTYLEColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="PROJTYPE" msprop:Generator_UserColumnName="PROJTYPE" msprop:Generator_ColumnPropNameInRow="PROJTYPE" msprop:Generator_ColumnVarNameInTable="columnPROJTYPE" msprop:Generator_ColumnPropNameInTable="PROJTYPEColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="REVREC" msprop:Generator_UserColumnName="REVREC" msprop:Generator_ColumnPropNameInRow="REVREC" msprop:Generator_ColumnVarNameInTable="columnREVREC" msprop:Generator_ColumnPropNameInTable="REVRECColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="BILLTYPE" msprop:Generator_UserColumnName="BILLTYPE" msprop:Generator_ColumnPropNameInRow="BILLTYPE" msprop:Generator_ColumnVarNameInTable="columnBILLTYPE" msprop:Generator_ColumnPropNameInTable="BILLTYPEColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="REVBILL" msprop:Generator_UserColumnName="REVBILL" msprop:Generator_ColumnPropNameInRow="REVBILL" msprop:Generator_ColumnVarNameInTable="columnREVBILL" msprop:Generator_ColumnPropNameInTable="REVBILLColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COGSWIP" msprop:Generator_UserColumnName="COGSWIP" msprop:Generator_ColumnPropNameInRow="COGSWIP" msprop:Generator_ColumnVarNameInTable="columnCOGSWIP" msprop:Generator_ColumnPropNameInTable="COGSWIPColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RTGAMOUNT" msprop:Generator_UserColumnName="RTGAMOUNT" msprop:Generator_ColumnPropNameInRow="RTGAMOUNT" msprop:Generator_ColumnVarNameInTable="columnRTGAMOUNT" msprop:Generator_ColumnPropNameInTable="RTGAMOUNTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="RTGPERCENT" msprop:Generator_UserColumnName="RTGPERCENT" msprop:Generator_ColumnPropNameInRow="RTGPERCENT" msprop:Generator_ColumnVarNameInTable="columnRTGPERCENT" msprop:Generator_ColumnPropNameInTable="RTGPERCENTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="RTGDAYS" msprop:Generator_UserColumnName="RTGDAYS" msprop:Generator_ColumnPropNameInRow="RTGDAYS" msprop:Generator_ColumnVarNameInTable="columnRTGDAYS" msprop:Generator_ColumnPropNameInTable="RTGDAYSColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="RTGAMTOVR" msprop:Generator_UserColumnName="RTGAMTOVR" msprop:Generator_ColumnPropNameInRow="RTGAMTOVR" msprop:Generator_ColumnVarNameInTable="columnRTGAMTOVR" msprop:Generator_ColumnPropNameInTable="RTGAMTOVRColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="RTGTXBASE1" msprop:Generator_UserColumnName="RTGTXBASE1" msprop:Generator_ColumnPropNameInRow="RTGTXBASE1" msprop:Generator_ColumnVarNameInTable="columnRTGTXBASE1" msprop:Generator_ColumnPropNameInTable="RTGTXBASE1Column" type="xs:double" minOccurs="0" />
+              <xs:element name="RTGTXBASE2" msprop:Generator_UserColumnName="RTGTXBASE2" msprop:Generator_ColumnPropNameInRow="RTGTXBASE2" msprop:Generator_ColumnVarNameInTable="columnRTGTXBASE2" msprop:Generator_ColumnPropNameInTable="RTGTXBASE2Column" type="xs:double" minOccurs="0" />
+              <xs:element name="RTGTXBASE3" msprop:Generator_UserColumnName="RTGTXBASE3" msprop:Generator_ColumnPropNameInRow="RTGTXBASE3" msprop:Generator_ColumnVarNameInTable="columnRTGTXBASE3" msprop:Generator_ColumnPropNameInTable="RTGTXBASE3Column" type="xs:double" minOccurs="0" />
+              <xs:element name="RTGTXBASE4" msprop:Generator_UserColumnName="RTGTXBASE4" msprop:Generator_ColumnPropNameInRow="RTGTXBASE4" msprop:Generator_ColumnVarNameInTable="columnRTGTXBASE4" msprop:Generator_ColumnPropNameInTable="RTGTXBASE4Column" type="xs:double" minOccurs="0" />
+              <xs:element name="RTGTXBASE5" msprop:Generator_UserColumnName="RTGTXBASE5" msprop:Generator_ColumnPropNameInRow="RTGTXBASE5" msprop:Generator_ColumnVarNameInTable="columnRTGTXBASE5" msprop:Generator_ColumnPropNameInTable="RTGTXBASE5Column" type="xs:double" minOccurs="0" />
+              <xs:element name="RTGTXAMT1" msprop:Generator_UserColumnName="RTGTXAMT1" msprop:Generator_ColumnPropNameInRow="RTGTXAMT1" msprop:Generator_ColumnVarNameInTable="columnRTGTXAMT1" msprop:Generator_ColumnPropNameInTable="RTGTXAMT1Column" type="xs:double" minOccurs="0" />
+              <xs:element name="RTGTXAMT2" msprop:Generator_UserColumnName="RTGTXAMT2" msprop:Generator_ColumnPropNameInRow="RTGTXAMT2" msprop:Generator_ColumnVarNameInTable="columnRTGTXAMT2" msprop:Generator_ColumnPropNameInTable="RTGTXAMT2Column" type="xs:double" minOccurs="0" />
+              <xs:element name="RTGTXAMT3" msprop:Generator_UserColumnName="RTGTXAMT3" msprop:Generator_ColumnPropNameInRow="RTGTXAMT3" msprop:Generator_ColumnVarNameInTable="columnRTGTXAMT3" msprop:Generator_ColumnPropNameInTable="RTGTXAMT3Column" type="xs:double" minOccurs="0" />
+              <xs:element name="RTGTXAMT4" msprop:Generator_UserColumnName="RTGTXAMT4" msprop:Generator_ColumnPropNameInRow="RTGTXAMT4" msprop:Generator_ColumnVarNameInTable="columnRTGTXAMT4" msprop:Generator_ColumnPropNameInTable="RTGTXAMT4Column" type="xs:double" minOccurs="0" />
+              <xs:element name="RTGTXAMT5" msprop:Generator_UserColumnName="RTGTXAMT5" msprop:Generator_ColumnPropNameInRow="RTGTXAMT5" msprop:Generator_ColumnVarNameInTable="columnRTGTXAMT5" msprop:Generator_ColumnPropNameInTable="RTGTXAMT5Column" type="xs:double" minOccurs="0" />
+              <xs:element name="PMTRANSNBR" msprop:Generator_UserColumnName="PMTRANSNBR" msprop:Generator_ColumnPropNameInRow="PMTRANSNBR" msprop:Generator_ColumnVarNameInTable="columnPMTRANSNBR" msprop:Generator_ColumnPropNameInTable="PMTRANSNBRColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="PRICEOPT" msprop:Generator_UserColumnName="PRICEOPT" msprop:Generator_ColumnPropNameInRow="PRICEOPT" msprop:Generator_ColumnVarNameInTable="columnPRICEOPT" msprop:Generator_ColumnPropNameInTable="PRICEOPTColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ARITEMNO" msprop:Generator_UserColumnName="ARITEMNO" msprop:Generator_ColumnPropNameInRow="ARITEMNO" msprop:Generator_ColumnVarNameInTable="columnARITEMNO" msprop:Generator_ColumnPropNameInTable="ARITEMNOColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ARUNIT" msprop:Generator_UserColumnName="ARUNIT" msprop:Generator_ColumnPropNameInRow="ARUNIT" msprop:Generator_ColumnVarNameInTable="columnARUNIT" msprop:Generator_ColumnPropNameInTable="ARUNITColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PAYMNTDIST" msprop:Generator_UserColumnName="PAYMNTDIST" msprop:Generator_ColumnPropNameInRow="PAYMNTDIST" msprop:Generator_ColumnVarNameInTable="columnPAYMNTDIST" msprop:Generator_ColumnPropNameInTable="PAYMNTDISTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="SERIALQTY" msprop:Generator_UserColumnName="SERIALQTY" msprop:Generator_ColumnPropNameInRow="SERIALQTY" msprop:Generator_ColumnVarNameInTable="columnSERIALQTY" msprop:Generator_ColumnPropNameInTable="SERIALQTYColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="LOTQTY" msprop:Generator_UserColumnName="LOTQTY" msprop:Generator_ColumnPropNameInRow="LOTQTY" msprop:Generator_ColumnVarNameInTable="columnLOTQTY" msprop:Generator_ColumnPropNameInTable="LOTQTYColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="SLITEM" msprop:Generator_UserColumnName="SLITEM" msprop:Generator_ColumnPropNameInRow="SLITEM" msprop:Generator_ColumnVarNameInTable="columnSLITEM" msprop:Generator_ColumnPropNameInTable="SLITEMColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="COMPANYID" msprop:Generator_UserColumnName="COMPANYID" msprop:Generator_ColumnPropNameInRow="COMPANYID" msprop:Generator_ColumnVarNameInTable="columnCOMPANYID" msprop:Generator_ColumnPropNameInTable="COMPANYIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="OPPOID" msprop:Generator_UserColumnName="OPPOID" msprop:Generator_ColumnPropNameInRow="OPPOID" msprop:Generator_ColumnVarNameInTable="columnOPPOID" msprop:Generator_ColumnPropNameInTable="OPPOIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="EXTSMOSTRE" msprop:Generator_UserColumnName="EXTSMOSTRE" msprop:Generator_ColumnPropNameInRow="EXTSMOSTRE" msprop:Generator_ColumnVarNameInTable="columnEXTSMOSTRE" msprop:Generator_ColumnPropNameInTable="EXTSMOSTREColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="EXTSSTDCOS" msprop:Generator_UserColumnName="EXTSSTDCOS" msprop:Generator_ColumnPropNameInRow="EXTSSTDCOS" msprop:Generator_ColumnVarNameInTable="columnEXTSSTDCOS" msprop:Generator_ColumnPropNameInTable="EXTSSTDCOSColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="EXTSCOST1" msprop:Generator_UserColumnName="EXTSCOST1" msprop:Generator_ColumnPropNameInRow="EXTSCOST1" msprop:Generator_ColumnVarNameInTable="columnEXTSCOST1" msprop:Generator_ColumnPropNameInTable="EXTSCOST1Column" type="xs:double" minOccurs="0" />
+              <xs:element name="EXTSCOST2" msprop:Generator_UserColumnName="EXTSCOST2" msprop:Generator_ColumnPropNameInRow="EXTSCOST2" msprop:Generator_ColumnVarNameInTable="columnEXTSCOST2" msprop:Generator_ColumnPropNameInTable="EXTSCOST2Column" type="xs:double" minOccurs="0" />
+              <xs:element name="EXTSAVGCST" msprop:Generator_UserColumnName="EXTSAVGCST" msprop:Generator_ColumnPropNameInRow="EXTSAVGCST" msprop:Generator_ColumnVarNameInTable="columnEXTSAVGCST" msprop:Generator_ColumnPropNameInTable="EXTSAVGCSTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="EXTSLSTCST" msprop:Generator_UserColumnName="EXTSLSTCST" msprop:Generator_ColumnPropNameInRow="EXTSLSTCST" msprop:Generator_ColumnVarNameInTable="columnEXTSLSTCST" msprop:Generator_ColumnPropNameInTable="EXTSLSTCSTColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="PCODDESC" msprop:Generator_UserColumnName="PCODDESC" msprop:Generator_ColumnPropNameInRow="PCODDESC" msprop:Generator_ColumnVarNameInTable="columnPCODDESC" msprop:Generator_ColumnPropNameInTable="PCODDESCColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CATGDESC" msprop:Generator_UserColumnName="CATGDESC" msprop:Generator_ColumnPropNameInRow="CATGDESC" msprop:Generator_ColumnVarNameInTable="columnCATGDESC" msprop:Generator_ColumnPropNameInTable="CATGDESCColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOCDESC" msprop:Generator_UserColumnName="LOCDESC" msprop:Generator_ColumnPropNameInRow="LOCDESC" msprop:Generator_ColumnVarNameInTable="columnLOCDESC" msprop:Generator_ColumnPropNameInTable="LOCDESCColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TAUTH1DESC" msprop:Generator_UserColumnName="TAUTH1DESC" msprop:Generator_ColumnPropNameInRow="TAUTH1DESC" msprop:Generator_ColumnVarNameInTable="columnTAUTH1DESC" msprop:Generator_ColumnPropNameInTable="TAUTH1DESCColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TAUTH2DESC" msprop:Generator_UserColumnName="TAUTH2DESC" msprop:Generator_ColumnPropNameInRow="TAUTH2DESC" msprop:Generator_ColumnVarNameInTable="columnTAUTH2DESC" msprop:Generator_ColumnPropNameInTable="TAUTH2DESCColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TAUTH3DESC" msprop:Generator_UserColumnName="TAUTH3DESC" msprop:Generator_ColumnPropNameInRow="TAUTH3DESC" msprop:Generator_ColumnVarNameInTable="columnTAUTH3DESC" msprop:Generator_ColumnPropNameInTable="TAUTH3DESCColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TAUTH4DESC" msprop:Generator_UserColumnName="TAUTH4DESC" msprop:Generator_ColumnPropNameInRow="TAUTH4DESC" msprop:Generator_ColumnVarNameInTable="columnTAUTH4DESC" msprop:Generator_ColumnPropNameInTable="TAUTH4DESCColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TAUTH5DESC" msprop:Generator_UserColumnName="TAUTH5DESC" msprop:Generator_ColumnPropNameInRow="TAUTH5DESC" msprop:Generator_ColumnVarNameInTable="columnTAUTH5DESC" msprop:Generator_ColumnPropNameInTable="TAUTH5DESCColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TCLAS1DESC" msprop:Generator_UserColumnName="TCLAS1DESC" msprop:Generator_ColumnPropNameInRow="TCLAS1DESC" msprop:Generator_ColumnVarNameInTable="columnTCLAS1DESC" msprop:Generator_ColumnPropNameInTable="TCLAS1DESCColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TCLAS2DESC" msprop:Generator_UserColumnName="TCLAS2DESC" msprop:Generator_ColumnPropNameInRow="TCLAS2DESC" msprop:Generator_ColumnVarNameInTable="columnTCLAS2DESC" msprop:Generator_ColumnPropNameInTable="TCLAS2DESCColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TCLAS3DESC" msprop:Generator_UserColumnName="TCLAS3DESC" msprop:Generator_ColumnPropNameInRow="TCLAS3DESC" msprop:Generator_ColumnVarNameInTable="columnTCLAS3DESC" msprop:Generator_ColumnPropNameInTable="TCLAS3DESCColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TCLAS4DESC" msprop:Generator_UserColumnName="TCLAS4DESC" msprop:Generator_ColumnPropNameInRow="TCLAS4DESC" msprop:Generator_ColumnVarNameInTable="columnTCLAS4DESC" msprop:Generator_ColumnPropNameInTable="TCLAS4DESCColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TCLAS5DESC" msprop:Generator_UserColumnName="TCLAS5DESC" msprop:Generator_ColumnPropNameInRow="TCLAS5DESC" msprop:Generator_ColumnVarNameInTable="columnTCLAS5DESC" msprop:Generator_ColumnPropNameInTable="TCLAS5DESCColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GLNONSTKCD" msprop:Generator_UserColumnName="GLNONSTKCD" msprop:Generator_ColumnPropNameInRow="GLNONSTKCD" msprop:Generator_ColumnVarNameInTable="columnGLNONSTKCD" msprop:Generator_ColumnPropNameInTable="GLNONSTKCDColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EDCSHIMISC" msprop:Generator_UserColumnName="EDCSHIMISC" msprop:Generator_ColumnPropNameInRow="EDCSHIMISC" msprop:Generator_ColumnVarNameInTable="columnEDCSHIMISC" msprop:Generator_ColumnPropNameInTable="EDCSHIMISCColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="ACTION" msprop:Generator_UserColumnName="ACTION" msprop:Generator_ColumnPropNameInRow="ACTION" msprop:Generator_ColumnVarNameInTable="columnACTION" msprop:Generator_ColumnPropNameInTable="ACTIONColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="IPCID" msprop:Generator_UserColumnName="IPCID" msprop:Generator_ColumnPropNameInRow="IPCID" msprop:Generator_ColumnVarNameInTable="columnIPCID" msprop:Generator_ColumnPropNameInTable="IPCIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="FPOPSNQO" msprop:Generator_UserColumnName="FPOPSNQO" msprop:Generator_ColumnPropNameInRow="FPOPSNQO" msprop:Generator_ColumnVarNameInTable="columnFPOPSNQO" msprop:Generator_ColumnPropNameInTable="FPOPSNQOColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="FPOPSNQS" msprop:Generator_UserColumnName="FPOPSNQS" msprop:Generator_ColumnPropNameInRow="FPOPSNQS" msprop:Generator_ColumnVarNameInTable="columnFPOPSNQS" msprop:Generator_ColumnPropNameInTable="FPOPSNQSColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="POPUPSN" msprop:Generator_UserColumnName="POPUPSN" msprop:Generator_ColumnPropNameInRow="POPUPSN" msprop:Generator_ColumnVarNameInTable="columnPOPUPSN" msprop:Generator_ColumnPropNameInTable="POPUPSNColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="CLOSESN" msprop:Generator_UserColumnName="CLOSESN" msprop:Generator_ColumnPropNameInRow="CLOSESN" msprop:Generator_ColumnVarNameInTable="columnCLOSESN" msprop:Generator_ColumnPropNameInTable="CLOSESNColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="LTSETID" msprop:Generator_UserColumnName="LTSETID" msprop:Generator_ColumnPropNameInRow="LTSETID" msprop:Generator_ColumnVarNameInTable="columnLTSETID" msprop:Generator_ColumnPropNameInTable="LTSETIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="FPOPLTQO" msprop:Generator_UserColumnName="FPOPLTQO" msprop:Generator_ColumnPropNameInRow="FPOPLTQO" msprop:Generator_ColumnVarNameInTable="columnFPOPLTQO" msprop:Generator_ColumnPropNameInTable="FPOPLTQOColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="FPOPLTQS" msprop:Generator_UserColumnName="FPOPLTQS" msprop:Generator_ColumnPropNameInRow="FPOPLTQS" msprop:Generator_ColumnVarNameInTable="columnFPOPLTQS" msprop:Generator_ColumnPropNameInTable="FPOPLTQSColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="POPUPLT" msprop:Generator_UserColumnName="POPUPLT" msprop:Generator_ColumnPropNameInRow="POPUPLT" msprop:Generator_ColumnVarNameInTable="columnPOPUPLT" msprop:Generator_ColumnPropNameInTable="POPUPLTColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="CLOSELT" msprop:Generator_UserColumnName="CLOSELT" msprop:Generator_ColumnPropNameInRow="CLOSELT" msprop:Generator_ColumnVarNameInTable="columnCLOSELT" msprop:Generator_ColumnPropNameInTable="CLOSELTColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ORDUNIQ" msprop:Generator_UserColumnName="ORDUNIQ" msprop:Generator_ColumnPropNameInRow="ORDUNIQ" msprop:Generator_ColumnVarNameInTable="columnORDUNIQ" msprop:Generator_ColumnPropNameInTable="ORDUNIQColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="SERIALITEM" msprop:Generator_UserColumnName="SERIALITEM" msprop:Generator_ColumnPropNameInRow="SERIALITEM" msprop:Generator_ColumnVarNameInTable="columnSERIALITEM" msprop:Generator_ColumnPropNameInTable="SERIALITEMColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="UNFMTITEM" msprop:Generator_UserColumnName="UNFMTITEM" msprop:Generator_ColumnPropNameInRow="UNFMTITEM" msprop:Generator_ColumnVarNameInTable="columnUNFMTITEM" msprop:Generator_ColumnPropNameInTable="UNFMTITEMColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORDLINENUM" msprop:Generator_UserColumnName="ORDLINENUM" msprop:Generator_ColumnPropNameInRow="ORDLINENUM" msprop:Generator_ColumnVarNameInTable="columnORDLINENUM" msprop:Generator_ColumnPropNameInTable="ORDLINENUMColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="PROCESSCMD" msprop:Generator_UserColumnName="PROCESSCMD" msprop:Generator_ColumnPropNameInRow="PROCESSCMD" msprop:Generator_ColumnVarNameInTable="columnPROCESSCMD" msprop:Generator_ColumnPropNameInTable="PROCESSCMDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="WUOMDESC" msprop:Generator_UserColumnName="WUOMDESC" msprop:Generator_ColumnPropNameInRow="WUOMDESC" msprop:Generator_ColumnVarNameInTable="columnWUOMDESC" msprop:Generator_ColumnPropNameInTable="WUOMDESCColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EXTNETPRI" msprop:Generator_UserColumnName="EXTNETPRI" msprop:Generator_ColumnPropNameInRow="EXTNETPRI" msprop:Generator_ColumnVarNameInTable="columnEXTNETPRI" msprop:Generator_ColumnPropNameInTable="EXTNETPRIColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="DISSHIMISC" msprop:Generator_UserColumnName="DISSHIMISC" msprop:Generator_ColumnPropNameInRow="DISSHIMISC" msprop:Generator_ColumnVarNameInTable="columnDISSHIMISC" msprop:Generator_ColumnPropNameInTable="DISSHIMISCColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="TAXTOTAL" msprop:Generator_UserColumnName="TAXTOTAL" msprop:Generator_ColumnPropNameInRow="TAXTOTAL" msprop:Generator_ColumnVarNameInTable="columnTAXTOTAL" msprop:Generator_ColumnPropNameInTable="TAXTOTALColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="STRTOTAL" msprop:Generator_UserColumnName="STRTOTAL" msprop:Generator_ColumnPropNameInRow="STRTOTAL" msprop:Generator_ColumnVarNameInTable="columnSTRTOTAL" msprop:Generator_ColumnPropNameInTable="STRTOTALColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="LVL1NAME" msprop:Generator_UserColumnName="LVL1NAME" msprop:Generator_ColumnPropNameInRow="LVL1NAME" msprop:Generator_ColumnVarNameInTable="columnLVL1NAME" msprop:Generator_ColumnPropNameInTable="LVL1NAMEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LVL2NAME" msprop:Generator_UserColumnName="LVL2NAME" msprop:Generator_ColumnPropNameInRow="LVL2NAME" msprop:Generator_ColumnVarNameInTable="columnLVL2NAME" msprop:Generator_ColumnPropNameInTable="LVL2NAMEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LVL3NAME" msprop:Generator_UserColumnName="LVL3NAME" msprop:Generator_ColumnPropNameInRow="LVL3NAME" msprop:Generator_ColumnVarNameInTable="columnLVL3NAME" msprop:Generator_ColumnPropNameInTable="LVL3NAMEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UFMTCONTNO" msprop:Generator_UserColumnName="UFMTCONTNO" msprop:Generator_ColumnPropNameInRow="UFMTCONTNO" msprop:Generator_ColumnVarNameInTable="columnUFMTCONTNO" msprop:Generator_ColumnPropNameInTable="UFMTCONTNOColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NETPRIWTX" msprop:Generator_UserColumnName="NETPRIWTX" msprop:Generator_ColumnPropNameInRow="NETPRIWTX" msprop:Generator_ColumnVarNameInTable="columnNETPRIWTX" msprop:Generator_ColumnPropNameInTable="NETPRIWTXColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="SHIDUE" msprop:Generator_UserColumnName="SHIDUE" msprop:Generator_ColumnPropNameInRow="SHIDUE" msprop:Generator_ColumnVarNameInTable="columnSHIDUE" msprop:Generator_ColumnPropNameInTable="SHIDUEColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="XGENALCQTY" msprop:Generator_UserColumnName="XGENALCQTY" msprop:Generator_ColumnPropNameInRow="XGENALCQTY" msprop:Generator_ColumnVarNameInTable="columnXGENALCQTY" msprop:Generator_ColumnPropNameInTable="XGENALCQTYColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="XLOTMAKQTY" msprop:Generator_UserColumnName="XLOTMAKQTY" msprop:Generator_ColumnPropNameInRow="XLOTMAKQTY" msprop:Generator_ColumnVarNameInTable="columnXLOTMAKQTY" msprop:Generator_ColumnPropNameInTable="XLOTMAKQTYColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="XPERLOTQTY" msprop:Generator_UserColumnName="XPERLOTQTY" msprop:Generator_ColumnPropNameInRow="XPERLOTQTY" msprop:Generator_ColumnVarNameInTable="columnXPERLOTQTY" msprop:Generator_ColumnPropNameInTable="XPERLOTQTYColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="SALLOCFROM" msprop:Generator_UserColumnName="SALLOCFROM" msprop:Generator_ColumnPropNameInRow="SALLOCFROM" msprop:Generator_ColumnVarNameInTable="columnSALLOCFROM" msprop:Generator_ColumnPropNameInTable="SALLOCFROMColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LALLOCFROM" msprop:Generator_UserColumnName="LALLOCFROM" msprop:Generator_ColumnPropNameInRow="LALLOCFROM" msprop:Generator_ColumnVarNameInTable="columnLALLOCFROM" msprop:Generator_ColumnPropNameInTable="LALLOCFROMColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="METERHWND" msprop:Generator_UserColumnName="METERHWND" msprop:Generator_ColumnPropNameInRow="METERHWND" msprop:Generator_ColumnVarNameInTable="columnMETERHWND" msprop:Generator_ColumnPropNameInTable="METERHWNDColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

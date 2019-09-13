@@ -1,0 +1,82 @@
+﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" x:Class="EclipsePOS.WPF.SystemManager.ReportsAndEnquiries.ReportingServices.ReportDefinition" >
+    <Section Name="pageHeader">
+        <Paragraph>Page Header</Paragraph>
+    </Section>
+    <Section Name="reportHeader">
+        <Paragraph>
+            ReporttHeader definition
+        </Paragraph>
+    </Section>
+    <Table CellSpacing="5">
+        <Table.Columns>
+            <TableColumn Width="100"/>
+            <TableColumn Width="100"/>
+            <TableColumn Width="150"/>
+        </Table.Columns>
+        <TableRowGroup Name="Group_1_Header">
+            <TableRow>
+                <TableCell ColumnSpan="3">
+                    <Paragraph FontWeight="Bold">Product:
+                        <c:FormattedRun PropertyName="Project"/>
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>
+                    <Paragraph >Created</Paragraph>
+                </TableCell>
+                <TableCell>
+                    <Paragraph TextAlignment="Right">Amount</Paragraph>
+                </TableCell>
+                <TableCell>
+                    <Paragraph TextAlignment="Right">Tax</Paragraph>
+                </TableCell>
+            </TableRow>
+            <c:RowLine ColSpan="3"/>
+        </TableRowGroup>
+
+        <TableRowGroup Name="ItemDetail">
+            <TableRow>
+                <TableCell >
+                    <Paragraph>
+                        <c:FormattedRun PropertyName="Created" Format="dd.MM.yyyy"/>
+                    </Paragraph>
+                </TableCell>
+                <TableCell >
+                    <Paragraph TextAlignment="Right">
+                        <c:FormattedRun PropertyName="Amount"/>
+                    </Paragraph>
+                </TableCell>
+                <TableCell >
+                    <Paragraph TextAlignment="Right">
+                        <c:FormattedRun PropertyName="Tax"/>
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+        </TableRowGroup>
+        <TableRowGroup Name="Group_1_Footer">
+            <c:RowLine ColSpan="3"/>
+            <TableRow>
+                <TableCell ColumnSpan="3" TextAlignment="Right">
+                    <Paragraph TextAlignment="Right">
+                        Total:
+                        <c:FormattedRun PropertyName="Tax"/>
+                    </Paragraph>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell ColumnSpan="3"></TableCell>
+            </TableRow>
+        </TableRowGroup>
+
+    </Table>
+    <Section Name="reportFooter">
+        <Paragraph>Report Footer</Paragraph>
+    </Section>
+    <Section Name="pageFooter">
+        <Paragraph>Page Footer</Paragraph>
+        <Paragraph TextAlignment="Right">
+            Page @PageNumber from @PageCount
+        </Paragraph>
+    </Section>
+    </FlowDocument>

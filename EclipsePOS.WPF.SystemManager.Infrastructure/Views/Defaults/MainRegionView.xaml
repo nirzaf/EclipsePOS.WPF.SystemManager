@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="EclipsePOS.WPF.SystemManager.Infrastructure.Views.Defaults.MainRegionView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="rootControl" Loaded="rootControl_Loaded" >
+    <UserControl.Resources>
+        <Storyboard x:Key="OnLoadedTransition">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rootControl" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        
+        <!-- LinearGradientBrush x:Key="ContentBrush" EndPoint="0.046,0.973" StartPoint="0.954,0.027">
+            <GradientStop Color="#FF010736" Offset="0"/>
+            <GradientStop Color="#FF165794" Offset="1"/>
+        </LinearGradientBrush -->
+        <SolidColorBrush x:Key="GridBrush" Color="#FF262626"/>
+        <SolidColorBrush x:Key="ContentBrush" Color="#FF262626"/>
+        
+    </UserControl.Resources>
+    <!-- UserControl.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource OnLoadedTransition}"/>
+        </EventTrigger>
+    </UserControl.Triggers -->
+    <!-- StackPanel>
+        <Canvas>
+            <TextBlock FontSize="40" Background="#FF1D0F48" Foreground="White" Canvas.Left="400" Canvas.Top="200"> EclipsePOS</TextBlock>
+            <Polygon Points="235,190 235,280 370,225 235,190" Fill="SlateBlue" ></Polygon>
+            <Ellipse Canvas.Left="200" Canvas.Top="200" Height="70" Width="70" Fill="#126CB8" ></Ellipse>
+            <TextBlock FontSize="14" Background="#100A3F" Foreground="White" Canvas.Left="400" Canvas.Top="300"> Copyright Eclipse Software Pte Ltd</TextBlock>
+        </Canvas>
+    </StackPanel -->
+
+    <DockPanel>
+        <Border x:Name ="TopPanelBorder"  DockPanel.Dock="Top" BorderBrush="{DynamicResource BorderBrush}"  BorderThickness="1" CornerRadius="0,0,0,0" Margin="0,5,5,0" Background="{DynamicResource BottomPanelBrush}" Height="25" >
+            <DockPanel>
+                <TextBlock Margin="5,2,5,2" Background="#00FFFFFF" FontSize="13" Foreground="#FFFFFFFF" Text=" " DockPanel.Dock="Left"   VerticalAlignment="Center"></TextBlock>
+            </DockPanel>
+        </Border>
+
+       
+        <Border DockPanel.Dock="Bottom"  BorderBrush="{DynamicResource BorderBrush}" BorderThickness ="1"  CornerRadius ="0,0,10,0" Margin="0,5,5,2" Background="{DynamicResource BottomPanelBrush}" Height="25">
+            <StackPanel>
+                <TextBlock DockPanel.Dock="Bottom" FontSize="14" Foreground="#FFFFFFFF" TextAlignment="Center" > Copyright © Eclipse Software Pte Ltd, www.eclipsesoftware.com.sg, Version 1.0.6</TextBlock>
+            </StackPanel>
+        </Border>
+
+        <Border DockPanel.Dock="Right" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,0,0,0" Margin="0,5,5,2" Background="{StaticResource ContentBrush}">
+            <StackPanel >
+                <Image Source="../../Images/EclipseLogo_sm.png" x:Name="image"  Height="400" Width="400" VerticalAlignment="Center" HorizontalAlignment="Center"  />
+                <!-- Canvas -->
+                    <!-- TextBlock FontSize="40"  Foreground="White" Canvas.Left="400" Canvas.Top="200"> EclipsePOS</TextBlock -->
+                    <!-- Polygon Points="235,190 235,280 370,225 235,190" Fill="#FF130E80" ></Polygon -->
+                    <!-- Ellipse Canvas.Left="200" Canvas.Top="200" Height="70" Width="80" Fill="#FF0A80CB" ></Ellipse -->
+                <!-- /Canvas -->
+
+            </StackPanel>
+        </Border>
+    </DockPanel>
+
+</UserControl>

@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="EclipsePOS.WPF.SystemManager.Inventory.Views.TaskNavigator.InventoryNavigatorView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:EclipsePOS.WPF.SystemManager.Inventory.Views.TaskNavigator"
+    Background ="{DynamicResource ContentAreaBrush}"
+             Name="rootControl"
+    >
+    <UserControl.Resources>
+        <Storyboard x:Key="OnLoadedTransition">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="rootControl" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:01" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <!-- UserControl.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource OnLoadedTransition}"/>
+        </EventTrigger>
+    </UserControl.Triggers -->
+       
+    <StackPanel>
+        <Border BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,10,0,0" Background="{DynamicResource HeaderBrush}" >
+            <TextBlock Margin="10,3,3,3" Background="#00FFFFFF" FontSize="13" Foreground="#FFFFFFFF" Text="Select a task:" />
+		</Border>
+
+        <Button Name="btnItemDepartment" Command="{Binding}" Style="{DynamicResource OrangeButton}">
+            Item Department
+        </Button>
+        <Button Name="btnItemGroup" Command="{Binding}" Style="{DynamicResource OrangeButton}">
+            Item Group
+        </Button>
+        <Button  Name="btnItemList" Command="{Binding}"  Style="{DynamicResource OrangeButton}" >
+            Items
+        </Button>
+        <Button Name="btnStockDiary" Command="{Binding}"  Style="{DynamicResource OrangeButton}" >
+            Stock Diary
+        </Button>
+        <!-- Button Name="btnChangeStoreGroup" Command="{Binding}"  Style="{DynamicResource OrangeButton}" >
+            Change store group
+        </Button -->
+    </StackPanel>
+</UserControl>

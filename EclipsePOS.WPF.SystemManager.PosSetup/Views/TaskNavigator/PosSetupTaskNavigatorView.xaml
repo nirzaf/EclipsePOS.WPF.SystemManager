@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="EclipsePOS.WPF.SystemManager.PosSetup.Views.TaskNavigator.PosSetupTaskNavigatorView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+    <StackPanel>
+        <TextBlock>
+            Select a task
+        </TextBlock>  
+        <TextBlock>
+            Organization
+        </TextBlock>
+        <TextBlock>
+            Employee Roles
+        </TextBlock>
+        <TextBlock>
+            Employees
+        </TextBlock>
+        <TextBlock>
+            Tax Groups
+        </TextBlock>
+        <TextBlock>
+            Tax
+        </TextBlock>
+        <TextBlock>
+            Currency
+        </TextBlock>
+        <TextBlock>
+            Store Group
+        </TextBlock>
+        <TextBlock>
+            Store
+        </TextBlock>
+        <TextBlock>
+            Station
+        </TextBlock>
+        <TextBlock>
+            Pos Configurations
+        </TextBlock>
+        <TextBlock>
+            Pos Parameters
+        </TextBlock>
+        <TextBlock>
+            Menus
+        </TextBlock>
+        <TextBlock>
+            Discounts
+        </TextBlock>
+        <TextBlock>
+            Promotions
+        </TextBlock>
+        <TextBlock>
+            Input Filters
+        </TextBlock>
+        <TextBlock>
+            Pos Keys
+        </TextBlock>
+    </StackPanel>
+</UserControl>

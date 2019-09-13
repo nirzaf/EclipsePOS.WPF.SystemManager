@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="EclipsePOS.WPF.SystemManager.Infrastructure.Views.ModuleNavigator.ModuleNavigatorView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cal="http://www.codeplex.com/CompositeWPF" 
+    Background ="{DynamicResource ContentAreaBrush}" >         
+    <StackPanel>
+        <!-- Button Height="37" Margin="2,2,2,2" Name="BtnPosSetup" Command="{x:Static inf:Constants.Commands.ShowPosSetupTaskView}" Style="{DynamicResource OrangeButton}" >Pos Setup</Button -->
+        <!-- Button Height="37" Margin="2,2,2,2" Name="BtnInventorySetp" Command="{x:Static inf:Constants.Commands.ShowInventoryTaskView}" Style="{DynamicResource OrangeButton}" >Items</Button -->
+        <!-- Button Height="37" Margin="2,2,2,2" Name="BtnDataSourceSetup" Command="{x:Static inf:Constants.Commands.ShowDataSourceTaskView}" Style="{DynamicResource OrangeButton}" >Manage Data Source</Button -->
+        <!-- Button Height="37" Margin="2,2,2,2" Name="BtnEnquiryAndReports" Command="{x:Static inf:Constants.Commands.ShowEnquiryAndReportsTaskView}" Style="{DynamicResource OrangeButton}">Reports</Button -->
+        <ContentControl cal:RegionManager.RegionName="EclipseContentRegion" />
+     </StackPanel>
+    
+</UserControl>

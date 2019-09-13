@@ -1,0 +1,78 @@
+﻿<Window x:Class="EclipsePOS.WPF.SystemManager.PosSetup.Views.PosConfigInput.InputConfigNoView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="EclipsePOS-SystemManager" Width="475" Height="300"  Background="{DynamicResource ContentAreaBrush}" ResizeMode="NoResize"  Opacity="1" Style="{DynamicResource WindowDialog}">
+    <Window.Resources>
+    </Window.Resources>
+
+    <DockPanel LastChildFill="True" >
+        
+        <Border  DockPanel.Dock="Top" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="0,10,0,0" Background="{DynamicResource HeaderBrush}" Margin="5,5,5,0">
+            <TextBlock Margin="10,3,3,3" Background="#00FFFFFF" FontSize="16" Foreground="#FFFFFFFF" Text="Create a new POS configuration" />
+		</Border>
+    
+        <Border DockPanel.Dock="Bottom" BorderBrush="{DynamicResource BorderBrush}" BorderThickness ="1"  CornerRadius ="0,0,10,0" Margin="5,5,5,2" Background="{DynamicResource BottomPanelBrush}">
+            <StackPanel>
+                <TextBlock x:Name="txtBlockMessges" FontSize="16" Foreground="#FFE3EA20" Margin="15,0,0,0" TextWrapping="Wrap"/>
+            </StackPanel>
+        </Border>
+           
+       
+        <Grid  DockPanel.Dock="Right" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+              
+            </Grid.RowDefinitions>
+            
+            <Border Grid.Row="0"  BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" Margin="5,5,5,0" CornerRadius="0,0,10,0" >
+                <Grid  DockPanel.Dock="Right" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  />
+                        <ColumnDefinition  />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition Height="*"/>
+                     </Grid.RowDefinitions>
+
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name ="txtMessageBox"  Foreground="#FFE3EA20" FontSize="14" TextWrapping="Wrap" TextAlignment="Center" Margin="16,0" />
+                <TextBlock Grid.Row="1"  Grid.Column="0" Foreground="White" Text="Copy from config number" FontSize="14" VerticalAlignment="Center"  HorizontalAlignment="Right" Margin="0,5,10,0" />
+		        <!--TextBox  Grid.Row="1" Grid.Column="1"  x:Name="txtBoxCopyFromConfigNo"  Margin="0,5,10,5" FontSize="14" /-->
+                <ComboBox Grid.Row="1" Grid.Column="1" SelectedValuePath="config_no"  Margin="0,5,10,5"  FontSize="14"  Name="cmbBoxCopyFromConfigNo" >
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock Name="txtBlockConfigNo" Text="{Binding Path=config_no}" />
+                                     <TextBlock Margin="10,0,0,0">-</TextBlock>
+                                     <TextBlock Name="txtBlockConfigName" Margin="10,0,0,0" Text="{Binding Path=name}" />
+                                </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ComboBox>
+                
+                <TextBlock Grid.Row="2"  Grid.Column="0" Foreground="White" Text="New config number" FontSize="14" x:Name="txtConfigNo" VerticalAlignment="Center"  HorizontalAlignment="Right" Margin="0,5,10,0" />
+		        <TextBox  Grid.Row="2" Grid.Column="1"  x:Name="txtBoxConfigNo"  Margin="0,5,10,5"  FontSize="14" VerticalAlignment="Center"/>
+		       </Grid> 
+             </Border>
+                
+            <Border  Grid.Row="1" Grid.ColumnSpan="2" Name="border4"   BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" Margin="5,5,5,0" CornerRadius="10,10,10,10">
+            <StackPanel Orientation="Horizontal"  FlowDirection="RightToLeft">
+                <Button Height="27" Name="btnCancel" Width="75" Margin="10,0,10,0" Style="{DynamicResource GlassyButtonStyle}" FontSize="12" TabIndex="8">Cancel</Button>
+                <Button Height="27" Name="btnOK" Width="75"  Style="{DynamicResource GlassyButtonStyle}" FontSize="12" TabIndex="7">OK</Button>
+            </StackPanel>   
+            </Border>
+            <!-- Button Grid.Column="0" Grid.Row="2" Style="{DynamicResource GlassyButtonStyle}" FontSize="12" Content="Cancel" x:Name="btnCancel"   Margin="10,10,0,0"  HorizontalAlignment="Right" Width="60" / -->
+	        <!--Button Grid.Row="2" Grid.Column="1"  Style="{DynamicResource GlassyButtonStyle}" FontSize="12" Content="Ok" x:Name="btnOK"  Margin="0,10,50,0"  HorizontalAlignment="Right" Width="60" / -->
+		
+        </Grid>
+        <!-- /Border -->
+    </DockPanel>
+    
+</Window>

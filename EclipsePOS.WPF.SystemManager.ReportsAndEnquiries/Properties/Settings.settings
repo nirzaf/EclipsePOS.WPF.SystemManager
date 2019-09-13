@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EclipsePOS.WPF.SystemManager.ReportsAndEnquiries.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BarcodeStyle" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CODE128</Value>
+    </Setting>
+    <Setting Name="NumberAcross" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="NumberDown" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="SideMargin" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.25</Value>
+    </Setting>
+    <Setting Name="TopMargin" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.25</Value>
+    </Setting>
+    <Setting Name="FilterBy" Type="System.String" Scope="User">
+      <Value Profile="(Default)">short_desc</Value>
+    </Setting>
+    <Setting Name="BarcodeColumn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">plu</Value>
+    </Setting>
+    <Setting Name="BorderColor" Type="System.Windows.Media.Color" Scope="User">
+      <Value Profile="(Default)">#FF000000</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

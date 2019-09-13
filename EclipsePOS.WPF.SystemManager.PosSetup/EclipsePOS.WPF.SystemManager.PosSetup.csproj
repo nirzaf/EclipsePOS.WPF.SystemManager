@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5BB2C883-415F-4A84-A281-6828BB9EC6C6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EclipsePOS.WPF.SystemManager.PosSetup</RootNamespace>
+    <AssemblyName>EclipsePOS.WPF.SystemManager.PosSetup</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator">
+      <HintPath>..\CAL\commonservicelocator-master\src\bin\Debug\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=3.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.3.0.0-preview9.19423.4\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Composite, Version=3.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Composite.3.0.0-preview9.19423.4\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Composite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=3.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.3.0.0-preview9.19423.4\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Composite">
+      <HintPath>..\LIB\Microsoft.Practices.Composite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Composite.Presentation">
+      <HintPath>..\LIB\Microsoft.Practices.Composite.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Composite.UnityExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\Microsoft.Practices.Composite.UnityExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Composite.Wpf">
+      <HintPath>..\LIB\Microsoft.Practices.Composite.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2">
+      <HintPath>..\LIB\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\LIB\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\LIB\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Prism">
+      <HintPath>..\..\..\..\POSMVVM\Build\Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Unity.Wpf">
+      <HintPath>..\..\..\..\POSMVVM\Build\Prism.Unity.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Wpf">
+      <HintPath>..\..\..\..\POSMVVM\Build\Prism.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.6.0-preview5.19224.8\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0-preview9.19421.4\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WPFToolkit">
+      <HintPath>..\LIB\WPFToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="WPFToolkit.Extended">
+      <HintPath>..\LIB\WPFToolkit.Extended.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PosSetupModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Setup\InstallHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SQLSetup\EmbeddedInstall.cs" />
+    <Compile Include="Util\EclipseSettingsProvider.cs" />
+    <Compile Include="Util\MD5ToTextConverter.cs" />
+    <Compile Include="Util\PasswordHelper.cs" />
+    <Compile Include="Util\PosSettings.cs" />
+    <Compile Include="Util\RegistrySettingsProvider1.cs" />
+    <Compile Include="Views\BackupDataSourcePrompt\BackupDataSource.xaml.cs">
+      <DependentUpon>BackupDataSource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BackupDataSourcePrompt\BackupDataSourcePresenter.cs" />
+    <Compile Include="Views\BackupDataSourcePrompt\IBackupDataSource.cs" />
+    <Compile Include="Views\CardMedia\CardMediaPresenter.cs" />
+    <Compile Include="Views\CardMedia\CardMediaView.xaml.cs">
+      <DependentUpon>CardMediaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CardMedia\ICardMedia.cs" />
+    <Compile Include="Views\CurrencyCode\CurrencyCodePresenter.cs" />
+    <Compile Include="Views\CurrencyCode\CurrencyCodeView.xaml.cs">
+      <DependentUpon>CurrencyCodeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CurrencyCode\ICurrencyCode.cs" />
+    <Compile Include="Views\CurrencyRate\CurrencyView.xaml.cs">
+      <DependentUpon>CurrencyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CurrencyRate\CurrencyViewPresenter.cs" />
+    <Compile Include="Views\CurrencyRate\ICurrencyView.cs" />
+    <Compile Include="Views\Customer\CustomerView.xaml.cs">
+      <DependentUpon>CustomerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerViewPresenter.cs" />
+    <Compile Include="Views\Customer\ICustomerView.cs" />
+    <Compile Include="Views\DataSource\DataSourceView.xaml.cs">
+      <DependentUpon>DataSourceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DataSource\DataSourceViewPresenter.cs" />
+    <Compile Include="Views\DataSource\IDataSourceView.cs" />
+    <Compile Include="Views\EmployeeRoles\EmployeeRolesView.xaml.cs">
+      <DependentUpon>EmployeeRolesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeRoles\EmployeeRolesViewPresenter.cs" />
+    <Compile Include="Views\EmployeeRoles\IEmployeeRolesView.cs" />
+    <Compile Include="Views\Employee\EmployeeView.xaml.cs">
+      <DependentUpon>EmployeeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Employee\EmployeeViewPresenter.cs" />
+    <Compile Include="Views\Employee\IEmployeeView.cs" />
+    <Compile Include="Views\ExportData\ExportDataPresenter.cs" />
+    <Compile Include="Views\ExportData\ExportDataView.xaml.cs">
+      <DependentUpon>ExportDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExportData\IExportDataView.cs" />
+    <Compile Include="Views\FolderPicker\FolderPickerView.xaml.cs">
+      <DependentUpon>FolderPickerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FolderPicker\FolderPickerPresenter.cs" />
+    <Compile Include="Views\FolderPicker\HeaderToImageConverter.cs" />
+    <Compile Include="Views\FolderPicker\IFolderPicker.cs" />
+    <Compile Include="Views\Help\HelpView.xaml.cs">
+      <DependentUpon>HelpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Help\HelpViewPresenter.cs" />
+    <Compile Include="Views\Help\IHelpView.cs" />
+    <Compile Include="Views\ImportData\IImportDataView.cs" />
+    <Compile Include="Views\ImportData\ImportDataView.xaml.cs">
+      <DependentUpon>ImportDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ImportData\ImportDataViewPresenter.cs" />
+    <Compile Include="Views\ListViewItemStyleSelector.cs" />
+    <Compile Include="Views\MenuConfig\IMenuConfigView.cs" />
+    <Compile Include="Views\MenuConfig\MenuConfigViewPresenter.cs" />
+    <Compile Include="Views\MenuConfig\MenuConfigView.xaml.cs">
+      <DependentUpon>MenuConfigView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MenuPanels\IMenuPanelsView.cs" />
+    <Compile Include="Views\MenuPanels\MenuPanelsView.xaml.cs">
+      <DependentUpon>MenuPanelsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MenuPanels\MenuPanelsViewPresenter.cs" />
+    <Compile Include="Views\MenuRoot\IMenuRoot.cs" />
+    <Compile Include="Views\MenuRoot\MenuRootPresenter.cs" />
+    <Compile Include="Views\MenuRoot\MenuRootView.xaml.cs">
+      <DependentUpon>MenuRootView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MenuRoot\PanelIdToNameConverter.cs" />
+    <Compile Include="Views\NavigatorDataSource\DataSourceNavPresenter.cs" />
+    <Compile Include="Views\NavigatorDataSource\DataSourceNavView.xaml.cs">
+      <DependentUpon>DataSourceNavView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NavigatorDataSource\IDataSourceNavView.cs" />
+    <Compile Include="Views\NavigatorOperations\IOperationsNavView.cs" />
+    <Compile Include="Views\NavigatorOperations\OperationsNavPresenter.cs" />
+    <Compile Include="Views\NavigatorOperations\OperationsNavView.xaml.cs">
+      <DependentUpon>OperationsNavView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NavigatorOrganization\IOrganizationNavView.cs" />
+    <Compile Include="Views\NavigatorOrganization\OrganizationNavPresenter.cs" />
+    <Compile Include="Views\NavigatorOrganization\OrganizationNavView.xaml.cs">
+      <DependentUpon>OrganizationNavView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NavigatorWorkbench\IWorkbenchNavView.cs" />
+    <Compile Include="Views\NavigatorWorkbench\WorkbenchNavPresenter.cs" />
+    <Compile Include="Views\NavigatorWorkbench\WorkbenchNavView.xaml.cs">
+      <DependentUpon>WorkbenchNavView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewDataSourcePrompt\INewDataSource.cs" />
+    <Compile Include="Views\NewDataSourcePrompt\NewDataSource.xaml.cs">
+      <DependentUpon>NewDataSource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewDataSourcePrompt\NewDataSourcePresenter.cs" />
+    <Compile Include="Views\Organization\IOrganizationView.cs" />
+    <Compile Include="Views\Organization\OrganizationView.xaml.cs">
+      <DependentUpon>OrganizationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Organization\OrganizationViewPresenter.cs" />
+    <Compile Include="Views\PosConfigInput\IInputConfigNoView.cs" />
+    <Compile Include="Views\PosConfigInput\InputConfigNoPresenter.cs" />
+    <Compile Include="Views\PosConfigInput\InputConfigNoView.xaml.cs">
+      <DependentUpon>InputConfigNoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PosConfig\IPosConfigurationsView.cs" />
+    <Compile Include="Views\PosConfig\PosConfigurationsView.xaml.cs">
+      <DependentUpon>PosConfigurationsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PosConfig\PosConfigurationsViewPresenter.cs" />
+    <Compile Include="Views\PosKey\IPosKey.cs" />
+    <Compile Include="Views\PosKey\PosKeyPresenter.cs" />
+    <Compile Include="Views\PosKey\PosKeyView.xaml.cs">
+      <DependentUpon>PosKeyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PosParam\IPosParamView.cs" />
+    <Compile Include="Views\PosParam\PosParamCatogoryConverter.cs" />
+    <Compile Include="Views\PosParam\PosParamView.xaml.cs">
+      <DependentUpon>PosParamView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PosParam\PosParamViewPresenter.cs" />
+    <Compile Include="Views\PromotionMap\IPromoMapView.cs" />
+    <Compile Include="Views\PromotionMap\PromoMapView.xaml.cs">
+      <DependentUpon>PromoMapView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PromotionMap\PromoMapViewPresenter.cs" />
+    <Compile Include="Views\Promotion\IPromotionView.cs" />
+    <Compile Include="Views\Promotion\PromotionView.xaml.cs">
+      <DependentUpon>PromotionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Promotion\PromotionViewPresenter.cs" />
+    <Compile Include="Views\StartupSetting\ISettings.cs" />
+    <Compile Include="Views\StartupSetting\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StartupSetting\SettingsViewPresenter.cs" />
+    <Compile Include="Views\Station\IStationView.cs" />
+    <Compile Include="Views\Station\StationView.xaml.cs">
+      <DependentUpon>StationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Station\StationViewPresenter.cs" />
+    <Compile Include="Views\Store\IStoreView.cs" />
+    <Compile Include="Views\Store\StoreView.xaml.cs">
+      <DependentUpon>StoreView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Store\StoreViewPresenter.cs" />
+    <Compile Include="Views\Surcharge\ISerchargeView.cs" />
+    <Compile Include="Views\Surcharge\SerchargeView.xaml.cs">
+      <DependentUpon>SerchargeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Surcharge\SurchargeViewPresenter.cs" />
+    <Compile Include="Views\TableGroup\ITableGroupView.cs" />
+    <Compile Include="Views\TableGroup\TableGroupView.xaml.cs">
+      <DependentUpon>TableGroupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TableGroup\TableGroupViewPresenter.cs" />
+    <Compile Include="Views\Table\ITableView.cs" />
+    <Compile Include="Views\Table\TableDisplayConverter.cs" />
+    <Compile Include="Views\Table\TableView.xaml.cs">
+      <DependentUpon>TableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Table\TableViewPresenter.cs" />
+    <Compile Include="Views\TaskNavigator\IPosNavigatorView.cs" />
+    <Compile Include="Views\TaskNavigator\PosNavigatorView.xaml.cs">
+      <DependentUpon>PosNavigatorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaskNavigator\PosNavigatorViewPresenter.cs" />
+    <Compile Include="Views\TaxGroup\ITaxGroupView.cs" />
+    <Compile Include="Views\TaxGroup\TaxGroupView.xaml.cs">
+      <DependentUpon>TaxGroupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaxGroup\TaxGroupViewPresenter.cs" />
+    <Compile Include="Views\Tax\ITaxView.cs" />
+    <Compile Include="Views\Tax\TaxView.xaml.cs">
+      <DependentUpon>TaxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tax\TaxViewPresenter.cs" />
+    <Compile Include="Views\Users\IUsersView.cs" />
+    <Compile Include="Views\Users\UsersView.xaml.cs">
+      <DependentUpon>UsersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Users\UsersViewPresenter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\BackupDataSourcePrompt\BackupDataSource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CardMedia\CardMediaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CurrencyCode\CurrencyCodeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CurrencyRate\CurrencyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Customer\CustomerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DataSource\DataSourceView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EmployeeRoles\EmployeeRolesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Employee\EmployeeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ExportData\ExportDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FolderPicker\FolderPickerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Help\HelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ImportData\ImportDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MenuConfig\MenuConfigView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MenuPanels\MenuPanelsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MenuRoot\MenuRootView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NavigatorDataSource\DataSourceNavView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NavigatorOperations\OperationsNavView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NavigatorOrganization\OrganizationNavView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NavigatorWorkbench\WorkbenchNavView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewDataSourcePrompt\NewDataSource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Organization\OrganizationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PosConfigInput\InputConfigNoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PosConfig\PosConfigurationsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PosKey\PosKeyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PosParam\PosParamView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PromotionMap\PromoMapView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Promotion\PromotionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StartupSetting\SettingsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Station\StationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Store\StoreView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Surcharge\SerchargeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TableGroup\TableGroupView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Table\TableView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TaskNavigator\PosNavigatorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TaxGroup\TaxGroupView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Tax\TaxView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Users\UsersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Alert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\sync.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\CreatePosSite_v103.sql" />
+    <None Include="Resources\CreatePosSite_v106.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\A1.ico" />
+    <Resource Include="Images\A4.ico" />
+    <Resource Include="Images\A5.ico" />
+    <Resource Include="Images\A6.ico" />
+    <Resource Include="Images\A7.ico" />
+    <Resource Include="Images\B2.ico" />
+    <Resource Include="Images\drive.png" />
+    <Resource Include="Images\stock_folder.png" />
+    <Resource Include="Images\diskdrive.png" />
+    <Resource Include="Images\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EclipsePOS.WPF.SystemManager.Data\EclipsePOS.WPF.SystemManager.Data.csproj">
+      <Project>{63e2602d-ea97-4ac7-944e-846f4205cba7}</Project>
+      <Name>EclipsePOS.WPF.SystemManager.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EclipsePOS.WPF.SystemManager.Infrastructure\EclipsePOS.WPF.SystemManager.Infrastructure.csproj">
+      <Project>{d2dc408c-c478-4b5a-bd7e-f755ae77384d}</Project>
+      <Name>EclipsePOS.WPF.SystemManager.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

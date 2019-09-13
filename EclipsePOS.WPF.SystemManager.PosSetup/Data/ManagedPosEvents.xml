@@ -1,0 +1,6 @@
+﻿<xmlns="" >
+  <PosEvents>
+    <Event name="CreditSale"></Event>
+    <Event name="PaidIn"></Event>
+    <Event name="PaidOut"></Event>
+  </PosEvents>

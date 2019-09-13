@@ -1,0 +1,1038 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{63E2602D-EA97-4AC7-944E-846F4205CBA7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EclipsePOS.WPF.SystemManager.Data</RootNamespace>
+    <AssemblyName>EclipsePOS.WPF.SystemManager.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.4\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=3.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.3.0.0-preview9.19423.4\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Composite, Version=3.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Composite.3.0.0-preview9.19423.4\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Composite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=3.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.3.0.0-preview9.19423.4\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\EclipsePOS.WPF.SystemManager\Library\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\EclipsePOS.WPF.SystemManager\Library\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism, Version=7.2.0.1367, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Core.7.2.0.1367\lib\net45\Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Unity.Wpf, Version=7.2.0.1367, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Unity.7.2.0.1367\lib\net45\Prism.Unity.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Wpf, Version=7.2.0.1367, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Wpf.7.2.0.1367\lib\net45\Prism.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.6.0-preview5.19224.8\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0-preview9.19421.4\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Wpf.7.2.0.1367\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=4.1.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Abstractions.4.1.3\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.10.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Container.5.10.3\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CardMediaDataSet.cs">
+      <DependentUpon>CardMediaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CardMediaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CardMediaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="currencyCodeDataSet.cs">
+      <DependentUpon>currencyCodeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="currencyCodeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>currencyCodeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="currencyDataSet.cs">
+      <DependentUpon>currencyDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="currencyDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>currencyDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="customerDataSet.cs">
+      <DependentUpon>customerDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="customerDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customerDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataModule.cs" />
+    <Compile Include="DataClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentDataSet.cs">
+      <DependentUpon>DepartmentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DepartmentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dialogDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dialogDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="eclipseposdataDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eclipseposdataDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="employeeDataSet.cs">
+      <DependentUpon>employeeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="employeeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>employeeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="employeeRoleEventDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>employeeRoleEventDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="employeeRolesDataSet.cs">
+      <DependentUpon>employeeRolesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="employeeRolesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>employeeRolesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="employeeRolesLookupDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>employeeRolesLookupDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="helpTextPosParamDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>helpTextPosParamDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ItemGroupDataSet.cs">
+      <DependentUpon>ItemGroupDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ItemGroupDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemGroupDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ItemsDataSet.cs">
+      <DependentUpon>ItemsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ItemsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="loadRetailStoreCustomerDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>loadRetailStoreCustomerDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="loadTransByUploadSessionNoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>loadTransByUploadSessionNoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="loadTransForAccpacImportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>loadTransForAccpacImportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="loadTransTaxByTransNoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>loadTransTaxByTransNoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="menuConfigDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>menuConfigDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="menuPanelsDataSet.cs">
+      <DependentUpon>menuPanelsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="menuPanelsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>menuPanelsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="menuPanelsLookupDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>menuPanelsLookupDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="menuRootDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>menuRootDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="menuRootLookupDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>menuRootLookupDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="organizationDataSet.cs">
+      <DependentUpon>organizationDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="organizationDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>organizationDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="organizationLookupDataSet.cs">
+      <DependentUpon>organizationLookupDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="organizationLookupDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>organizationLookupDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="posConfigDataSet.cs">
+      <DependentUpon>posConfigDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="posConfigDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>posConfigDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="posConfigLookupDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>posConfigLookupDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="posKeyDataSet.cs">
+      <DependentUpon>posKeyDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="posKeyDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>posKeyDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="posParamDataSet.cs">
+      <DependentUpon>posParamDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="posParamDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>posParamDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="posParamDefaultDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>posParamDefaultDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="posTransUploadDataSet.cs">
+      <DependentUpon>posTransUploadDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="posTransUploadDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>posTransUploadDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="promotionDataSet.cs">
+      <DependentUpon>promotionDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="promotionDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>promotionDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="promotionMapDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>promotionMapDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="shipmentDetailsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>shipmentDetailsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="shipmentsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>shipmentsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stationDataSet.cs">
+      <DependentUpon>stationDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stationDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stationDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stockBalanceDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stockBalanceDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="storeDataSet.cs">
+      <DependentUpon>storeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="storeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>storeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="surchargeDataSet.cs">
+      <DependentUpon>surchargeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="surchargeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>surchargeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tableDetailsDataSet.cs">
+      <DependentUpon>tableDetailsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tableDetailsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tableDetailsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tableGroupDataSet.cs">
+      <DependentUpon>tableGroupDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tableGroupDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tableGroupDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="taxDataSet.cs">
+      <DependentUpon>taxDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="taxDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>taxDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="taxGroupDataSet.cs">
+      <DependentUpon>taxGroupDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="taxGroupDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>taxGroupDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="transDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>transDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="transStockDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>transStockDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="updateStockBalanceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>updateStockBalanceDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="usersDataSet.cs">
+      <DependentUpon>usersDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="usersDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>usersDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Util\EclipseSettingsProvider.cs" />
+    <Compile Include="Util\PosSettings.cs" />
+    <Compile Include="Util\RegistrySettingsProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="CardMediaDataSet.xsc">
+      <DependentUpon>CardMediaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CardMediaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CardMediaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CardMediaDataSet.xss">
+      <DependentUpon>CardMediaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="currencyCodeDataSet.xsc">
+      <DependentUpon>currencyCodeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="currencyCodeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>currencyCodeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="currencyCodeDataSet.xss">
+      <DependentUpon>currencyCodeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="currencyDataSet.xsc">
+      <DependentUpon>currencyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="currencyDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>currencyDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="currencyDataSet.xss">
+      <DependentUpon>currencyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="customerDataSet.xsc">
+      <DependentUpon>customerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="customerDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>customerDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="customerDataSet.xss">
+      <DependentUpon>customerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataClasses.dbml.layout">
+      <DependentUpon>DataClasses.dbml</DependentUpon>
+    </None>
+    <None Include="DepartmentDataSet.xsc">
+      <DependentUpon>DepartmentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DepartmentDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DepartmentDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DepartmentDataSet.xss">
+      <DependentUpon>DepartmentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dialogDataSet.xsc">
+      <DependentUpon>dialogDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dialogDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dialogDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dialogDataSet.xss">
+      <DependentUpon>dialogDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="eclipseposdataDataSet.xsc">
+      <DependentUpon>eclipseposdataDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="eclipseposdataDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>eclipseposdataDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="eclipseposdataDataSet.xss">
+      <DependentUpon>eclipseposdataDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="employeeDataSet.xsc">
+      <DependentUpon>employeeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="employeeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>employeeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="employeeDataSet.xss">
+      <DependentUpon>employeeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="employeeRoleEventDataSet.xsc">
+      <DependentUpon>employeeRoleEventDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="employeeRoleEventDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>employeeRoleEventDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="employeeRoleEventDataSet.xss">
+      <DependentUpon>employeeRoleEventDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="employeeRolesDataSet.xsc">
+      <DependentUpon>employeeRolesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="employeeRolesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>employeeRolesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="employeeRolesDataSet.xss">
+      <DependentUpon>employeeRolesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="employeeRolesLookupDataSet.xsc">
+      <DependentUpon>employeeRolesLookupDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="employeeRolesLookupDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>employeeRolesLookupDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="employeeRolesLookupDataSet.xss">
+      <DependentUpon>employeeRolesLookupDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="helpTextPosParamDataSet.xsc">
+      <DependentUpon>helpTextPosParamDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="helpTextPosParamDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>helpTextPosParamDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="helpTextPosParamDataSet.xss">
+      <DependentUpon>helpTextPosParamDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ItemGroupDataSet.xsc">
+      <DependentUpon>ItemGroupDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ItemGroupDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ItemGroupDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ItemGroupDataSet.xss">
+      <DependentUpon>ItemGroupDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ItemsDataSet.xsc">
+      <DependentUpon>ItemsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ItemsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ItemsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ItemsDataSet.xss">
+      <DependentUpon>ItemsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="loadRetailStoreCustomerDataSet.xsc">
+      <DependentUpon>loadRetailStoreCustomerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="loadRetailStoreCustomerDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>loadRetailStoreCustomerDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="loadRetailStoreCustomerDataSet.xss">
+      <DependentUpon>loadRetailStoreCustomerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="loadTransByUploadSessionNoDataSet.xsc">
+      <DependentUpon>loadTransByUploadSessionNoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="loadTransByUploadSessionNoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>loadTransByUploadSessionNoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="loadTransByUploadSessionNoDataSet.xss">
+      <DependentUpon>loadTransByUploadSessionNoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="loadTransForAccpacImportDataSet.xsc">
+      <DependentUpon>loadTransForAccpacImportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="loadTransForAccpacImportDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>loadTransForAccpacImportDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="loadTransForAccpacImportDataSet.xss">
+      <DependentUpon>loadTransForAccpacImportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="loadTransTaxByTransNoDataSet.xsc">
+      <DependentUpon>loadTransTaxByTransNoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="loadTransTaxByTransNoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>loadTransTaxByTransNoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="loadTransTaxByTransNoDataSet.xss">
+      <DependentUpon>loadTransTaxByTransNoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="menuConfigDataSet.xsc">
+      <DependentUpon>menuConfigDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="menuConfigDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>menuConfigDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="menuConfigDataSet.xss">
+      <DependentUpon>menuConfigDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="menuPanelsDataSet.xsc">
+      <DependentUpon>menuPanelsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="menuPanelsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>menuPanelsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="menuPanelsDataSet.xss">
+      <DependentUpon>menuPanelsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="menuPanelsLookupDataSet.xsc">
+      <DependentUpon>menuPanelsLookupDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="menuPanelsLookupDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>menuPanelsLookupDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="menuPanelsLookupDataSet.xss">
+      <DependentUpon>menuPanelsLookupDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="menuRootDataSet.xsc">
+      <DependentUpon>menuRootDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="menuRootDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>menuRootDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="menuRootDataSet.xss">
+      <DependentUpon>menuRootDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="menuRootLookupDataSet.xsc">
+      <DependentUpon>menuRootLookupDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="menuRootLookupDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>menuRootLookupDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="menuRootLookupDataSet.xss">
+      <DependentUpon>menuRootLookupDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="organizationDataSet.xsc">
+      <DependentUpon>organizationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="organizationDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>organizationDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="organizationDataSet.xss">
+      <DependentUpon>organizationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="organizationLookupDataSet.xsc">
+      <DependentUpon>organizationLookupDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="organizationLookupDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>organizationLookupDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="organizationLookupDataSet.xss">
+      <DependentUpon>organizationLookupDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="posConfigDataSet.xsc">
+      <DependentUpon>posConfigDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="posConfigDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>posConfigDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="posConfigDataSet.xss">
+      <DependentUpon>posConfigDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="posConfigLookupDataSet.xsc">
+      <DependentUpon>posConfigLookupDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="posConfigLookupDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>posConfigLookupDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="posConfigLookupDataSet.xss">
+      <DependentUpon>posConfigLookupDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="posKeyDataSet.xsc">
+      <DependentUpon>posKeyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="posKeyDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>posKeyDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="posKeyDataSet.xss">
+      <DependentUpon>posKeyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="posParamDataSet.xsc">
+      <DependentUpon>posParamDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="posParamDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>posParamDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="posParamDataSet.xss">
+      <DependentUpon>posParamDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="posParamDefaultDataSet.xsc">
+      <DependentUpon>posParamDefaultDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="posParamDefaultDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>posParamDefaultDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="posParamDefaultDataSet.xss">
+      <DependentUpon>posParamDefaultDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="posTransUploadDataSet.xsc">
+      <DependentUpon>posTransUploadDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="posTransUploadDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>posTransUploadDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="posTransUploadDataSet.xss">
+      <DependentUpon>posTransUploadDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="promotionDataSet.xsc">
+      <DependentUpon>promotionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="promotionDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>promotionDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="promotionDataSet.xss">
+      <DependentUpon>promotionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="promotionMapDataSet.xsc">
+      <DependentUpon>promotionMapDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="promotionMapDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>promotionMapDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="promotionMapDataSet.xss">
+      <DependentUpon>promotionMapDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="shipmentDetailsDataSet.xsc">
+      <DependentUpon>shipmentDetailsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="shipmentDetailsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>shipmentDetailsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="shipmentDetailsDataSet.xss">
+      <DependentUpon>shipmentDetailsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="shipmentsDataSet.xsc">
+      <DependentUpon>shipmentsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="shipmentsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>shipmentsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="shipmentsDataSet.xss">
+      <DependentUpon>shipmentsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="stationDataSet.xsc">
+      <DependentUpon>stationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="stationDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stationDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stationDataSet.xss">
+      <DependentUpon>stationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="stockBalanceDataSet.xsc">
+      <DependentUpon>stockBalanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="stockBalanceDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stockBalanceDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stockBalanceDataSet.xss">
+      <DependentUpon>stockBalanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="storeDataSet.xsc">
+      <DependentUpon>storeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="storeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>storeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="storeDataSet.xss">
+      <DependentUpon>storeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="surchargeDataSet.xsc">
+      <DependentUpon>surchargeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="surchargeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>surchargeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="surchargeDataSet.xss">
+      <DependentUpon>surchargeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tableDetailsDataSet.xsc">
+      <DependentUpon>tableDetailsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tableDetailsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tableDetailsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tableDetailsDataSet.xss">
+      <DependentUpon>tableDetailsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tableGroupDataSet.xsc">
+      <DependentUpon>tableGroupDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tableGroupDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tableGroupDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tableGroupDataSet.xss">
+      <DependentUpon>tableGroupDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="taxDataSet.xsc">
+      <DependentUpon>taxDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="taxDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>taxDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="taxDataSet.xss">
+      <DependentUpon>taxDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="taxGroupDataSet.xsc">
+      <DependentUpon>taxGroupDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="taxGroupDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>taxGroupDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="taxGroupDataSet.xss">
+      <DependentUpon>taxGroupDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="transDataSet.xsc">
+      <DependentUpon>transDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="transDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>transDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="transDataSet.xss">
+      <DependentUpon>transDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="transStockDataSet.xsc">
+      <DependentUpon>transStockDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="transStockDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>transStockDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="transStockDataSet.xss">
+      <DependentUpon>transStockDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="updateStockBalanceDataSet.xsc">
+      <DependentUpon>updateStockBalanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="updateStockBalanceDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>updateStockBalanceDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="updateStockBalanceDataSet.xss">
+      <DependentUpon>updateStockBalanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="usersDataSet.xsc">
+      <DependentUpon>usersDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="usersDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>usersDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="usersDataSet.xss">
+      <DependentUpon>usersDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.9.2">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2005 Express Edition SP2 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
